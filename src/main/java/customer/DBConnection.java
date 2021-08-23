@@ -10,7 +10,7 @@ public class DBConnection {
 		public static Connection getConnection() {
 			Connection conn = null;
 			try {
-				String user = "project6";
+				String user = "project9";
 				String pw = "1111";
 				String url = "jdbc:oracle:thin:@203.216.179.152:1521:xe";
 				
