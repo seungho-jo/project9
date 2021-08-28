@@ -1,0 +1,67 @@
+@charset "UTF-8";
+* {
+	color: #323232;
+	font-family : Noto Sans KR,Malgun Gothic;
+}
+section {
+	margin:0px;
+	min-height: 1000px;
+}
+#category-content {
+	padding-top: 15px;
+	margin: auto;
+	width: 870px;
+	height: 300px;
+}
+#category-content #category-button li {
+	margin: 8px 0px;
+	list-style: none;
+	float: left;
+}
+#category-content #category-button #category-icon {
+	text-align: center;
+	width: 188px;
+	height: 88px;
+}
+#category-content #category-button #category-icon img:hover{
+	transform: translate( 0, -8px);
+}
+#category-content #category-button #category-icon p{
+	font-size: 14px;
+	font-weight: bold;
+	color: #323232;
+}
+#main-recommend{
+	margin: auto;
+	width: 1000px;
+	height: 450px;
+	padding-top: 18px;
+}
+#main-recommend #rclass-list{
+	width: 240px;
+	height: 310px;
+	padding: 5px;
+	float: left;
+}
+#main-recommend #rclass-list img{
+	width: 240px;
+	height: 150px;
+	border-radius: 10px;
+}
+#main-recommend #rclass-list img:hover{
+    transform: scale(1.2, 1.2);
+    transition-duration: 0.5s;
+}
+#main-recommend #rclass-list #rclass-list-img{
+    overflow: hidden;
+}
+#main-recommend #rclass-list #rclass-list-name{
+	font-size: 11px;
+}
+#main-recommend #rclass-list #rclass-list-title{
+	font-size: 13px;
+}
+#main-recommend #rclass-list #rclass-list-price{
+	font-weight: bold;
+	border-top: solid 0.8px #F5F5F5;
+}
