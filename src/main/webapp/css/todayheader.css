@@ -26,8 +26,9 @@ header #top #btn{
 	float : right;
 	line-height : 100px;
 }
-header #top #btn span {
+header #top #btn a {
 	padding : 13px;
+	text-decoration : none;
 }
 header #top .search-box{
   box-shadow: 0px 0px 2px 2px #6482FF;
@@ -56,4 +57,7 @@ header #top .search-btn{
 }
 header #top .search-box:hover{
 	 box-shadow: 0px 0px 2px 4px #6482FF;
+}
+#cl{
+	clear : both;
 }

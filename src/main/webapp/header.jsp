@@ -16,11 +16,11 @@
 <body>
 	<header>
 		<div id="top">
-			<a href="#"><img id="title" src="img/title.png"></a>
+			<a href="index.jsp"><img id="title" src="img/title.png"></a>
 			<div id="btn">
-				<span>외주</span>
-				<span>로그인</span>
-				<span>회원가입</span>
+				<a>외주</a>
+				<a href="login.jsp">로그인</a>
+				<a href="join.jsp">회원가입</a>
 			</div>
 	    <div class="search-box">
 	      <input type="text" class="search-txt" name=""placeholder="서비스를 입력하세요"/>
@@ -30,5 +30,6 @@
 	    </div>
 		</div>
 	</header>
+	<div id="cl"></div>
 </body>
 </html>
