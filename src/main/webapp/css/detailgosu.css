@@ -1,0 +1,122 @@
+@charset "UTF-8";
+* {
+	color: #323232;
+	font-family : Noto Sans KR,Malgun Gothic;
+}
+section {
+	min-height: 1000px;
+}
+.class-info {
+	width: 1000px;
+	margin: auto;
+	margin-top: 30px;
+}
+.class-info .gosu-info .gosu_img {
+	width: 45px;
+	float: left;
+}
+.class-info .gosu-info .gosu_img img{
+	width: 42px;
+	height: 42px;
+	border-radius: 70%
+}
+.class-info .gosu-info .short-info {
+	float: left;	
+	width: 45px;
+	margin: 6px 7px;
+}
+.class-info .gosu-info .short-info span{
+	font-size: 14px;
+}
+.slider img{
+	margin:0 auto;
+}
+
+.sticky_area .sticky_navi {
+	position: fixed;
+	background-color: white;
+	top: 135px;
+	right: 23%;
+    width: 300px;
+    height: 446px;
+    padding: 15px 15px 25px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 1px 4px 0 rgb(17 17 17 / 10%);
+    box-shadow: 0 1px 4px 0 rgb(17 17 17 / 10%);
+    -webkit-transition: all 1s;
+    transition: all 1s;
+    clear: both;
+}
+.sticky_area .sticky_navi #c_schedule {
+	background-color: white;
+	min-height: 250px;
+}
+.sticky_area .sticky_navi #c_schedule #sch_list{
+	margin-left: 0px;
+	padding-inline-start: 0px;
+	
+}
+.sticky_area .sticky_navi #c_schedule ul {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 0.5px solid #fafafa;
+}
+.sticky_area .sticky_navi #c_schedule li {
+	list-style: none;
+}
+.sticky_area .sticky_navi #c_schedule .sch_date,.sch_loc{
+	font-size: 13.5px;
+}
+.sticky_area .sticky_navi #c_schedule .sch_place{
+	font-size: 12px;
+}
+.sticky_area .sticky_navi #price_list li {
+	list-style: none;
+	text-align: right;
+}
+.sticky_area .sticky_navi #price_list .c_price {
+	font-weight: bold;
+	font-size: 15.5px;
+}
+.sticky_area .sticky_navi #price_list .c_tot {
+	font-size: 13.5px;
+}
+.sticky_area .sticky_navi #c_like{
+	width: 48px;
+	height: 48px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	cursor: pointer;
+	float: left;
+	margin-right: 10px;
+	background-color: white;
+}
+.sticky_area .sticky_navi #c_like i{
+	color:#6482FF;
+	font-size:30px;
+	margin: 10px 10px;
+}
+.sticky_area .sticky_navi #c_app #application{
+	width: 238px;
+	height: 48px;
+	background-color: #6482FF;
+	color: white;
+	border: 0;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 20px;
+}
+.class_info {
+	width: 1000px;
+	margin: auto;
+}
+.class_info #class_notice,#class_target,#gosu_info {
+	width: 65%;
+	padding: 8px;
+
+}
+.class_info p{
+	padding: 15px;
+	background-color: #fafafa;
+	border-radius: 10px;
+}

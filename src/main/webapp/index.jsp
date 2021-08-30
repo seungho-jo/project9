@@ -7,8 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="cs
-s/index.css"/>
+<link rel="stylesheet" href="css/index.css"/>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
@@ -97,16 +96,16 @@ s/index.css"/>
 		</div>
 		<div id="rclass-list">
 			<div id="rclass-list-img">
-				<img src="img/reco1.jpg"/>
+				<img src="img/reco2.JPG"/>
 			</div>
 			<div id="rclass-list-name">
-				<p>오늘한입</p>
+				<p>이은정</p>
 			</div>
 			<div id="rclass-list-title">
-				<p>한 번 배우면 평생 사용할 수 있는 소불고기 레시피</p>
+				<p>생화같은 카네이션 앙금쿠키 원데이 클래스</p>
 			</div>
 			<div id="rclass-list-price">
-				<p>25,000원</p>
+				<p>44,000원</p>
 			</div>
 		</div>
 		<div id="rclass-list">
