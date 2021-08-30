@@ -61,7 +61,7 @@ body,html {
 #login table tr:nth-child(6) td:hover,#login table tr:nth-child(7) td:hover{
 	color : #6482FF;
 }
-#login table button{
+#login table #button{
 	background-color : #6482FF;
 	width : 380px;
 	height : 50px;
@@ -71,7 +71,7 @@ body,html {
 	font-size : 18px;
 	border-radius :4px;
 }
-#login table button:hover{
+#login table #button:hover{
 	background-color : #4D56D5;
 }
 #image {
