@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/todayheader.css"/>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
-<title>header</title>
+<title>오늘의 수업</title>
 
 </head>
 <body>
