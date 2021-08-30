@@ -7,7 +7,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="css/index.css"/>
+<link rel="stylesheet" href="cs
+s/index.css"/>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>

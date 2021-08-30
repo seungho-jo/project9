@@ -18,17 +18,17 @@
 	<div id="login">
 		<a href="index.jsp"><img alt="타이틀" src="${path}/img/title.png"></a>
 		<h1 align="center">로그인</h1>
-		<table align="center">
-			<colgroup>
-			</colgroup>
-			<tr><td>아이디</td></tr>
-			<tr><td><input type="text" name="id" placeholder="아이디를 입력해주세요."/></td></tr>
-			<tr><td>비밀번호</td></tr>
-			<tr><td><input type="password" name="pass" placeholder="비밀번호를 입력해주세요."/></td></tr>
-			<tr><td><button>로그인</button></td></tr>
-			<tr><td>계정이 없으신가요?</td></tr>
-			<tr><td>계정 찾기</td></tr>
-		</table>
+		<form>
+			<table align="center">
+				<tr><td>아이디</td></tr>
+				<tr><td><input type="text" name="id" placeholder="아이디를 입력해주세요."/></td></tr>
+				<tr><td>비밀번호</td></tr>
+				<tr><td><input type="password" name="pass" placeholder="비밀번호를 입력해주세요."/></td></tr>
+				<tr><td><input type="button" value="로그인" id="button"></td></tr>
+				<tr><td>계정이 없으신가요?</td></tr>
+				<tr><td>계정 찾기</td></tr>
+			</table>
+		</form>
 	</div>
 	<div id="image">
 		<img alt="로그인 이미지" src="${path}/img/study.jfif">

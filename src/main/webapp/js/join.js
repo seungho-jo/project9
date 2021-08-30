@@ -50,7 +50,7 @@ $("[name=pass]").blur(function() {
 		}
 	} else {
 		$("table tr:eq(3) td br").remove();
-		$("table tr:eq(3) td p").remove();
+		$("table tr:eq(3) td span").remove();
 	}
 })
 $("[name=re_pass]").blur(function() {
@@ -62,7 +62,7 @@ $("[name=re_pass]").blur(function() {
 		}
 	} else {
 		$("table tr:eq(5) td br").remove();
-		$("table tr:eq(5) td p").remove();
+		$("table tr:eq(5) td span").remove();
 	}
 })
 function sample6_execDaumPostcode() {
@@ -84,3 +84,24 @@ function sample6_execDaumPostcode() {
 $("#click").click(function(){
 	$("[name=profile]").click();
 })
+function show () {
+	// 인원선택 팝업창 띄우기
+	document.querySelector(".background").className = "background show";
+}
+function close () { 
+	// 팝업창 닫기
+	document.querySelector(".background").className = "background";
+}
+document.querySelector("#show").addEventListener('click', show);
+document.querySelector("#close").addEventListener('click', close);
+
+function show2 () {
+	// 인원선택 팝업창 띄우기
+	document.querySelector(".background2").className = "background2 show2";
+}
+function close2 () { 
+	// 팝업창 닫기
+	document.querySelector(".background2").className = "background2";
+}
+document.querySelector("#show2").addEventListener('click', show2);
+document.querySelector("#close2").addEventListener('click', close2);
