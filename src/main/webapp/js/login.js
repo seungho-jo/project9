@@ -6,7 +6,7 @@ $("#button").click(function(){
 		alert("비밀번호를 입력해주세요");
 		$("[name=pass]").focus();
 	}else{
-		location.href="index.jsp"
+		$("form").submit();
 	}
 });
 $("#login table tr:nth-child(6) td").click(function(){
