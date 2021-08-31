@@ -12,41 +12,21 @@
 <meta charset="UTF-8">
 <title>오늘의 수업</title>
 <link rel="stylesheet" href="css/detailgosu.css"/>
-<link rel="stylesheet" href="css/detailimg.css"/> 
+<link rel="stylesheet" href="css/detailimg.css"/>
 <script src="https://kit.fontawesome.com/e34f41b737.js" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-1.11.3.js"></script> 
-<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script> 
-<script>
-$(document).ready(function(){ 
-    var main = $('.bxslider').bxSlider({ 
-    mode: 'fade', 
-    auto: false,	//자동으로 슬라이드 
-    controls : true,	//좌우 화살표	
-    autoControls: false,	//stop,play 
-    pager:true,	//페이징 
-    pause: 3000, 
-    autoDelay: 0,	
-    slideWidth: 1000, 
-    speed: 500, 
-    stopAutoOnclick:true 
-}); 
-   
-$(".bx-stop").click(function(){	 
-    main.stopAuto(); 
-    $(".bx-stop").hide(); 
-    $(".bx-start").show(); 
-    return false; 
-}); 
-
-$(".bx-start").click(function(){	
-    main.startAuto(); 
-    $(".bx-start").hide(); 
-    $(".bx-stop").show(); 
-    return false; 
-}); 
-
-  $(".bx-start").hide();	
-}); 
+<link rel="stylesheet"
+	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script type="text/javascript">
+{
+	  "tags": [
+	    "swiper"
+	  ],
+	  "name": "Swiper - CSS mode",
+	  "dependencies": {
+	    "swiper": "latest",
+	    "parcel-bundler": "^1.6.1"
+	  }
+	}
 </script>
 </head>
 <body>
@@ -65,14 +45,18 @@ $(".bx-start").click(function(){
 			</div>
 		</div>
 	<%-- 클래스이미지 슬라이더 --%>
-	<div class="home__slider"> 
-	    <div class="bxslider"> 
-	        <div><img src="img/reco2.JPG" alt="그림1"></div>
-	        <div><img src="img/reco1.jpg" alt="그림2"></div> 
-	        <div><img src="img/reco2.JPG" alt="그림1"></div>
-	        <div><img src="img/reco1.jpg" alt="그림2"></div> 
-	    </div> 
-	</div> 	
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="img/reco2.JPG" alt=""/></div>
+        <div class="swiper-slide"><img src="img/reco2.JPG" alt=""/></div>
+        <div class="swiper-slide"><img src="img/reco2.JPG" alt=""/></div>
+        <div class="swiper-slide"><img src="img/reco2.JPG" alt=""/></div>
+        <div class="swiper-slide"><img src="img/reco2.JPG" alt=""/></div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
 	<%-- 네비 수강신청버튼 --%>	
 	<div class="sticky_area">
 		<div class="sticky_navi">
@@ -151,10 +135,29 @@ $(".bx-start").click(function(){
 				</div>
 			</div>
 		</div>
+		<%--리뷰 --%>
+		
 	</div>
 	</section>
-
 	<jsp:include page="footer.jsp"></jsp:include>
-</body>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        cssMode: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        mousewheel: true,
+        keyboard: true,
+      });
+    </script>
+
+</body>
+<script src="${path}/js/detailgosu.js" type="text/javascript"></script>
 </html>

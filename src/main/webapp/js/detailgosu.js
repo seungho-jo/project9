@@ -1,30 +1,82 @@
-$(document).ready(function(){ 
-    var main = $('.bxslider').bxSlider({ 
-    mode: 'fade', 
-    auto: false,	//자동으로 슬라이드 
-    controls : true,	//좌우 화살표	
-    autoControls: false,	//stop,play 
-    pager:true,	//페이징 
-    pause: 3000, 
-    autoDelay: 0,	
-    slideWidth: 1000, 
-    speed: 500, 
-    stopAutoOnclick:true 
-}); 
-   
-$(".bx-stop").click(function(){	// 중지버튼 눌렀을때 
-    main.stopAuto(); 
-    $(".bx-stop").hide(); 
-    $(".bx-start").show(); 
-    return false; 
-}); 
+/**
+ * 
+ */
 
-$(".bx-start").click(function(){	//시작버튼 눌렀을때 
-    main.startAuto(); 
-    $(".bx-start").hide(); 
-    $(".bx-stop").show(); 
-    return false; 
-}); 
+//slide-wrap
+var slideWrapper = document.getElementById('slide_img');
+//current slideIndexition
+var slideIndex = 0;
+//items
+var slides = document.querySelectorAll('#slide_img ul li');
+//number of slides
+var totalSlides = slides.length;
+//get the slide width
+var sliderWidth = slideWrapper.clientWidth;
+//set width of items
+slides.forEach(function (element) {
+    element.style.width = sliderWidth + 'px';
+})
+//set width to be 'x' times the number of slides
+var slider = document.querySelector('#slider');
+slider.style.width = sliderWidth * totalSlides + 'px';
 
-  $(".bx-start").hide();	//onload시 시작버튼 숨김. 
-}); 
+// next, prev
+var nextBtn = document.getElementById('next');
+var prevBtn = document.getElementById('previous');
+nextBtn.addEventListener('click', function () {
+    plusSlides(1);
+});
+prevBtn.addEventListener('click', function () {
+    plusSlides(-1);
+});
+
+// hover
+slideWrapper.addEventListener('mouseover', function () {
+    this.classList.add('active');
+    clearInterval(autoSlider);
+});
+slideWrapper.addEventListener('mouseleave', function () {
+    this.classList.remove('active');
+    autoSlider = setInterval(function () {
+        plusSlides(1);
+    }, 3000);
+});
+
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlides(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    slideIndex = n;
+    if (slideIndex == -1) {
+        slideIndex = totalSlides - 1;
+    } else if (slideIndex === totalSlides) {
+        slideIndex = 0;
+    }
+
+    slider.style.left = -(sliderWidth * slideIndex) + 'px';
+    pagination();
+}
+//pagination
+slides.forEach(function () {
+    var li = document.createElement('li');
+    document.querySelector('#slider-pagination-wrap ul').appendChild(li);
+})
+
+function pagination() {
+    var dots = document.querySelectorAll('#slider-pagination-wrap ul li');
+    dots.forEach(function (element) {
+        element.classList.remove('active');
+    });
+    dots[slideIndex].classList.add('active');
+}
+
+pagination();
+var autoSlider = setInterval(function () {
+    plusSlides(1);
+}, 3000);
