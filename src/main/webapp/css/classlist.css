@@ -1,0 +1,58 @@
+@charset "UTF-8";
+section{
+	width : 1000px;
+	min-height : 1000px;
+	margin : 0 auto;
+}
+#class_list {
+	margin: auto;
+	width: 320px;
+	float: left;
+	padding: 5px;
+}
+#class_cont_list {
+	border: solid 0.8px #ddd;
+	width: 320px;
+	height: 310px;
+	float: left;
+}
+#class_cont_list:hover {
+	opacity:0.5;
+	cursor: pointer;
+}
+#class_cont_list #class_list_img img{
+	width: 320px;
+	height: 200px;	
+}
+#class_cont_list #class_list_profile {
+	float: left;
+	padding-left: 10px;
+}
+#class_cont_list #class_list_profile img{
+	width: 42px;
+	height: 42px;
+	border-radius: 70%
+}
+#class_cont_list #class_list_name {
+	font-size: 14px;
+	padding-left: 60px;
+}
+#class_cont_list #class_list_title span{
+	font-size: 14px;
+	font-weight: bold;
+	padding-left: 10px;	
+	padding-top: 4px;
+}
+
+#class_cont_list #class_list_price #pricespan{
+	padding-left: 10px;
+	padding-top: 4px;
+	color: #6482FF;
+	font-weight: bold;
+	float: left
+}
+#class_cont_list #class_list_price #timespan {
+	margin-left: 2px;
+	font-size: 11px;
+	padding-top: 5px;
+}
