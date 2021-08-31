@@ -140,7 +140,6 @@
 	</div>
 	</section>
 	<jsp:include page="footer.jsp"></jsp:include>
-<<<<<<< Updated upstream
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!-- Initialize Swiper -->
