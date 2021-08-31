@@ -140,6 +140,7 @@
 	</div>
 	</section>
 	<jsp:include page="footer.jsp"></jsp:include>
+<<<<<<< Updated upstream
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <!-- Initialize Swiper -->
@@ -160,4 +161,39 @@
 
 </body>
 <script src="${path}/js/detailgosu.js" type="text/javascript"></script>
+=======
+</body>
+<script>
+$(document).ready(function(){ 
+    var main = $('.bxslider').bxSlider({ 
+    mode: 'fade', 
+    auto: false,	//자동으로 슬라이드 
+    controls : true,	//좌우 화살표	
+    autoControls: false,	//stop,play 
+    pager:true,	//페이징 
+    pause: 3000, 
+    autoDelay: 0,	
+    slideWidth: 1000, 
+    speed: 500, 
+    stopAutoOnclick:true 
+}); 
+   
+$(".bx-stop").click(function(){	 
+    main.stopAuto(); 
+    $(".bx-stop").hide(); 
+    $(".bx-start").show(); 
+    return false; 
+}); 
+
+$(".bx-start").click(function(){	
+    main.startAuto(); 
+    $(".bx-start").hide(); 
+    $(".bx-stop").show(); 
+    return false; 
+}); 
+
+  $(".bx-start").hide();	
+}); 
+</script>
+>>>>>>> Stashed changes
 </html>
