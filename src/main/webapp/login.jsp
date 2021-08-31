@@ -6,6 +6,14 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
 <c:set var = "path" value="${pageContext.request.contextPath}"/>
 <fmt:requestEncoding value="utf-8"/>
+<%
+	String id= request.getParameter("id");
+	String pass= request.getParameter("pass");
+	if(id!=null&&pass!=null){
+		session.setAttribute("idkey", id);
+		response.sendRedirect("index.jsp");
+	}
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +26,7 @@
 	<div id="login">
 		<a href="index.jsp"><img alt="타이틀" src="${path}/img/title.png"></a>
 		<h1 align="center">로그인</h1>
-		<form>
+		<form method="post">
 			<table align="center">
 				<tr><td>아이디</td></tr>
 				<tr><td><input type="text" name="id" placeholder="아이디를 입력해주세요."/></td></tr>

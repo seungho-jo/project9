@@ -1,4 +1,8 @@
 @charset "UTF-8";
+a{
+	text-decoration : none;
+	color : black;
+}
 html,body{
 	font-family : Noto Sans KR,Malgun Gothic;
 	background-color: #fff;
@@ -12,7 +16,7 @@ header{
 	border-bottom : solid 1px #F5F5F5;
 }
 header #top{
-	width : 1020px;
+	width : 59%;
 	height : 100%;
 	margin : 0 auto;
 }
@@ -27,6 +31,51 @@ header #top #btn{
 header #top #btn a {
 	padding : 13px;
 	text-decoration : none;
+	color : black;
+}
+header #top #btn #my{
+	display : inline-block;
+	cursor : pointer;
+	font-weight : 300px;
+} 
+header #top #btn #my div{
+	display : none;
+}
+header #top #btn #my .display{
+	display : block;
+	position : absolute;
+	z-index: 1000;
+	top : 9%;
+	right : 20.5%;
+	box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+	padding: 1.3125rem;
+	border : 0.5px solid rgba(0,0,0,0.1);
+	background-color : white;
+	cursor : auto;
+}
+header #top #btn #my .display h4{
+	margin : 0;
+	height : 50px;
+	line-height : 50px;
+}
+header #top #btn #my .display ul{
+	width : 140px;
+	height : 90px;
+	margin : 0;
+	padding : 0;
+	list-style : none;
+}
+
+header #top #btn .display ul li{
+	height : 33px;
+	line-height : 33px;
+	cursor : pointer;
+}
+header #top #btn .display ul li a{
+	padding : 0;
+}
+header #top #btn .display ul li a:hover{
+	color : #6482FF;
 }
 header #top .search-box{
   box-shadow: 0px 0px 2px 2px #6482FF;
