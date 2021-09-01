@@ -2,6 +2,7 @@ $("ul li").click(function(event){
 	// 색상주기
 	$(this).css("color","#6482FF");
 	$(this).siblings().css("color","black");
+	$(".now").css("color","#6482FF");
 	// 클래스 입히기
 	$(this).children("ul").addClass("show");
 	// 슬라이드
@@ -13,5 +14,10 @@ $("ul li").click(function(event){
 		$(this).css("color","#6482FF");
 		$(this).siblings().css("color","black");
 	});
-	console.log($(this).text());
+	console.log($(this).children("input").val());
+	if($(this).children("input").val()==undefined){
+		
+	}else{
+		location.href=$(this).children("input").val();
+	}
 });

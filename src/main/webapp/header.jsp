@@ -58,4 +58,12 @@
 	<div id="cl"></div>
 </body>
 <script src="${path}/js/header.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$("#my>div>ul>li").eq(2).click(function(){
+		<%
+		session.invalidate();
+		%>
+		location.href = "index.jsp";
+	})
+</script>
 </html>

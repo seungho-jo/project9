@@ -18,7 +18,7 @@
 		<h1>마이페이지</h1>
 		<div id="member_info">
 			<p>회원정보</p>
-			<a href="">
+			<a href="edit_mem_info.jsp">
 				<img id="my_icon" src="${path}/img/bros_blank.jpg">
 				<p>홍길동 고객님</p>
 				<img id="right" src="${path}/img/right_icon.svg">
