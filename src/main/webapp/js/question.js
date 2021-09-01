@@ -9,17 +9,14 @@ function setThumbnail(event) {
 		document.getElementById('preview').src = "";
 	}
 }
-$("#submit").click(function() {
+$("#edit").click(function() {
 	if ($("[name=id]").val() == "") {
 		alert("아이디를 입력해주세요");
 		$("[name=id]").focus();
 	} else if ($("[name=pass]").val() == "") {
 		alert("비밀번호를 입력해주세요");
 		$("[name=pass]").focus();
-	} else if ($("[name=re_pass]").val() == "") {
-		alert("비밀번호를 확인란에 입력해주세요");
-		$("[name=re_pass]").focus();
-	} else if ($("[name=name]").val() == "") {
+	}else if ($("[name=name]").val() == "") {
 		alert("이름을 입력해주세요");
 		$("[name=name]").focus();
 	} else if ($("[name=phone]").val() == "") {
@@ -32,13 +29,6 @@ $("#submit").click(function() {
 		$("form").submit();
 	}
 });
-$("#idCheck").click(function() {
-	if ($("[name=id]").val().indexOf(" ") >= 0) {
-		alert("아이디에 공백을 사용할 수 없습니다.");
-		$("[name=id]").focus();
-		return;
-	}
-})
 var passCheck = /^[a-z0-9!@#$%^&*-+=]{8,15}$/;
 $("[name=pass]").blur(function() {
 	if (!passCheck.test($("[name=pass]").val())) {
@@ -51,18 +41,6 @@ $("[name=pass]").blur(function() {
 	} else {
 		$("table tr:eq(3) td br").remove();
 		$("table tr:eq(3) td span").remove();
-	}
-})
-$("[name=re_pass]").blur(function() {
-	if ($("[name=re_pass]").val() != $("[name=pass]").val()) {
-		if ($("table tr:eq(5) td br").length) {
-		}
-		else {
-			$("table tr:eq(5) td").append("<br><span style='color:red;'>다시한번 확인해주세요</span>");
-		}
-	} else {
-		$("table tr:eq(5) td br").remove();
-		$("table tr:eq(5) td span").remove();
 	}
 })
 function sample6_execDaumPostcode() {
@@ -84,24 +62,5 @@ function sample6_execDaumPostcode() {
 $("#click").click(function(){
 	$("[name=profile]").click();
 })
-function show () {
-	// 인원선택 팝업창 띄우기
-	document.querySelector(".background").className = "background show";
-}
-function close () { 
-	// 팝업창 닫기
-	document.querySelector(".background").className = "background";
-}
-document.querySelector("#show").addEventListener('click', show);
-document.querySelector("#close").addEventListener('click', close);
-
-function show2 () {
-	// 인원선택 팝업창 띄우기
-	document.querySelector(".background2").className = "background2 show2";
-}
-function close2 () { 
-	// 팝업창 닫기
-	document.querySelector(".background2").className = "background2";
-}
-document.querySelector("#show2").addEventListener('click', show2);
-document.querySelector("#close2").addEventListener('click', close2);
+$("#navi>ul>li").eq(3).addClass("now");
+$(".now").css("color","#6482FF");

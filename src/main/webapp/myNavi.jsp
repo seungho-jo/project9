@@ -20,11 +20,14 @@
 		<ul>
 			<li>
 				회원정보
+				<input type="hidden" value="edit_mem_info.jsp">
 			</li>
 			<li>
 				내클래스
 				<ul>
-					<li>수강중인 클래스</li>
+					<li>
+						수강중인 클래스
+					</li>
 					<li>수강신청 현황</li>
 					<li>외주현황</li>
 					<li>북마크</li>
@@ -39,7 +42,10 @@
 					<li>쿠폰등록</li>
 				</ul>
 			</li>
-			<li>문의내역</li>
+			<li>
+				문의내역
+				<input type="hidden" value="question.jsp">
+			</li>
 		</ul>
 	</div>
 </body>
