@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+body{
+	margin :0;
+	padding : 0;
+	text-decoration : none;	
+}
+
+nav #navi{
+	display:block;
+	margin :0px;
+	width : 200px;
+	height:85vh;
+	float:left;
+	background: #6482FF;
+}
+
+#navi ul{
+	padding : 0;
+}
+#navi li{
+	text-align:center;
+	margin: 20px 0;
+	list-style : none;	
+	transition: .2s linear;
+}
+
+#navi li:active{
+	text-align:center;
+	margin: 20px 0;
+	list-style : none;	
+	transition: .2s linear;
+	color: white;
+}
+
+#navi li:hover{
+	font-size : 20px;
+}
+
