@@ -43,10 +43,18 @@
 			</thead>
 			<tbody>
 				<%for(int i=0;i<title.length;i++){ %>
-				<tr><td><%=i+1 %></td><td><a href="#"><%=title[i] %></a></td><td><%=dates[i] %></td><td><%=result[i] %></td></tr>
+				<tr>
+					<td><%=i+1 %></td><td><a href="#"><%=title[i] %></a></td>
+					<td><%=dates[i] %></td><td><%=result[i] %></td>
+				</tr>
 				<%} %>
 			</tbody>
 		</table>
+		<div id="paging">
+			<%for(int i=0;i<title.length;i++){ %>
+				<span><%=i+1%></span>
+			<%} %>
+		</div>
 	</div>
 </section>
 <jsp:include page="footer.jsp"/>

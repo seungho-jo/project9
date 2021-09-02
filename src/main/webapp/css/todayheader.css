@@ -6,32 +6,44 @@ a{
 html,body{
 	font-family : Noto Sans KR,Malgun Gothic;
 	background-color: #fff;
+	width : 100%;
+	height : 100%;
+	margin : 0;
 }
 input:focus {
 	outline:none;
 }
 header{
 	width : 100%;
-	height : 100px;
+	height : 11.6%;
 	border-bottom : solid 1px #F5F5F5;
 }
 header #top{
 	width : 59%;
 	height : 100%;
 	margin : 0 auto;
+	display : flex;
+}
+header #top>a{
+	width : 10%;
+	height : 100%;
 }
 header #top img {
-	width : 9%;
-	padding : 5px;
+	width : 100%;
+	height : 100%;
 }
 header #top #btn{
-	float : right;
-	line-height : 100px;
+	height : 100%;
+	width : 20%;
 }
-header #top #btn a {
-	padding : 13px;
+header #top #btn>a {
+	display : inline-block;
+	padding : 3%;
+	height : 100%;
+	line-height : 800%;
 	text-decoration : none;
 	color : black;
+	font-size : 0.7vw;
 }
 header #top #btn #my{
 	display : inline-block;
@@ -79,28 +91,23 @@ header #top #btn .display ul li a:hover{
 }
 header #top .search-box{
   box-shadow: 0px 0px 2px 2px #6482FF;
-  width: 282px;
-  float: right;
-  margin: 30px 340px 10px 10px;
+  width: 27%;
+  height : 40%;
+  margin: 3% 40% 3% 3%;
   border-radius: 30px;
 }
 header #top .search-btn{
   text-decoration: none;
-  display : flex;
-  justify-content : center;
-  align-items : center;
-  width: 30px;
-  height: 30px;
-  border-radius: 30px;
   color: #6482FF;
-  margin-top: 7px;
+  line-height: 250%;
 }
 .search-txt{
   border:none;
-  width: 220px;
-  margin: 6px;
-  padding: 6px 6px 6px 10px;
-  float: left;
+  width: 80%;
+  margin: 2%;
+  padding: 2% 2% 2% 3%;
+  font-size : 0.8vw;
+  border-radius: 10px;
 }
 header #top .search-box:hover{
 	 box-shadow: 0px 0px 2px 4px #6482FF;
