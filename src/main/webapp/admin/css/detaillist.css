@@ -1,0 +1,118 @@
+@charset "UTF-8";
+/* 타이틀 */
+.titleSm{
+	padding-top: 15px;
+}
+/* 리스트 테이블 */
+.listTable {
+	border-collapse: collapse;
+	text-align: center;
+	font-size: 14px;
+	width: 100%;
+}
+
+.listTable th {
+	padding: 7px;
+	font-weight: bold;
+	vertical-align: top;
+	border-bottom: 1px solid #ccc;
+	background: #e8f5fb;
+}
+
+.listTable td {
+	border-collapse: collapse;
+	padding: 7px;
+	vertical-align: top;
+	border-bottom: 1px solid #ccc;
+}
+/* 01리스트 */
+.no{
+	width: 10%;
+}
+.id{
+	width: 15%;
+}
+.name{
+	width: 15%;
+}
+.phone{
+	width: 20%;
+}
+.type{
+	width: 20%;
+}
+.date{
+	width: 20%;
+}
+/* 02리스트 */
+.buyNo{
+	width: 10%;
+}
+.clsName{
+	width: 20%;
+}
+.price{
+	width: 10%;
+}
+.pay{
+	width: 15%;
+}
+.pdate{
+	width: 15%;
+}
+.state{
+	width: 10%;
+}
+.disc{
+	width: 10%;
+}
+.dispri{
+	width: 10%;
+}
+/* 03리스트 */
+.cno{
+	width: 10%;
+}
+.cname{
+	width: 15%;
+}
+.cprice{
+	width: 15%;
+}
+.cond{
+	width: 30%;
+}
+.cdate{
+	width: 15%;
+}
+/* 블라인드 버튼 */
+.blind{
+	float: right;
+    margin: 25px 10px;
+}
+.blind button{
+	font-size: 14px;
+    background: #eee;
+    border: 1px solid #ccc;
+    padding: 3px 5px;
+    border-radius: 3px;
+}
+/* 목록 버튼 */
+.toList {
+    display: flex;
+    width: 100%;
+    padding: auto;
+    justify-content: center;
+}
+.toList button {
+    background: #2176cc;
+    padding: 7px 15px;
+    color: #ffffff;
+    border: none;
+    font-size: 15px;
+    border-radius: 3px;
+}
+/* 마우스 처리 */
+button:hover {
+	cursor: pointer;
+}
