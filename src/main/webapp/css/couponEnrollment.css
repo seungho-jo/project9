@@ -1,0 +1,45 @@
+@charset "UTF-8";
+section {
+	width: 60%;
+	height: 1000px;
+	margin: auto;
+	display : flex;
+	margin-bottom : 10%;
+}
+section #contents{
+	width : 70%;
+	margin-left : 5%;
+	margin-right : 5%;
+}
+section #contents h1 {
+	padding-top: 60px;
+	font-weight: bold;
+	font-size: 32px;
+	margin-bottom : 0;
+}
+section #contents hr{
+	margin-bottom : 70px;
+}
+section #contents form{
+	text-align : center;
+}
+section #contents form input{
+	width : 22%;
+	font-size : 18px;
+	padding : 0.5%;
+}
+section #contents form #enrollment{
+	width : 12%;
+	height : 30px;
+	font-size : 18px;
+	padding : 0;
+	border : 0;
+	border-radius : 5px;
+	background-color : #6482FF;
+	color : white;
+	margin-top : 5%;
+	cursor : pointer;
+}
+section #contents form #enrollment:hover{
+	background-color: #4D56D5;
+}

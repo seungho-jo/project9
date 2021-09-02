@@ -40,17 +40,17 @@
 		</div>
 		<div id="cuppon">
 			<p>쿠폰</p>
-			<a href="">
+			<div>
 				<ul>
-					<li>내쿠폰</li>
-					<li>쿠폰등록</li>
+					<li><a href="myCoupon.jsp">내쿠폰</a></li>
+					<li><a href="couponEnrollment.jsp">쿠폰등록</a></li>
 				</ul>
 				<img id="right" src="${path}/img/right_icon.svg">
-			</a>
+			</div>
 		</div>
 		<div id="question">
 			<p>문의내역</p>
-			<a href="">
+			<a href="question.jsp">
 				<p>바로가기</p>
 				<img id="right" src="${path}/img/right_icon.svg">
 			</a>
@@ -58,5 +58,4 @@
 	</section>
 	<jsp:include page="footer.jsp" />
 </body>
-<script src="${path}/js/myPage.js" type="text/javascript"></script>
 </html>
