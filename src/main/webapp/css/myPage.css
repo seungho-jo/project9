@@ -87,19 +87,19 @@ section #cuppon p{
 	font-size : 1vw;
 	font-weight : bold;
 }
-section #cuppon a{
+section #cuppon div{
 	display : flex;
 	align-items : center;
 }
-section #cuppon a ul{
+section #cuppon div ul{
 	margin-right : 82%;
 }
-section #cuppon a ul li{
+section #cuppon div ul li{
 	width : 140%;
 	padding : 5px 0 5px 0;
 	font-size : 0.95vw;
 }
-section #cuppon a #my_icon{
+section #cuppon div #my_icon{
 	border-radius: .75rem;
     padding: 0;
     height: 100%;

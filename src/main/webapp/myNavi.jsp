@@ -38,8 +38,14 @@
 			<li>
 				쿠폰
 				<ul>
-					<li>내 쿠폰</li>
-					<li>쿠폰등록</li>
+					<li>
+						내 쿠폰
+						<input type="hidden" value="myCoupon.jsp">
+					</li>
+					<li>
+						쿠폰등록
+						<input type="hidden" value="couponEnrollment.jsp">
+					</li>
 				</ul>
 			</li>
 			<li>
