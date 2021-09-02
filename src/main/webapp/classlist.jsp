@@ -21,72 +21,74 @@
 <body>
 <jsp:include page="header.jsp"/>
 
-<section>
-	<jsp:include page="catenavi.jsp"/>
-	<div>
-	<h1>레슨</h1>
-	<hr style="margin-bottom:50px;">
-	<div id="class_list">
-			<div id="class_cont_list">
-				<div id="class_list_img">
-					<img src="img/reco2.JPG" alt="" />
+	<section>
+		<jsp:include page="catenavi.jsp" />
+		<div>
+			<h1>레슨</h1>
+			<hr style="margin-bottom: 50px;">
+			<a href="detailgosu.jsp">
+				<div id="class_list">
+					<div id="class_cont_list">
+						<div id="class_list_img">
+							<img src="img/reco2.JPG" alt="" />
+						</div>
+						<div id="class_list_profile">
+							<img src="img/reco2.JPG" alt="" />
+						</div>
+						<div id="class_list_name">
+							<p>이은정</p>
+						</div>
+						<div id="class_list_title">
+							<span>생화같은 카네이션 앙금쿠키 원데이 클래스</span>
+						</div>
+						<div id="class_list_price">
+							<span id=pricespan>44,000원</span><span id="timespan"> / 시간</span>
+						</div>
+					</div>
 				</div>
-				<div id="class_list_profile">
-					<img src="img/reco2.JPG" alt="" />
+			</a>
+			<div id="class_list">
+				<div id="class_cont_list">
+					<div id="class_list_img">
+						<img src="img/reco2.JPG" alt="" />
+					</div>
+					<div id="class_list_profile">
+						<img src="img/reco2.JPG" alt="" />
+					</div>
+					<div id="class_list_name">
+						<p>이은정</p>
+					</div>
+					<div id="class_list_title">
+						<span>생화같은 카네이션 앙금쿠키 원데이 클래스</span>
+					</div>
+					<div id="class_list_price">
+						<span id=pricespan>44,000원</span><span id="timespan"> / 시간</span>
+					</div>
 				</div>
-				<div id="class_list_name">
-					<p>이은정</p>
-				</div>
-				<div id="class_list_title">
-					<span>생화같은 카네이션 앙금쿠키 원데이 클래스</span>
-				</div>
-				<div id="class_list_price">
-					<span id=pricespan>44,000원</span><span id="timespan"> / 시간</span>
+			</div>
+			<div id="class_list">
+				<div id="class_cont_list">
+					<div id="class_list_img">
+						<img src="img/reco2.JPG" alt="" />
+					</div>
+					<div id="class_list_profile">
+						<img src="img/reco2.JPG" alt="" />
+					</div>
+					<div id="class_list_name">
+						<p>이은정</p>
+					</div>
+					<div id="class_list_title">
+						<span>생화같은 카네이션 앙금쿠키 원데이 클래스</span>
+					</div>
+					<div id="class_list_price">
+						<span id=pricespan>44,000원</span><span id="timespan"> / 시간</span>
+					</div>
 				</div>
 			</div>
 		</div>
-	<div id="class_list">
-			<div id="class_cont_list">
-				<div id="class_list_img">
-					<img src="img/reco2.JPG" alt="" />
-				</div>
-				<div id="class_list_profile">
-					<img src="img/reco2.JPG" alt="" />
-				</div>
-				<div id="class_list_name">
-					<p>이은정</p>
-				</div>
-				<div id="class_list_title">
-					<span>생화같은 카네이션 앙금쿠키 원데이 클래스</span>
-				</div>
-				<div id="class_list_price">
-					<span id=pricespan>44,000원</span><span id="timespan"> / 시간</span>
-				</div>
-			</div>
-		</div>
-	<div id="class_list">
-			<div id="class_cont_list">
-				<div id="class_list_img">
-					<img src="img/reco2.JPG" alt="" />
-				</div>
-				<div id="class_list_profile">
-					<img src="img/reco2.JPG" alt="" />
-				</div>
-				<div id="class_list_name">
-					<p>이은정</p>
-				</div>
-				<div id="class_list_title">
-					<span>생화같은 카네이션 앙금쿠키 원데이 클래스</span>
-				</div>
-				<div id="class_list_price">
-					<span id=pricespan>44,000원</span><span id="timespan"> / 시간</span>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-</section>
-<jsp:include page="footer.jsp"/>
+
+	</section>
+	<jsp:include page="footer.jsp"/>
 </body>
 
 </html>

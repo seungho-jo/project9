@@ -13,7 +13,7 @@ String id = (String) session.getAttribute("idkey");
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="css/todayheader.css" />
+<link rel="stylesheet" href="${path }/css/todayheader.css" />
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
 <script
