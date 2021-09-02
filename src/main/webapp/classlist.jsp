@@ -20,8 +20,12 @@
 </script>
 <body>
 <jsp:include page="header.jsp"/>
-<jsp:include page="catenavi.jsp"></jsp:include>
+
 <section>
+	<jsp:include page="catenavi.jsp"/>
+	<div>
+	<h1>레슨</h1>
+	<hr style="margin-bottom:50px;">
 	<div id="class_list">
 			<div id="class_cont_list">
 				<div id="class_list_img">
@@ -79,7 +83,7 @@
 				</div>
 			</div>
 		</div>
-	
+	</div>
 	
 </section>
 <jsp:include page="footer.jsp"/>
