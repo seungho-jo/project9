@@ -13,6 +13,7 @@
 	<jsp:include page="header.jsp"></jsp:include>
 	<section>
 	<div id="category-content">
+		<a href="classlist.jsp">
 		<ul id="category-button">
 			<li class="category">
 				<div id="category-icon">
@@ -21,6 +22,7 @@
 				</div>
 			</li>
 		</ul>
+		</a>
 		<ul id="category-button">
 			<li class="category">
 				<div id="category-icon">

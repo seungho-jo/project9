@@ -83,9 +83,8 @@
 				</div>
 			</div>
 		</div>
-		
 		<%--클래스 공지사항/설명 --%>
-		<div class="class_info">
+		<div id="gosu_notice">
 			<div id="class_notice">
 				<div id="class_notice_title">
 					<h2>클래스 공지사항</h2>
@@ -139,9 +138,8 @@
 		
 	</div>
 	</section>
-	<jsp:include page="footer.jsp"></jsp:include>
+	<jsp:include page="footer.jsp"/>
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
     <!-- Initialize Swiper -->
     <script>
       var swiper = new Swiper(".mySwiper", {

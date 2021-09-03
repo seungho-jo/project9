@@ -24,6 +24,7 @@ section {
 	height: 88px;
 }
 #category-content #category-button #category-icon img:hover{
+	cursor: pointer;
 	transform: translate( 0, -8px);
 }
 #category-content #category-button #category-icon p{
@@ -38,12 +39,14 @@ section {
 	padding-top: 18px;
 }
 #main-recommend #rclass-list{
+	cursor: pointer;
 	width: 240px;
 	height: 310px;
 	padding: 5px;
 	float: left;
 }
 #main-recommend #rclass-list img{
+	cursor: pointer;
 	width: 240px;
 	height: 150px;
 	border-radius: 10px;
