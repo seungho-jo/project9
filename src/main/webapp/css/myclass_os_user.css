@@ -1,0 +1,65 @@
+@charset "UTF-8";
+section {
+	width: 60%;
+	min-height: 1000px;
+	margin: auto;
+	display : flex;
+	margin-bottom : 10%;
+}
+section #contents{
+	width : 70%;
+	margin-left : 5%;
+	margin-right : 5%;
+	padding-top : 60px;
+}
+#dday {
+	background-color: #6482FF;	
+	padding: 0.5%;
+	color : white;
+	font-weight: bold;
+	font-size: 0.8vw;
+}
+#os_btn {
+    width: 13%;
+	background-color: #6482FF;	
+	padding: 0.5%;
+	color : white;
+	border-radius : 8px;
+	display: inline;
+	margin-left: 37%;
+	font-size: 0.8vw;
+	padding-left: 3%;
+	padding-right: 3%;
+	cursor: pointer;
+}
+#class_ing {
+	padding: 3%;
+	background-color: #f9f9f9;
+	border-radius: 15px;
+	width: 90%;	
+	height: 15%;
+	margin-bottom: 3%;
+}
+#class_ing p {
+	font-size: 0.8vw;
+	font-weight: bold;
+	display: inline-block;
+}
+#class_ing #ing_info_con span {
+	font-size: 0.8vw;
+	margin-left: 0.6rem;
+}
+#ing_title {
+	font-size: 1vw;
+	font-weight: bold;
+	display: inline;
+}
+#ing_img {
+	float: left;
+	width: 100px;
+	height: 150px; 
+	padding: 3%;
+}
+#ing_info_con div {
+	height: 2rem;
+}
