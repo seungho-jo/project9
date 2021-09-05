@@ -35,3 +35,7 @@ ul{
 #navi ul li .show li:nth-child(1){
 	padding-top : 10px;
 }
+
+.active {
+	color : #6482FF;
+}

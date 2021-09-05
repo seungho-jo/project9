@@ -17,7 +17,7 @@
 <script src="${path}/js/catenavi.js" type="text/javascript"></script>
 <script type="text/javascript">
 onload = function() {
-	$("li").click(function(){
+	$("ul>li").click(function(){
 	    $(this).addClass("active");  
 	    $(this).siblings().removeClass("active");
 	});
@@ -26,31 +26,39 @@ onload = function() {
 </script>
 <body>
 	<div id="navi">
-		<h4>카테고리</h4>
+	
+		<h4>외주</h4>
 		<ul>
-			<li class="list">
-				레슨
-				<input type="hidden" value="classlist.jsp">
+			<li>
+				<a href="os_form.jsp">외주신청</a>
 			</li>
-			<li class="list">
+		<h4>카테고리</h4>
+			<li>
+				전체
+				<input type="hidden" value="os_list.jsp">
+			</li>
+			<li>
+				<a href="os_list.jsp">레슨</a>
+			</li>
+			<li>
 				홈/리빙
 			</li>
-			<li class="list">
+			<li>
 				이벤트
 			</li>
-			<li class="list">
+			<li>
 				비즈니스
 			</li>
-			<li class="list">
+			<li>
 				디자인/개발
 			</li>
-			<li class="list">
+			<li>
 				건강/미용
 			</li>
-			<li class="list">
+			<li>
 				알바
 			</li>
-			<li class="list">
+			<li>
 				기타
 			</li>
 		</ul>

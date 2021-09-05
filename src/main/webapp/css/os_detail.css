@@ -1,0 +1,119 @@
+@charset "UTF-8";
+body, html {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	color: #323232;
+	font-family : Noto Sans KR,Malgun Gothic;	
+}
+#backcolor {
+	background-color: #f9f9f9;
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+section {
+	width: 68%;
+	min-height: 1000px;
+	margin: auto;
+	display : flex;
+}
+section #outsourcing {
+	width: 874px;
+	padding: 50px;
+	border : 0.8px solid #F5F5F5;
+	border-radius: 15px;
+	background-color: white;
+
+}
+section #os_title {
+	display: inline;
+}
+
+section #outsourcing #os_info {
+	position: relative;
+    bottom: 20%;
+}
+section #outsourcing #os_info>div {
+	padding-bottom: 5%;
+}
+section #outsourcing #os_info span {
+	font-size: 0.8vw;	
+}
+
+/*사이드 유저정보*/
+#user_info {
+    width: 41%;
+    position: relative;
+    bottom: -2%;
+    border: 0.8px solid #F5F5F5;
+    left: 51%;
+    padding: 2%;
+    text-align: center;
+}
+#user_info_con {
+	margin: auto;
+	text-align: center;
+	padding: 3%;
+}
+#user_info_con>div{
+	padding-bottom: 2%;
+}
+
+#os_profile img{
+width: 20%;
+    height: 20%;
+	border-radius: 70px;
+	object-fit: cover;	
+}
+#os_price {
+	padding-top: 6%;
+}
+#os_tax {
+	padding-top: 2%;
+}
+
+#user_name {
+	padding-bottom: 3%;
+}
+/*이름 세금계산서여부*/
+section #user_1, #user_5 {
+	font-size: 0.8vw;
+	font-weight: bold;
+}
+section #user_5 {
+	font-size: 0.8vw;
+	font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+}
+/*예산 세금계산서*/
+section #user_2,#user_4 {
+	font-size: 0.8vw;
+	margin-left: 1%;
+    float: left;
+}
+/*금액*/
+section #user_3 {
+	font-size: 1vw;
+	font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+}
+#os_btn {
+	height: 41px;
+}
+#sug_btn {
+	margin-top: 3%;
+	width: 36%;
+    height: 100%;
+    background-color: #6482FF;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9vw;
+    padding: 1%;
+}
+#cl{
+	clear : both;
+}

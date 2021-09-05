@@ -13,7 +13,7 @@ String id = (String) session.getAttribute("idkey");
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="${path }/css/todayheader.css" />
+<link rel="stylesheet" href="css/todayheader.css" />
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
 <script
@@ -33,14 +33,14 @@ String id = (String) session.getAttribute("idkey");
 			<c:choose>
 				<c:when test="${idkey!=null}">
 					<div id="btn">
-						<a>외주</a>
+						<a href="os_list.jsp">외주</a>
 						<div id="my">
 							홍길동 회원님
 							<div>
 								<h4>안녕하세요,홍길동님</h4>
 								<ul>
 									<li><a href="myPage.jsp">마이페이지</a></li>
-									<li><a>고수신청</a></li>
+									<li><a href="gosuform.jsp">고수신청</a></li>
 									<li><a>로그아웃</a></li>
 								</ul>
 							</div>
@@ -49,7 +49,7 @@ String id = (String) session.getAttribute("idkey");
 				</c:when>
 				<c:otherwise>
 					<div id="btn">
-						<a>외주</a> <a href="login.jsp">로그인</a> <a href="join.jsp">회원가입</a>
+						<a href="os_list.jsp">외주</a> <a href="login.jsp">로그인</a> <a href="join.jsp">회원가입</a>
 					</div>
 				</c:otherwise>
 			</c:choose>

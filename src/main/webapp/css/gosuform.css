@@ -1,0 +1,297 @@
+@charset "UTF-8";
+
+body, html {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	color: #323232;
+}
+#backcolor {
+	background-color: #f9f9f9;
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+section {
+	width: 800px;
+	min-height: 1000px;
+	margin: auto;
+}
+
+section h1 {
+	font-weight: bold;
+	font-size: 32px;
+	margin: 0px;
+	padding-bottom: 20px;
+}
+section #gosuform1 {
+	padding: 50px;
+	border : 0.8px solid #F5F5F5;
+	border-radius: 15px;
+	background-color: white;
+}
+section #gosuform1_action {
+	width: 457px;
+}
+#h5 {
+	width: 604px;
+}
+section div table {
+	width: 466px;
+	float: left;
+}
+section div table td {
+	font-weight: bold;
+
+}
+section div table tr:nth-child(1) td {
+	height: 20px;
+}
+
+section div table tr:nth-child(2) td {
+	position: relative;
+}
+
+section div table tr:nth-child(2n) td {
+	padding-bottom: 20px;
+}
+
+section div table tr:nth-child(12) td {
+	padding-bottom: 0;
+	position: relative;
+}
+
+section div table tr:nth-child(13) td {
+	padding-bottom: 20px;
+}
+section div table textarea {
+	width: 400px;
+	min-height: 100px;
+	padding: 12px;	
+	border-radius: 5px;
+	resize: vertical;
+	font-size: 15px;
+	font-family : Noto Sans KR,Malgun Gothic;
+}
+section div table textarea:focus {
+	border: 2px solid #6482FF;
+	outline: none;
+}
+#first_table input {
+	width: 400px;
+	height: 22px;
+	padding: 12px;
+	font-size: 15px;
+	border: 0.5px solid rgba(0, 0, 0, 0.5);
+	border-radius: 5px;
+}
+#first_table {
+	margin-bottom: 50px;
+}
+#second_table {
+	margin-bottom: 50px;	
+}
+section div table tr td input:focus {
+	border: 2px solid #6482FF;
+	outline: none;
+}
+
+section div table #nickCheck {
+	position: absolute;
+	left: 76%;
+	width: 80px;
+	height: 48px;
+	background-color: #6482FF;
+	color: white;
+	border: 0;
+	border-radius: 0 5px 5px 0/0 5px 5px 0;
+	cursor: pointer;
+}
+#third_table input {
+	width: 200px;
+	height: 22px;
+	padding: 12px;
+	font-size: 15px;
+	border: 0.5px solid rgba(0, 0, 0, 0.5);
+	border-radius: 5px;
+}
+#third_table input:focus {
+	border: 2px solid #6482FF;
+	outline: none;	
+}
+#third_table #third_tot_input input {
+	width: 400px;
+}
+#third_table #unit {
+    position: absolute;
+    top: 14px;
+    right: 15px;
+}
+#tooltip {
+	height: 0px;
+}
+#tooltip img {
+    position: relative;
+    width: 25px;
+    bottom: 44px;
+    left: 447px;
+    cursor: pointer;
+}
+#tooltip2 {
+	position: relative;
+	background-color: #F5F5F5;	
+	border-radius: 10px;
+	padding: 8px;
+	top: -9px;
+}
+#tooltip2 span{
+	font-size: 12px;
+}
+#tooltip_ {
+	height: 0px;
+}
+
+#tooltip_ img {
+    position: relative;
+    width: 25px;
+    bottom: 44px;
+    left: 596px;
+    cursor: pointer;
+}
+#tooltip3 {
+	width: 446px;
+	position: relative;
+	background-color: #F5F5F5;	
+	border-radius: 10px;
+	padding: 8px;
+	top: -9px;
+}
+#tooltip3 span{
+	font-size: 12px;
+}
+#tot_div {
+	width: 750px;
+	font-weight: bold;
+	float: left;	
+    margin-left: 170px;
+	margin-bottom: 50px;    
+	margin-top: 20px;
+}
+#tot_div2 {
+	width: 750px;
+	font-weight: bold;
+	float: left;	
+    margin-left: 170px;
+	margin-bottom: 50px;    
+}
+#tot_div #unit2{
+    position: relative;	
+    left: 62px;
+}
+#tot_div #unit3{
+    position: relative;	
+    left: 105px;
+}
+#tot_div #unit4{
+    position: relative;	
+    right: 35px;
+}
+#tot_div2 #unit6{
+    position: relative;	
+    left: 62px;
+}
+#tot_div2 #unit7{
+    position: relative;	
+    left: 105px;
+}
+#tot_div2 #unit8{
+    position: relative;	
+    right: 35px;
+}
+#tot_div input {
+	width: 386px;
+	height: 22px;
+	padding: 12px;
+	font-size: 15px;
+	border: 0.5px solid rgba(0, 0, 0, 0.5);
+	border-radius: 5px;	
+    padding-right: 45px;
+    text-align: right;
+}
+#tot_div input:focus {
+	border: 2px solid #6482FF;
+	outline: none;		
+}
+#tot_div2 input {
+	width: 386px;
+	height: 22px;
+	padding: 12px;
+	font-size: 15px;
+	border: 0.5px solid rgba(0, 0, 0, 0.5);
+	border-radius: 5px;	
+    padding-right: 45px;
+    text-align: right;
+}
+#tot_div2 input:focus {
+	border: 2px solid #6482FF;
+	outline: none;		
+}
+#fourth_table input {
+	width : 120px;
+	height: 22px;
+	padding: 12px;
+	font-size: 15px;
+	border: 0.5px solid rgba(0, 0, 0, 0.5);
+	border-radius: 5px;
+}
+#fourth_table input:focus {
+	border: 2px solid #6482FF;
+	outline: none;	
+}
+#fourth_table #minus {
+    padding-bottom: 42px;
+}
+#unit5 {
+	position: relative;
+	left: 118px;
+    bottom: 34px;
+}
+section div table #nickCheck:hover {
+	background-color: #4D56D5;
+}
+
+section div table select {
+	width: 200px;
+	height: 48px;
+	font-size: 15px;	
+	border-radius: 5px;
+	padding: 12px;
+}
+section div table select:focus {
+	border: 2px solid #6482FF;
+	outline: none;	
+}
+#clear {
+	clear: both;
+}
+
+section p {
+	text-align: center;
+}
+
+
+section #submit {
+	width: 174px;
+    height: 40px;
+    background-color: #6482FF;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    display: block;
+    margin: auto;
+    margin-top: 90px;
+}
+section #submit:hover {
+	background-color: #4D56D5;	
+}
