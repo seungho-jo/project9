@@ -6,15 +6,12 @@ body, html {
 	height: 100%;
 	color: #323232;
 }
-#backcolor {
-	background-color: #f9f9f9;
-	padding-top: 60px;
-	padding-bottom: 60px;
-}
+
 section {
 	width: 800px;
 	min-height: 1000px;
 	margin: auto;
+	padding: 3%;
 }
 
 section h1 {

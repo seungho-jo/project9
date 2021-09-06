@@ -51,7 +51,7 @@ section #contents{
 	height: 2rem;
 }
 
-#rev_btn {
+.rev_btn {
     width: 13%;
     height: 10%;
     left: 84%;

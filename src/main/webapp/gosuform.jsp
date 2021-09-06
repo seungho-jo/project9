@@ -42,7 +42,6 @@
 <body>
 	
 	<jsp:include page="header.jsp"/>
-	<div id="backcolor">
 	<section>	
 		<div id="gosuform1">
 		<h1>고수신청</h1>
@@ -221,7 +220,6 @@
 		</div>
 	
 	</section>
-	</div>
 	<jsp:include page="footer.jsp"/>
 </body>
 <script src="${path}/js/gosuform.js" type="text/javascript"></script>
