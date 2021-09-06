@@ -26,23 +26,18 @@
 		</div>
 		<div id="myClass">
 			<p>내클래스</p>
-			<a href="">
+			<div>
 				<ul>
 					<li>
 						수강중인 클래스
 					</li>
-					<li>수강신청 현황
-						<input type="hidden" value="myclass_app_user.jsp">
-					</li>
-					<li>외주현황
-						<input type="hidden" value="myclass_os_user.jsp">
-					</li>
-					<li>북마크</li>
-					<li>결제내역</li>
-					<li>리뷰</li>
+					<li><a href="myclass_app_user.jsp">수강신청 현황</a></li>
+					<li><a href="myclass_os_user.jsp">외주현황</a></li>
+					<li><a href="bookmark.jsp">북마크</a></li>
+					<li><a href="paymentHistory.jsp">결제내역</a></li>
 				</ul>
 				<img id="right" src="${path}/img/right_icon.svg">
-			</a>
+			</div>
 		</div>
 		<div id="cuppon">
 			<p>쿠폰</p>

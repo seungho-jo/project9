@@ -52,7 +52,6 @@ section #member_info a #right{
     height: 30%;
 }
 section #myClass{
-	text-align : left;
 	padding : 16px 0 16px 0;
 	border-bottom : 1px solid rgba(0,0,0,0.1);
 }
@@ -60,20 +59,20 @@ section #myClass p{
 	font-size : 1vw;
 	font-weight : bold;
 }
-section #myClass a{
+section #myClass div{
 	display : flex;
 	align-items : center;
 }
-section #myClass a ul{
+section #myClass div ul{
 	
 	margin-right : 75%;
 }
-section #myClass a ul li{
+section #myClass div ul li{
 	width : 140%;
 	padding : 5px 0 5px 0;
 	font-size : 0.95vw;
 }
-section #myClass a #my_icon{
+section #myClass div #my_icon{
 	border-radius: .75rem;
     padding: 0;
     height: 100%;
