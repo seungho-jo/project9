@@ -35,9 +35,13 @@
 					<li>외주현황
 						<input type="hidden" value="myclass_os_user.jsp">
 					</li>
-					<li>북마크</li>
-					<li>결제내역</li>
-					<li>리뷰</li>
+					<li>북마크
+						<input type="hidden" value="bookmark.jsp">
+					</li>
+					<li>
+						결제내역
+						<input type="hidden" value="paymentHistory.jsp">
+					</li>
 				</ul>
 			</li>
 			<li>
