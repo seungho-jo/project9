@@ -16,8 +16,6 @@ String id = (String) session.getAttribute("idkey");
 <link rel="stylesheet" href="css/todayheader.css" />
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <title>오늘의 수업</title>
 </head>
 <body>

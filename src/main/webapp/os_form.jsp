@@ -17,17 +17,15 @@
 <meta charset="UTF-8">
 <title>오늘의 수업</title>
 <link rel="stylesheet" href="css/os_form.css"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script type="text/javascript">
 	function clicksubmit(){
 		confirm('제출하시겠습니까?\n제출이 완료되면 수정이 불가능합니다.');
 	}
 	
-	$(function() {
-		$("#datepicker").datepicker();
-	});
+
 
     $(function() {
         //input을 datepicker로 선언
@@ -48,8 +46,12 @@
             ,dayNames: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'] //달력의 요일 부분 Tooltip 텍스트
             ,minDate: "-1M" //최소 선택일자(-1D:하루전, -1M:한달전, -1Y:일년전)
             ,maxDate: "+1M" //최대 선택일자(+1D:하루후, -1M:한달후, -1Y:일년후)                
-        });                    
+        });       
         
+	     	$(function() {
+			$("#datepicker").datepicker();
+		});   
+	     	
         //초기값을 오늘 날짜로 설정
         $('#datepicker').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)            
     });
@@ -58,9 +60,8 @@
 <body>
 	
 	<jsp:include page="header.jsp"/>
-	<div id="backcolor">
+
 	<section>
-		<jsp:include page="osnavi.jsp" />
 		<div id="gosuform1">
 		<h1>외주요청서</h1>
 		
@@ -141,7 +142,7 @@
 		</div>
 	
 	</section>
-	</div>
+
 	<jsp:include page="footer.jsp"/>
 </body>
 <script src="${path}/js/gosuform.js" type="text/javascript"></script>

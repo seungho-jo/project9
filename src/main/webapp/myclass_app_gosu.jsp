@@ -16,16 +16,23 @@
 <script type="text/javascript">
 
 	$(document).ready(function() {
-		if($("#rev_btn").attr('value')=='승인완료'){
-			$("#rev_btn").css('background','#f5007a');
+		if($(".rev_btn").val()=='승인대기'){
+			$(this).css('background','#6482FF');
 		} 
-		if($("#rev_btn").attr('value')=='승인대기'){
-			$("#rev_btn").css('background','#6482FF');
+		if($(".rev_btn").val()=='승인완료'){
+			$(this).css('background','#f5007a');
 		} 
 		
-		$("#rev_btn").click(function(){
+		
+		$(".rev_btn").click(function(){
 			confirm("승인하시겠습니까?");
-			$('#rev_btn').val("승인완료");
+			$(this).val("승인완료");
+			if($(".rev_btn").val()=='승인완료'){
+				$(this).css('background','#f5007a');
+			} 
+			if($(".rev_btn").val()=='승인대기'){
+				$(this).css('background','#6482FF');
+			} 
 		});
 	});
 	
@@ -43,7 +50,7 @@
 				<div id="ing_info">
 					<div id='ing_title'>생화같은 카네이션 앙금쿠키 원데이 클래스</div>
 					<div id="btn_div">
-						<input type="button" name="rev_btn" id="rev_btn" value="승인완료"/>
+						<input type="button" name="rev_btn" class="rev_btn" value="승인완료"/>
 					</div>
 					<div id="ing_img">
 						<img src="img/dog1.jpg">
@@ -65,7 +72,7 @@
 				<div id="ing_info">
 					<div id='ing_title'>생화같은 카네이션 앙금쿠키 원데이 클래스</div>
 					<div id="btn_div">
-						<input type="button" name="rev_btn" id="rev_btn" value="승인대기"/>
+						<input type="button" name="rev_btn" class="rev_btn" value="승인대기"/>
 					</div>
 					<div id="ing_img">
 						<img src="img/dog2.jpg">
