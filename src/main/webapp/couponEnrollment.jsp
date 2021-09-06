@@ -22,7 +22,8 @@
 			<h1>쿠폰 등록</h1>
 			<hr>
 			<form>
-				<input type="text" name="code1">-<input type="password" name="code2">-<input type="password" name="code3">-<input type="text" name="code4">
+				<input type="text" name="code1" maxlength='4'>-<input type="password" name="code2" maxlength='4'>-
+				<input type="password" name="code3" maxlength='4'>-<input type="text" name="code4" maxlength='4'>
 				<input type="button" id="enrollment" value="등록">
 			</form>
 		</div>

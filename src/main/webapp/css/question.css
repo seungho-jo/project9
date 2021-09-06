@@ -37,6 +37,9 @@ section div button{
 	border-radius : 5px;
 	margin-bottom : 25px;
 }
+section div button:hover{
+	background-color : #4D56D5;
+}
 section div table {
 	width: 100%;
 	margin : 0;

@@ -1,0 +1,57 @@
+@charset "UTF-8";
+section {
+	width: 60%;
+	min-height: 600px;
+	margin: auto;
+	margin-bottom : 10%;
+}
+section h1{
+	width : 80%;
+	margin : 5% auto;
+	
+}
+section table{
+	width : 80%;
+	height : 100%;
+	margin : 0 auto;
+	min-width : 850px;
+}
+section table tr th,td{
+	padding : 1% 0;
+}
+section table tr th{
+	font-size : 17px;
+}
+section table tr td select,input{
+	font-size : 0.8vw;
+	padding : 0.5%;
+	border : 1px solid black;
+	border-radius : 5px;
+}
+section table tr td select{
+	width : 17%;
+}
+section table tr td input{
+	width : 28%;
+}
+section table tr:nth-child(2) td input:focus{
+	border : 1px solid #6482FF;
+	outline: none;
+}
+section table tr:last-child td{
+	text-align : center;
+}
+section table tr:last-child td input{
+	background-color : #6482FF;
+	color : white;
+	padding : 0.7%;
+	width : 10%;
+	font-size : 0.8vw;
+	border : none;
+	border-radius : 5px;
+	cursor : pointer;
+	margin : 0 2%;
+}
+section table tr:last-child td input:hover{
+	background-color: #4D56D5;;
+}

@@ -23,6 +23,7 @@
 		<jsp:include page="myNavi.jsp"/>
 		<div id="contents">
 			<h1>내 쿠폰</h1>
+			<p>총 계수: 30개</p>
 			<hr>
 			<div>
 				<%

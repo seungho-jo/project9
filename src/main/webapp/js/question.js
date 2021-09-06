@@ -5,3 +5,6 @@ $("#paging>span").click(function(){
 	$(this).css("background-color","#6482FF");
 	$(this).siblings().css("background-color","white");
 });
+$("button").click(function(){
+	location.href = "writeQuestion.jsp";
+})
