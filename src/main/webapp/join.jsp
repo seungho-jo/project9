@@ -19,7 +19,7 @@
 	<section>
 		<h1>회원정보 입력</h1>
 		<div>
-			<form action="joinProc_jsp" method="post">
+			<form action="join.do" method="post" enctype="multipart/form-data">
 				<table>
 					<tr><td>아이디</td></tr>
 					<tr><td><input type="text" name="id" placeholder="아이디를 입력해주세요"/><input type="button" value="중복검사" id="idCheck"></td></tr>
@@ -32,8 +32,8 @@
 					<tr><td>휴대전화</td></tr>
 					<tr><td><input type="text" name="phone" placeholder="-없이 입력해주세요"/></td></tr>
 					<tr><td>주소</td></tr>
-					<tr><td><input type="text" name="zipcode" placeholder="우편번호" disabled/><input type="button" id="search" onclick="sample6_execDaumPostcode()" value="검색"></td></tr>
-					<tr><td><input type="text" name="addr1" placeholder="주소" disabled/>&nbsp;<input type="text" name="addr2" placeholder="상세주소"/></td></tr>
+					<tr><td><input type="text" name="zipcode" placeholder="우편번호"/><input type="button" id="search" onclick="sample6_execDaumPostcode()" value="검색"></td></tr>
+					<tr><td><input type="text" name="addr1" placeholder="주소"/>&nbsp;<input type="text" name="addr2" placeholder="상세주소"/></td></tr>
 				</table>
 				<div id="profile">
 					<img id="preview" src="${path}/img/bros_blank.jpg"><br>
