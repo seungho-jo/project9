@@ -36,7 +36,21 @@
 			$('#tooltip3').css('display','block');
 		}
 	}
+	
 
+	function cal() {
+		if (document.getElementById("price").value
+				&& document.getElementById("hour").value) {
+			document.getElementById('tot').value = parseInt(document
+					.getElementById('price').value)
+					* parseInt(document.getElementById('hour').value);
+			document.getElementById('tot2').value = document.getElementById('tot').value;
+			document.getElementById('vat').value = parseInt(document.getElementById('tot2').value) * 0.1;
+			document.getElementById('fee').value = (parseInt(document.getElementById('tot2').value) - parseInt(document.getElementById('vat').value))*0.2;
+			document.getElementById('tax').value = (parseInt(document.getElementById('tot2').value) - parseInt(document.getElementById('vat').value) - parseInt(document.getElementById('fee').value)) * 0.033;
+			document.getElementById('final').value = (parseInt(document.getElementById('tot2').value) - parseInt(document.getElementById('vat').value) - parseInt(document.getElementById('fee').value) - parseInt(document.getElementById('tax').value))
+		}
+	}
 </script>
 </head>
 <body>
@@ -125,14 +139,14 @@
 					</tr>
 					<tr>
 						<td>
-							<input type="text"  name="price" placeholder="10,000"/>
+							<input type="text"  name="price" id="price"  onkeyup='cal()' placeholder="10,000"/>
 							<span id="unit">원</span>
 						</td>						
 						<td>
 							X
 						</td>
 						<td>
-							<input type="text"  name="hour" placeholder="2"/>
+							<input type="text"  name="hour" id="hour" onkeyup='cal()' placeholder="2"/>
 							<span id="unit">시간</span>
 						</td>
 						<td>
@@ -147,7 +161,7 @@
 				<div id="tot_div">
 					<span id="unit2">=</span>
 					<span id="unit3">최종수강료</span>
-					<input type="text"  name="tot" placeholder="20,000" value disabled/>
+					<input type="text"  name="tot" placeholder="20,000" id="tot" disabled/>
 					<span id="unit4">원</span>
 				</div>
 				<h3>최종 정산금 안내</h3>
@@ -182,28 +196,28 @@
 					</tr>
 					<tr>
 						<td>
-							<input type="text"  name="tot2" placeholder="20,000" value disabled/>
+							<input type="text"  name="tot" placeholder="20,000" id="tot2" disabled/>
 							<span id="unit5">원</span>
 						</td>						
 						<td id="minus">
 							ㅡ
 						</td>
 						<td>
-							<input type="text"  name="hour" placeholder="1,818" value disabled/>
+							<input type="text"  name="hour" placeholder="1,818" id="vat" value disabled/>
 							<span id="unit5">원</span>
 						</td>
 						<td id="minus">
 							ㅡ
 						</td>
 						<td>
-							<input type="text"  name="cnt" placeholder="3,636" value disabled/>
+							<input type="text"  name="cnt" placeholder="3,636" id="fee" value disabled/>
 							<span id="unit5">원</span>						
 						</td>
 						<td id="minus">
 							ㅡ
 						</td>
 						<td>
-							<input type="text"  name="cnt" placeholder="480" value disabled/>
+							<input type="text"  name="cnt" placeholder="480" id="tax" value disabled/>
 							<span id="unit5">원</span>						
 						</td>
 					</tr>
@@ -211,7 +225,7 @@
 				<div id="tot_div2">
 					<span id="unit6">=</span>
 					<span id="unit7">최종정산금</span>
-					<input type="text"  name="tot" placeholder="14,066" value disabled/>
+					<input type="text"  name="tot" placeholder="14,066" id="final" value disabled/>
 					<span id="unit8">원</span>
 				</div>
 				<div id="clear"></div>
