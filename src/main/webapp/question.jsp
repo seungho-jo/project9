@@ -44,7 +44,7 @@
 			<tbody>
 				<%for(int i=0;i<title.length;i++){ %>
 				<tr>
-					<td><%=i+1 %></td><td><a href="#"><%=title[i] %></a></td>
+					<td><%=i+1 %></td><td><a href="readQuestion.jsp"><%=title[i] %></a></td>
 					<td><%=dates[i] %></td><td><%=result[i] %></td>
 				</tr>
 				<%} %>

@@ -1,0 +1,144 @@
+@charset "UTF-8";
+body,html{
+	margin : 0;
+	width : 100%;
+	height : 100%;
+}
+section{
+	width : 59%;
+	margin : 0 auto;
+	margin-top : 7%;
+	min-height : 600px;
+}
+section>div{
+	width : 100%;
+	height : 100%;
+	display : flex;
+	margin : 0 auto;
+}
+#findId{
+	width : 50%;
+	height : 100%;
+}
+#findId h1{
+	margin : 8% 0 15% 0;
+	text-align : center;
+}
+#findId table{
+	margin : 0 auto;
+	width : 60%;
+	height : 100%;
+	text-align : left;
+}
+#findId table th{
+	font-size : 0.9vw;
+	padding : 1% 0;
+}
+#findId table td{
+	padding : 1% 0;
+}
+#findId table tr:nth-child(1) th,#findId table tr:nth-child(2) td{
+	padding-left : 10%;
+}
+#findId table td [name=phone]{
+	padding : 2%;
+	font-size : 0.8vw;
+	width : 80%;
+	border: 2px solid rgba(0, 0, 0, 0.5);
+	border-radius: 5px;
+}
+#findId table td [name=phone]:focus{
+	padding : 2%;
+	border : 2px solid #6482FF;
+	outline: none;
+}
+#findId table tr:last-child td{
+	text-align : center;
+	padding-top : 10%;
+}
+#findId table td #idBtn{
+	width : 17%;
+	height : 100%;
+	background-color : #6482FF;
+	color : white;
+	border: 0;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 0.8vw;
+    padding: 2% 0;
+}
+#findId table td #idBtn:hover{
+	background-color: #4D56D5;
+}
+#findPass{
+	border-left : 1px solid black;
+	text-align : center;
+	width : 50%;
+	height : 100%;
+}
+#findPass h1{
+	margin : 8% 0 15% 0;
+	text-align : center;
+}
+#findPass table{
+	margin : 0 auto;
+	width : 60%;
+	height : 100%;
+	text-align : left;
+}
+#findPass table th{
+	font-size : 0.9vw;
+	padding : 1% 0;
+}
+#findPass table td{
+	padding : 1% 0;
+}
+#findPass table tr:nth-child(1) th,#findPass table tr:nth-child(2) td{
+	padding-left : 10%;
+}
+#findPass table td [name=id]{
+	padding : 2%;
+	font-size : 0.8vw;
+	width : 80%;
+	border: 2px solid rgba(0, 0, 0, 0.5);
+	border-radius: 5px;
+}
+#findPass table td [name=id]:focus{
+	padding : 2%;
+	border : 2px solid #6482FF;
+	outline: none;
+}
+#findPass table tr:nth-child(3) th,#findPass table tr:nth-child(4) td{
+	padding-left : 10%;
+}
+#findPass table td [name=phone]{
+	padding : 2%;
+	font-size : 0.8vw;
+	width : 80%;
+	border: 2px solid rgba(0, 0, 0, 0.5);
+	border-radius: 5px;
+}
+#findPass table td [name=phone]:focus{
+	padding : 2%;
+	border : 2px solid #6482FF;
+	outline: none;
+}
+#findPass table tr:last-child td{
+	text-align : center;
+	padding : 10% 0;
+	
+}
+#findPass table td #passBtn{
+	width : 17%;
+	height : 100%;
+	background-color : #6482FF;
+	color : white;
+	border: 0;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 0.8vw;
+    padding: 2% 0;
+}
+#findPass table td #passBtn:hover{
+	background-color: #4D56D5;
+}
