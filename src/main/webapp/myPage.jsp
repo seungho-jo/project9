@@ -19,8 +19,11 @@
 		<div id="member_info">
 			<p>회원정보</p>
 			<a href="edit_mem_info.jsp">
-				<img id="my_icon" src="${path}/img/bros_blank.jpg">
-				<p>홍길동 고객님</p>
+				<c:choose>
+					<c:when test="${mem.profile!=null}"><img id="my_icon" src="${path}/upload/${mem.profile}"></c:when>
+					<c:otherwise><img id="my_icon" src="${path}/img/bros_blank.jpg"></c:otherwise>
+				</c:choose>
+				<p>${mem.name} 고객님</p>
 				<img id="right" src="${path}/img/right_icon.svg">
 			</a>
 		</div>

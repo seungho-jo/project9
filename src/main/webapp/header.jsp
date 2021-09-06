@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
-request.setCharacterEncoding("utf-8");
-String path = request.getContextPath();
-String id = (String) session.getAttribute("idkey");
-%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
@@ -29,13 +24,13 @@ String id = (String) session.getAttribute("idkey");
 				</a>
 			</div>
 			<c:choose>
-				<c:when test="${idkey!=null}">
+				<c:when test="${mem.id!=null}">
 					<div id="btn">
 						<a href="os_list.jsp">외주</a>
 						<div id="my">
-							홍길동 회원님
+							${mem.name} 회원님
 							<div>
-								<h4>안녕하세요,홍길동님</h4>
+								<h4>안녕하세요,${mem.name}님</h4>
 								<ul>
 									<li><a href="myPage.jsp">마이페이지</a></li>
 									<li><a href="gosuform.jsp">고수신청</a></li>
@@ -58,7 +53,7 @@ String id = (String) session.getAttribute("idkey");
 <script src="${path}/js/header.js" type="text/javascript"></script>
 <script type="text/javascript">
 	$("#my>div>ul>li:nth-child(3)").click(function() {
-		location.href = "logout.jsp";
+		location.href = "logout.do";
 	})
 </script>
 </html>
