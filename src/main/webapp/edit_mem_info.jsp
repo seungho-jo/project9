@@ -13,6 +13,13 @@
 <title>근면하고 성실하게 살아라. 그리고 늘 유익한 일에 열중하라(프랭클린)</title>
 <link rel="stylesheet" href="${path}/css/edit_mem_info.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+var msg = "${msg}";
+console.log(msg);
+if(msg!=""){
+	alert(msg);
+}
+</script>
 </head>
 <body>
 <jsp:include page="header.jsp"/>
@@ -20,25 +27,38 @@
 	<jsp:include page="myNavi.jsp"/>
 	<div id="contents">
 		<h1>회원정보</h1>
-		<form action="edit_mem_info.jsp" method="post">
+		<form action="join.do" method="post" enctype="multipart/form-data">
+			<input type="hidden" name="choice">
 			<div id="profile">
-				<img id="preview" src="${path}/img/bros_blank.jpg"><br>
-				<input type="file" name="profile" onchange="setThumbnail(this)" value="업로드"/>
+				<c:choose>
+					<c:when test="${mem.profile!=null}"><img id="preview" src="${path}/upload/${mem.profile}"><br></c:when>
+					<c:otherwise><img id="preview" src="${path}/img/bros_blank.jpg"><br></c:otherwise>
+				</c:choose>
+				<input type="file" name="profile" onchange="setThumbnail(this)" value="${mem.profile}"/>
 				<input type="button" id="click" value="업로드"/>
 			</div>
 			<table>
 				<tr><td>아이디</td></tr>
-				<tr><td><input type="text" name="id" disabled value="himan"/></td></tr>
+				<tr><td><input type="text" name="id" value="${mem.id}"/></td></tr>
 				<tr><td>비밀번호</td></tr>
-				<tr><td><input type="password" name="pass" value="111111a!" placeholder="영문+숫자+특수문자 8~15자리 입력해주세요"/></td></tr>
+				<tr><td><input type="password" name="pass" value="${mem.pass}" placeholder="영문+숫자+특수문자 8~15자리 입력해주세요"/></td></tr>
 				<tr><td>이름</td></tr>
-				<tr><td><input type="text" name="name" value="홍길동"/></td></tr>
+				<tr><td><input type="text" name="name" value="${mem.name}"/></td></tr>
 				<tr><td>휴대전화</td></tr>
-				<tr><td><input type="text" name="phone" value="01012345678" placeholder="-없이 입력해주세요"/></td></tr>
+				<tr><td><input type="text" name="phone" value="${mem.phone}" placeholder="-없이 입력해주세요"/></td></tr>
 				<tr><td>주소</td></tr>
-				<tr><td><input type="text" name="zipcode" placeholder="우편번호" disabled/><input type="button" id="search" onclick="sample6_execDaumPostcode()" value="검색"></td></tr>
-				<tr><td><input type="text" name="addr1" placeholder="주소" disabled/>&nbsp;<input type="text" name="addr2" placeholder="상세주소"/></td></tr>
+				<tr><td><input type="text" name="zipcode" value="${mem.zipcode}" placeholder="우편번호"/><input type="button" id="search" onclick="sample6_execDaumPostcode()" value="검색"></td></tr>
+				<tr><td><input type="text" name="addr1" placeholder="주소" value="${mem.address1}"/>&nbsp;<input type="text" name="addr2" value="${mem.address2}" placeholder="상세주소"/></td></tr>
 			</table>
+			<div class="background">
+			<div class="window">
+				<div class="popup">
+					<h4>비밀번호 재 확인</h4>
+					<input type="password" name="pass_check" placeholder="작성 후 엔터키를 눌러주세요"/><br>
+					<input type="button" name="close" value="닫기" id="close"/>
+				</div>
+			</div>
+	</div>
 		</form>
 		<div id="btns">
 			<button id="edit">설정완료</button>

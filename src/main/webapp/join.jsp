@@ -20,6 +20,7 @@
 		<h1>회원정보 입력</h1>
 		<div>
 			<form action="join.do" method="post" enctype="multipart/form-data">
+				<input type="hidden" name="choice">
 				<table>
 					<tr><td>아이디</td></tr>
 					<tr><td><input type="text" name="id" placeholder="아이디를 입력해주세요"/><input type="button" value="중복검사" id="idCheck"></td></tr>

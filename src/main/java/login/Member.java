@@ -9,6 +9,22 @@ public class Member {
 	private String address1;
 	private String address2;
 	private String profile;
+	public Member() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Member(String id, String pass, String name, String phone, String zipcode, String address1, String address2,
+			String profile) {
+		super();
+		this.id = id;
+		this.pass = pass;
+		this.name = name;
+		this.phone = phone;
+		this.zipcode = zipcode;
+		this.address1 = address1;
+		this.address2 = address2;
+		this.profile = profile;
+	}
 	public String getId() {
 		return id;
 	}
