@@ -1,26 +1,14 @@
 package login;
 
-import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.servlet.http.HttpServletRequest;
-
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
-
 public class Login_Join_Dao {
 	Connection conn = null;
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
-	private static final String SAVEFOLDER = "C:\\javaexp\\workspacce\\project9\\src\\main\\webapp\\upload";
-	private static final String ENCTYPE = "UTF-8";
-	private static int MAXSIZE = 5*1024*1024;
-	MultipartRequest multi = null;
-	int filesize = 0;
-	String filename = null;
 	// 로그인
 	public Member login(String id,String pass) {
 		Member mem = null;
@@ -56,28 +44,47 @@ public class Login_Join_Dao {
 		}
 		return mem;
 	}
-	// 회원가입
-	public void join(HttpServletRequest req) {
+	// 아이디 중복 검사
+	public boolean idCheck(String id) {
+		boolean result = true;
 		try {
-			File file = new File(SAVEFOLDER);
-			if (!file.exists())
-				file.mkdirs();
-			multi = new MultipartRequest(req, SAVEFOLDER, MAXSIZE, ENCTYPE, new DefaultFileRenamePolicy());
-			if (multi.getFilesystemName("profile") != null) {
-				filename = multi.getFilesystemName("profile");
+			String sql = "select * from member where id = ?";
+			conn = DBConnection.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				result = false;
 			}
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally {
+			try {
+				if(rs!=null) rs.close();
+				if(pstmt!=null) pstmt.close();
+				if(conn!=null) conn.close();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
+	// 회원가입
+	public void join(Member m) {
+		try {
 			String sql = "insert into member values(?,?,?,?,?,?,?,?)";
 			conn = DBConnection.getConnection();
 			conn.setAutoCommit(false);
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, multi.getParameter("id"));
-			pstmt.setString(2, multi.getParameter("pass"));
-			pstmt.setString(3, multi.getParameter("name"));
-			pstmt.setString(4, multi.getParameter("phone"));
-			pstmt.setString(5, multi.getParameter("zipcode"));
-			pstmt.setString(6, multi.getParameter("addr1"));
-			pstmt.setString(7, multi.getParameter("addr2"));
-			pstmt.setString(8, filename);
+			pstmt.setString(1, m.getId());
+			pstmt.setString(2, m.getPass());
+			pstmt.setString(3, m.getName());
+			pstmt.setString(4, m.getPhone());
+			pstmt.setString(5, m.getZipcode());
+			pstmt.setString(6, m.getAddress1());
+			pstmt.setString(7, m.getAddress2());
+			pstmt.setString(8, m.getProfile());
 			pstmt.executeUpdate();
 			conn.commit();
 		}catch(Exception e) {
@@ -98,5 +105,62 @@ public class Login_Join_Dao {
 			}
 		}
 	}
-	
+	// 회원정보 수정
+	public void updateMember(Member m) {
+		try {
+			String sql = "update member set pass = ?, name = ?, phone = ?, zipcode = ?, address1 = ?, address2 = ?, profile = ? where id = ?";
+			conn = DBConnection.getConnection();
+			conn.setAutoCommit(false);
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, m.getPass());
+			pstmt.setString(2, m.getName());
+			pstmt.setString(3, m.getPhone());
+			pstmt.setString(4, m.getZipcode());
+			pstmt.setString(5, m.getAddress1());
+			pstmt.setString(6, m.getAddress2());
+			pstmt.setString(7, m.getProfile());
+			pstmt.setString(8, m.getId());
+			System.out.println(m.getId());
+			pstmt.executeUpdate();
+			conn.commit();
+		}catch(Exception e) {
+			e.printStackTrace();
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}finally {
+			try {
+				if(pstmt!=null) pstmt.close();
+				if(conn!=null) conn.close();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	// 회원탈퇴
+	public void deleteMember(String id) {
+		try {
+			String sql = "delete from member where id = ?";
+			conn = DBConnection.getConnection();
+			conn.setAutoCommit(false);
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			pstmt.executeUpdate();
+			conn.commit();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(pstmt!=null) pstmt.close();
+				if(conn!=null) conn.close();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
 }

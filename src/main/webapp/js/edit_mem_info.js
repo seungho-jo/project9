@@ -10,10 +10,7 @@ function setThumbnail(event) {
 	}
 }
 $("#edit").click(function() {
-	if ($("[name=id]").val() == "") {
-		alert("아이디를 입력해주세요");
-		$("[name=id]").focus();
-	} else if ($("[name=pass]").val() == "") {
+	if ($("[name=pass]").val() == "") {
 		alert("비밀번호를 입력해주세요");
 		$("[name=pass]").focus();
 	}else if ($("[name=name]").val() == "") {
@@ -26,8 +23,31 @@ $("#edit").click(function() {
 		alert("우편번호를 입력해주세요");
 		$("[name=zipcode]").focus();
 	} else {
-		$("form").submit();
+		show();
+		$("[name=pass_check]").keyup(function(event){
+			if(event.keyCode == '13'){
+				if($("[name=pass_check]")!=null){
+					$("[name=choice]").val("회원정보수정");
+					$("form").submit();
+				}else{
+					alert("비밀번호를 입력하세요")
+				}
+			}
+		})
 	}
+});
+$("#remove").click(function(){
+	show();
+	$("[name=pass_check]").keyup(function(event){
+		if(event.keyCode == '13'){
+			if($("[name=pass_check]")!=null){
+				$("[name=choice]").val("회원탈퇴");
+				$("form").submit();
+			}else{
+				alert("비밀번호를 입력하세요")
+			}
+		}
+	})
 });
 var passCheck = /^[a-z0-9!@#$%^&*-+=]{8,15}$/;
 $("[name=pass]").blur(function() {
@@ -64,3 +84,13 @@ $("#click").click(function(){
 })
 $("#navi ul li").eq(0).addClass("now");
 $(".now").css("color","#6482FF");
+
+function show () {
+	// 인원선택 팝업창 띄우기
+	document.querySelector(".background").className = "background show2";
+}
+function close () { 
+	// 팝업창 닫기
+	document.querySelector(".background").className = "background";
+}
+document.querySelector("#close").addEventListener('click', close);

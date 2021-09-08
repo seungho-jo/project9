@@ -10,3 +10,4 @@ CREATE TABLE member(
 );
 INSERT INTO MEMBER values('himan','1111','홍길동','01012345678','05412357','서울 강남구 테헤란로 132','한독건물 8층','img.png');
 SELECT * FROM MEMBER;
+update member set pass = '11111111', name = '관리자', phone = '01045677654', zipcode = '06134', address1 = '서울 강남구 테헤란로 101', address2 = '2층', profile = '' where id = 'admin';

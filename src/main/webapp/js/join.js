@@ -1,3 +1,4 @@
+var xhr = new XMLHttpRequest();
 function setThumbnail(event) {
 	if (event.files && event.files[0]) {
 		var reader = new FileReader();
@@ -29,6 +30,7 @@ $("#submit").click(function() {
 		alert("우편번호를 입력해주세요");
 		$("[name=zipcode]").focus();
 	} else {
+		$("[name=choice]").val("회원가입");
 		$("form").submit();
 	}
 });
@@ -37,6 +39,20 @@ $("#idCheck").click(function() {
 		alert("아이디에 공백을 사용할 수 없습니다.");
 		$("[name=id]").focus();
 		return;
+	}else{
+		var id = $("[name=id]").val();
+		var snd = "id="+id;
+		xhr.open("post","idcheck.do",true);
+		xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+		xhr.send(snd);
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState==4&&xhr.status==200){
+				alert(xhr.responseText);
+				if(xhr.responseText=="이 아이디는 사용 불가능합니다"){
+					$("[name=id]").val("");
+				}
+			}
+		}
 	}
 })
 var passCheck = /^[a-z0-9!@#$%^&*-+=]{8,15}$/;

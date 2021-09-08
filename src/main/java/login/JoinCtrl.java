@@ -1,5 +1,6 @@
 package login;
 
+import java.io.File;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -8,6 +9,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.oreilly.servlet.MultipartRequest;
+import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 /**
  * Servlet implementation class JoinCtrl
@@ -30,10 +35,60 @@ public class JoinCtrl extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("UTF-8");
-		service.join(request);
-		RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
-		rd.forward(request, response);
+		HttpSession session = request.getSession();
+		String SAVEFOLDER = "C:\\javaexp\\workspacce\\project9\\src\\main\\webapp\\upload";
+		String ENCTYPE = "UTF-8";
+		int MAXSIZE = 5*1024*1024;
+		MultipartRequest multi = null;
+		String filename = null;
+		File file = new File(SAVEFOLDER);
+		if (!file.exists())
+			file.mkdirs();
+		multi = new MultipartRequest(request, SAVEFOLDER, MAXSIZE, ENCTYPE, new DefaultFileRenamePolicy());
+		if (multi.getFilesystemName("profile") != null) {
+			filename = multi.getFilesystemName("profile");
+		}
+		Member mem = new Member(
+					multi.getParameter("id"),
+					multi.getParameter("pass"),
+					multi.getParameter("name"),
+					multi.getParameter("phone"),
+					multi.getParameter("zipcode"),
+					multi.getParameter("addr1"),
+					multi.getParameter("addr2"),
+					filename
+				);
+		if(multi.getParameter("choice").equals("회원가입")) {
+			service.join(mem);
+			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+			rd.forward(request, response);
+		}else if(multi.getParameter("choice").equals("회원정보수정")) {
+			Member mem2 = (Member)session.getAttribute("mem");
+			if(multi.getParameter("pass_check").equals(mem2.getPass())) {
+				service.updateMember(mem);
+				session.invalidate();
+				RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+				rd.forward(request, response);
+			}else {
+				session.removeAttribute("msg");
+				session.setAttribute("msg", "비밀번호가 틀렸습니다. 다시 확인해주세요");
+				RequestDispatcher rd = request.getRequestDispatcher("edit_mem_info.jsp");
+				rd.forward(request, response);
+			}
+		}else if(multi.getParameter("choice").equals("회원탈퇴")) {
+			Member mem2 = (Member)session.getAttribute("mem");
+			if(multi.getParameter("pass_check").equals(mem2.getPass())) {
+				service.deleteMember(mem2.getId());
+				session.invalidate();
+				RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+				rd.forward(request, response);
+			}else {
+				session.removeAttribute("msg");
+				session.setAttribute("msg", "비밀번호가 틀렸습니다. 다시 확인해주세요");
+				RequestDispatcher rd = request.getRequestDispatcher("edit_mem_info.jsp");
+				rd.forward(request, response);
+			}
+		}
 	}
 
 }

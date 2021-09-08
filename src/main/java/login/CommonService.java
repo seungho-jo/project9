@@ -1,7 +1,5 @@
 package login;
 
-import javax.servlet.http.HttpServletRequest;
-
 import com.google.gson.Gson;
 
 public class CommonService {
@@ -16,8 +14,20 @@ public class CommonService {
 	public Member login(String id,String pass) {
 		return dao.login(id, pass);
 	}
+	// 아이디 체크
+	public boolean idCheck(String id) {
+		return dao.idCheck(id);
+	}
 	// 회원가입
-	public void join(HttpServletRequest request) {
-		dao.join(request);
+	public void join(Member m) {
+		dao.join(m);
+	}
+	// 회원정보 업데이트
+	public void updateMember(Member m) {
+		dao.updateMember(m);
+	}
+	// 회원탈퇴
+	public void deleteMember(String id) {
+		dao.deleteMember(id);
 	}
 }
