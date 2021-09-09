@@ -20,8 +20,9 @@
 
 </script>
 <body>
-<section>
-	<div>
+<jsp:include page="admin_header.jsp"></jsp:include>
+	<section>	
+	<jsp:include page="admin_nav.jsp"></jsp:include>	<div>
 		<div class="title">
 			<div class="title-left">
 				<h2>전체 사용자 리스트</h2>

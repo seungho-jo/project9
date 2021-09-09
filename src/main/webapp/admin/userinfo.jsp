@@ -20,7 +20,9 @@
 
 </script>
 <body>
-<section>
+<jsp:include page="admin_header.jsp"></jsp:include>
+	<section>	
+	<jsp:include page="admin_nav.jsp"></jsp:include>
 	<div>
 		<div class="list01">
 			<table class="listTable">
