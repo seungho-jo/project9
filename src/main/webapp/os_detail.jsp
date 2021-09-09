@@ -26,7 +26,6 @@
 	
 %>
 <jsp:include page="header.jsp"/>
-	<div id="backcolor">
 	<section>
 		<jsp:include page="osnavi.jsp" />
 		
@@ -105,7 +104,6 @@ Flutter와 Spring을 이용한 개발이였으면 좋겠습니다.<br>
 			</div>
 		</div>
 	</section>
-	</div>
 	<div id="cl"></div>
 	<jsp:include page="footer.jsp"/>
 </body>

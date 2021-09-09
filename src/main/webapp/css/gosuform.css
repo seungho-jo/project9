@@ -103,6 +103,18 @@ section div table #nickCheck {
 	border-radius: 0 5px 5px 0/0 5px 5px 0;
 	cursor: pointer;
 }
+#second_table input {
+	width: 400px;
+	height: 22px;
+	padding: 12px;
+	font-size: 15px;
+	border: 0.5px solid rgba(0, 0, 0, 0.5);
+	border-radius: 5px;
+}
+#second_table input:focus {
+	border: 2px solid #6482FF;
+	outline: none;	
+}
 #third_table input {
 	width: 200px;
 	height: 22px;
@@ -276,7 +288,7 @@ section p {
 }
 
 
-section #submit {
+section #send {
 	width: 174px;
     height: 40px;
     background-color: #6482FF;
@@ -286,9 +298,9 @@ section #submit {
     cursor: pointer;
     font-size: 20px;
     display: block;
-    margin: auto;
+    margin-left: auto;
     margin-top: 90px;
 }
-section #submit:hover {
+section #send:hover {
 	background-color: #4D56D5;	
 }
