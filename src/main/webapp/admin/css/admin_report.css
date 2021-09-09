@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+*{
+	margin:0;
+	padding:0;
+	font-family: sans-serif;
+}
+
+section{
+	margin:0;
+	width: 80%;
+	display:flex;
+}
+
+#main{
+	width: 80%;
+}
+
+section #report_title #head h3{
+	position : relative;
+    left: 5%;
+	padding : 2%;	
+
+}
+section #report_title hr{
+	position : relative;
+	left :5%;
+}
+
+section #main #date{
+   position: relative;
+    margin-top: 5%;
+    margin-left: 10%;
+    display: flex;
+}
+
+section #main #date #date_loc{
+	width:50%;
+}
+
+section #main #date #status{
+	width: 20%;
+}
+
+section #main #date #status select{
+	width: 77%;
+    height: 100%;
+}
+
+section #date #date_loc input[type="date"]{
+	height: 35px;
+}
+
+
+section #table01{
+	width: 100%;
+    margin-top: 7%;
+}
+
+section #table01 table{
+	border: 1px solid black;
+    border-top: unset;
+    border-left: unset;
+    border-right :unset;
+    position: relative;
+  	left: 5%;
+}
+
+
+section #table01 table th{
+    width: 5%;
+}
+
+section #button input[type="button"]{
+	position: relative;
+	top : 100px;
+	float: right;
+	background: #6482FF;
+	color: white;
+	width : 100px;
+	
+}
+
+section #button input[type="button"]:hover{
+	color:black;
+	background:white;
+}

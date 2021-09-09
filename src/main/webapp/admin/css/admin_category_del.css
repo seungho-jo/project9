@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+*{
+	margin:0;
+	padding:0;
+	font-family: sans-serif;
+}
+
+section{
+	margin:0;
+	width: 80%;
+	display:flex;
+}
+
+#main{
+	width:90%;
+}
+
+section #category_title #head h3{
+	position : relative;
+    left : 10%;
+	padding : 2%;	
+
+}
+
+section #category_title hr{
+	position : relative;
+	left :5%;
+}
+
+
+section #dropdown{
+    position : relative;
+   	left: 5%;
+    padding : 20px;
+    display:flex;
+}
+
+#main #dropdown #dropdown_select{
+	width: 30%;
+}
+
+#main #dropdown #dropdown_select select{
+	width: 80%;
+}
+
+#main #dropdown .search_box{
+	width: 28%;
+    height: 40%;
+    border: 1px solid black;
+}
+
+section #dropdown input[type="text"]{
+	margin-left: 5%;
+    height: 20px;
+    width: 80%;
+    border: 0;
+}
+
+section #table01 table{
+	border: 1px solid black;
+    border-top: unset;
+    border-left: unset;
+    border-right :unset;
+    position: relative;
+  	left: 5%;
+}
+
+section #table01 table th{
+    width: 25vh;
+    font-size : 14px;
+}
+
+section #button input[type="button"]{
+	position : relative;
+	top: 100px;
+	float: right;
+	background: #6482FF;
+	color: white;
+	width : 100px;
+	
+}
+
+section #button input[type="button"]:hover{
+	color:black;
+	background:white;
+}

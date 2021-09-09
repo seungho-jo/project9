@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
-    import = "java.util.*"    
     %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
@@ -16,7 +15,6 @@
 </head>
 
 <body>
-	<jsp:include page="admin_header.jsp"></jsp:include>
 	<nav>
 		<div id="navi">
 			<h3 align="center">Menu</h3>
@@ -25,14 +23,48 @@
 				<li>추천란</li>
 				<li>문의사항</li>
 				<li>클래스</li>
-				<li>카테고리</li>
-				<li>쿠폰</li>
-				<li>리뷰</li>
-				<li>신고</li>
-				<li>지도</li>
-				<li>수익</li>
+				<li>카테고리
+					<ul>
+						<li>카테고리 조회
+							<input type="hidden" value="admin_category_whole.jsp"/>
+						</li>
+						<li>생성
+							<input type="hidden" value="admin_category_create.jsp"/>
+						</li>
+						<li>삭제
+							<input type="hidden" value="admin_category_del.jsp"/>
+						</li>
+					</ul>
+				</li>
+				<li>쿠폰
+					<ul>
+						<li>쿠폰 조회
+							<input type="hidden" value="admin_coupon.jsp"/>
+						</li>
+						<li>생성
+							<input type="hidden" value="admin_coupon_create.jsp"/>
+						</li>
+						<li>삭제
+							<input type="hidden" value="admin_coupon_del.jsp"/>
+						</li>						
+					</ul>
+				</li>
+				<li>리뷰
+					<input type="hidden" value="admin_review.jsp"/>
+				</li>
+				<li>신고
+					<input type="hidden" value="admin_report.jsp"/>
+				</li>
+				
+				<li>지도
+					<input type="hidden" value=""/>
+				</li>
+				<li>수익
+					<input type="hidden" value="admin_revenue.jsp"/>
+				</li>
 			</ul>		
 		</div>
 	</nav>
 </body>
+<script type="text/javascript" src="${path}/sist_project9/js/admin_nav.js"></script>
 </html>
