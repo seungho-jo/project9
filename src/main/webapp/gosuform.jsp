@@ -18,40 +18,7 @@
 <title>오늘의 수업</title>
 <link rel="stylesheet" href="css/gosuform.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script type="text/javascript">
-	function clicksubmit(){
-		confirm('제출하시겠습니까?\n제출이 완료되면 수정이 불가능합니다.');
-	}
-	function divhide(){
-		if($('#tooltip2').css('display')=='block'){
-			$('#tooltip2').css('display','none');
-		} else {
-			$('#tooltip2').css('display','block');
-		}
-	}
-	function divhide2(){
-		if($('#tooltip3').css('display')=='block'){
-			$('#tooltip3').css('display','none');
-		} else {
-			$('#tooltip3').css('display','block');
-		}
-	}
-	
 
-	function cal() {
-		if (document.getElementById("price").value
-				&& document.getElementById("hour").value) {
-			document.getElementById('tot').value = parseInt(document
-					.getElementById('price').value)
-					* parseInt(document.getElementById('hour').value);
-			document.getElementById('tot2').value = document.getElementById('tot').value;
-			document.getElementById('vat').value = parseInt(document.getElementById('tot2').value) * 0.1;
-			document.getElementById('fee').value = (parseInt(document.getElementById('tot2').value) - parseInt(document.getElementById('vat').value))*0.2;
-			document.getElementById('tax').value = (parseInt(document.getElementById('tot2').value) - parseInt(document.getElementById('vat').value) - parseInt(document.getElementById('fee').value)) * 0.033;
-			document.getElementById('final').value = (parseInt(document.getElementById('tot2').value) - parseInt(document.getElementById('vat').value) - parseInt(document.getElementById('fee').value) - parseInt(document.getElementById('tax').value))
-		}
-	}
-</script>
 </head>
 <body>
 	
@@ -60,15 +27,17 @@
 		<div id="gosuform1">
 		<h1>고수신청</h1>
 		
-			<form id="gosuform1_action" action="joinProc_jsp" method="post">
+			<form id="gosuform1_action" name="gosuform" action="insGosuform.do" method="post">
+			<input type="hidden" name="id" value="${mem.id}"/>
+			<input type="hidden" name="pass" value="${mem.pass}"/>
 				<h3>고수 홍길동님에 대해 알려주세요.</h3>
 				<table id="first_table">
 					<tr><td>활동할 닉네임</td></tr>
-					<tr><td><input type="text" name="nick" placeholder="사용하실 닉네임을 입력해주세요."/><input type="button" value="중복검사" id="nickCheck"></td></tr>
+					<tr><td><input type="text" name="nickname" placeholder="사용하실 닉네임을 입력해주세요."/><input type="button" value="중복검사" id="nickCheck"></td></tr>
 					<tr><td>고수소개</td></tr>
 					<tr><td><textarea name="info" placeholder="-경력&#13;&#10;-경험담&#13;&#10;-자격증"></textarea></td></tr>
 					<tr><td>이력(권장사항)</td></tr>
-					<tr><td><textarea name="career" placeholder="재능과 관련된 이력을 입력해주세요."></textarea></td></tr>
+					<tr><td><textarea name="history" placeholder="재능과 관련된 이력을 입력해주세요."></textarea></td></tr>
 					<tr><td>소셜미디어(권장사항)</td></tr>
 					<tr><td><input type="text" name="sns" placeholder="SNS 주소를 입력해주세요."/></td></tr>
 				</table>
@@ -77,7 +46,7 @@
 					<tr><td>분야선택</td></tr>
 					<tr>
 						<td>				
-							<select name="select_cate">
+							<select name="category">
 								<option selected>카테고리</option>
 								<option value="레슨">레슨</option>								
 								<option value="홈리빙">홈/리빙</option>								
@@ -90,10 +59,12 @@
 							</select>
 						</td>
 					</tr>
+					<tr><td>클래스 제목</td></tr>
+					<tr><td><input type="text" name="title" placeholder="클래스 제목을 입력해주세요."/></td></tr>
 					<tr><td>진행방식</td></tr>
 					<tr>
 						<td>				
-							<select name="select_way">
+							<select name="ftf">
 								<option selected>진행방식</option>
 								<option value="대면">대면</option>								
 								<option value="비대면">비대면</option>								
@@ -104,7 +75,7 @@
 					<tr><td>지역</td></tr>
 					<tr>
 						<td>				
-							<select name="select_loc">
+							<select name="loc">
 								<option selected>지역</option>
 								<%for(int i=0; i<loc.length; i++) { %>
 								<option><%=loc[i] %></option>								
@@ -139,21 +110,21 @@
 					</tr>
 					<tr>
 						<td>
-							<input type="text"  name="price" id="price"  onkeyup='cal()' placeholder="10,000"/>
+							<input type="text"  name="price" id="price" onkeyup='cal()' placeholder="10,000"/>
 							<span id="unit">원</span>
 						</td>						
 						<td>
 							X
 						</td>
 						<td>
-							<input type="text"  name="hour" id="hour" onkeyup='cal()' placeholder="2"/>
+							<input type="text"  name="classtime" id="classtime" onkeyup='cal()' placeholder="2"/>
 							<span id="unit">시간</span>
 						</td>
 						<td>
 							X
 						</td>
 						<td>
-							<input type="text"  name="cnt" placeholder="1" value disabled/>
+							<input type="text"  name="cnt" placeholder="1" value readonly/>
 							<span id="unit">회</span>						
 						</td>
 					</tr>
@@ -161,7 +132,7 @@
 				<div id="tot_div">
 					<span id="unit2">=</span>
 					<span id="unit3">최종수강료</span>
-					<input type="text"  name="tot" placeholder="20,000" id="tot" disabled/>
+					<input type="text"  name="tot" placeholder="20,000" id="tot" readonly/>
 					<span id="unit4">원</span>
 				</div>
 				<h3>최종 정산금 안내</h3>
@@ -196,28 +167,28 @@
 					</tr>
 					<tr>
 						<td>
-							<input type="text"  name="tot" placeholder="20,000" id="tot2" disabled/>
+							<input type="text"  name="tot2" placeholder="20,000" id="tot2" readonly/>
 							<span id="unit5">원</span>
 						</td>						
 						<td id="minus">
 							ㅡ
 						</td>
 						<td>
-							<input type="text"  name="hour" placeholder="1,818" id="vat" value disabled/>
+							<input type="text"  name="vat" placeholder="1,818" id="vat" readonly/>
 							<span id="unit5">원</span>
 						</td>
 						<td id="minus">
 							ㅡ
 						</td>
 						<td>
-							<input type="text"  name="cnt" placeholder="3,636" id="fee" value disabled/>
+							<input type="text"  name="fee" placeholder="3,636" id="fee" readonly/>
 							<span id="unit5">원</span>						
 						</td>
 						<td id="minus">
 							ㅡ
 						</td>
 						<td>
-							<input type="text"  name="cnt" placeholder="480" id="tax" value disabled/>
+							<input type="text"  name="tax" placeholder="480" id="tax" readonly/>
 							<span id="unit5">원</span>						
 						</td>
 					</tr>
@@ -225,16 +196,54 @@
 				<div id="tot_div2">
 					<span id="unit6">=</span>
 					<span id="unit7">최종정산금</span>
-					<input type="text"  name="tot" placeholder="14,066" id="final" value disabled/>
+					<input type="text"  name="final" placeholder="14,066" id="final" readonly/>
 					<span id="unit8">원</span>
 				</div>
-				<div id="clear"></div>
-			</form>	
-			<button onclick="clicksubmit()" id="submit">제출</button>		
+				<div id="clear"></div>	
+			<input type="button"  id="send" value="제출"/>
+
+			</form>
+			
 		</div>
 	
 	</section>
 	<jsp:include page="footer.jsp"/>
 </body>
+<script type="text/javascript">
+	
+	$("#send").click(function(){
+		$("form").submit();
+	});
+	function divhide(){
+		if($('#tooltip2').css('display')=='block'){
+			$('#tooltip2').css('display','none');
+		} else {
+			$('#tooltip2').css('display','block');
+		}
+	}
+	function divhide2(){
+		if($('#tooltip3').css('display')=='block'){
+			$('#tooltip3').css('display','none');
+		} else {
+			$('#tooltip3').css('display','block');
+		}
+	}
+
+	function cal() {
+		if (document.getElementById("price").value
+				&& document.getElementById("classtime").value) {
+			document.getElementById('tot').value = parseInt(document
+					.getElementById('price').value)
+					* parseInt(document.getElementById('classtime').value);
+			document.getElementById('tot2').value = document.getElementById('tot').value;
+			document.getElementById('vat').value = parseInt(document.getElementById('tot2').value) * 0.1;
+			document.getElementById('fee').value = (parseInt(document.getElementById('tot2').value) - parseInt(document.getElementById('vat').value))*0.2;
+			document.getElementById('tax').value =  Math.round((parseInt(document.getElementById('tot2').value) - parseInt(document.getElementById('vat').value) - parseInt(document.getElementById('fee').value)) * 0.033);
+			document.getElementById('final').value = (parseInt(document.getElementById('tot2').value) - parseInt(document.getElementById('vat').value) - parseInt(document.getElementById('fee').value) - parseInt(document.getElementById('tax').value))
+		}
+	}
+	
+
+</script>
 <script src="${path}/js/gosuform.js" type="text/javascript"></script>
 </html>

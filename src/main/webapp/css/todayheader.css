@@ -95,19 +95,24 @@ header #top .search-box{
   height : 40%;
   margin: 3% 40% 3% 3%;
   border-radius: 30px;
+ 
 }
 header #top .search-btn{
   text-decoration: none;
   color: #6482FF;
   line-height: 250%;
+  position: relative;
+  bottom: 7%;
 }
 .search-txt{
   border:none;
   width: 80%;
   margin: 2%;
-  padding: 2% 2% 2% 3%;
-  font-size : 0.8vw;
-  border-radius: 10px;
+    padding: 0% 1% 0% 3%;
+    font-size: 0.8vw;
+    border-radius: 10px;
+    position: relative;
+    bottom: 11%;
 }
 header #top .search-box:hover{
 	 box-shadow: 0px 0px 2px 4px #6482FF;
