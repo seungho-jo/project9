@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+*{
+	margin:0;
+	padding:0;
+	font-family: sans-serif;
+}
+
+section{
+	margin:0;
+	width: 80%;
+	display:flex;
+}
+
+#main{
+	width:100%;
+}
+
+section #coupon_title #head h3{
+	position : relative;
+    left: 5%;
+	padding : 2%;	
+
+}
+section #coupon_title hr{
+	position : relative;
+	left :5%;
+}
+
+#main #coupon_table{
+	position: relative;
+  	left: 5%;
+}
+
+#main #coupon_table #coupon_list{
+	padding:5%;
+	padding-left: 0;
+	width:55%;
+}
+
+#main #coupon_table table tr{
+	margin:5%;
+}
+
+#main #coupon_table table td{
+  	width: 25vh;
+    font-size: 16px;
+    height: 55px;
+}
+
+#main #coupon_table #coupon_list #tlist{
+	display:flex;
+	align-items: center;
+	width: 100%;
+}
+
+#main #coupon_table table tr input{
+	width: 100%;
+    height: 25px;
+}
+
+#main #button{
+	position:relative;
+	left: 50%;
+}
+
+section #coupon_table #button input[type="button"]{
+	background: #6482FF;
+	color: white;
+	width : 100px;
+	height: 30px;
+	
+}
+
+section #coupon_table #button input[type="button"]:hover{
+	color:black;
+	background:white;
+}

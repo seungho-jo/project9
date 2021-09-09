@@ -25,5 +25,4 @@
 	</div>
 </header>
 <div id="cl"></div>	
-</body>
 </html>
