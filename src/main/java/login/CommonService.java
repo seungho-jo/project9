@@ -30,4 +30,12 @@ public class CommonService {
 	public void deleteMember(String id) {
 		dao.deleteMember(id);
 	}
+	// 아이디찾기
+	public String findId(String phone) {
+		return dao.findId(phone);
+	}
+	// 비밀번호 변경
+	public String changePass(String id,String phone,String pass) {
+		return dao.changePass(id, phone, pass);
+	}
 }

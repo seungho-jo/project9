@@ -54,7 +54,7 @@
 		</div>
 		<div id="question">
 			<p>문의내역</p>
-			<a href="question.jsp">
+			<a href="qlist.do">
 				<p>바로가기</p>
 				<img id="right" src="${path}/img/right_icon.svg">
 			</a>
