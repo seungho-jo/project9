@@ -30,11 +30,15 @@ button:hover{
 </head>
 <body align="center">
 	<p>
-		고객님의 아이디는<span style="color: red;">himan</span>입니다
+		<c:choose>
+			<c:when test="${id!=null}">고객님의 아이디는<span style="color: red;">${id}</span>입니다</c:when>
+			<c:otherwise>${msg}</c:otherwise>
+		</c:choose>
 	</p>
 	<button>닫기</button>
 </body>
 <script type="text/javascript">
+console.log("${msg}");
 	$("button").click(function() {
 		opener.window.location.reload();
 		window.close();

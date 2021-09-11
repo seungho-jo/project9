@@ -11,3 +11,22 @@ CREATE TABLE member(
 INSERT INTO MEMBER values('himan','1111','홍길동','01012345678','05412357','서울 강남구 테헤란로 132','한독건물 8층','img.png');
 SELECT * FROM MEMBER;
 update member set pass = '11111111', name = '관리자', phone = '01045677654', zipcode = '06134', address1 = '서울 강남구 테헤란로 101', address2 = '2층', profile = '' where id = 'admin';
+SELECT * FROM MEMBER WHERE id = 'adad' AND phone = '01011111111';
+CREATE TABLE question(
+	qcode varchar2(5) PRIMARY KEY,
+	title varchar2(100) NOT NULL,
+	category varchar2(50) NOT NULL,
+	content varchar2(2000) NOT NULL,
+	wdate date,
+	answer char(1) CHECK (answer IN ('Y','N')),
+	id varchar2(20) NOT null
+);
+ALTER TABLE question 
+MODIFY answer DEFAULT 'N';
+select qcode,title,wdate,answer from question where id = 'himan' order by wdate DESC;
+SELECT * FROM (SELECT ROWNUM AS RNUM,A.* FROM
+(SELECT * FROM question where id = 'himan' ORDER BY WDATE DESC) A)
+WHERE RNUM >=21 AND RNUM <=30;
+SELECT * FROM
+(SELECT ROWNUM AS RUM, A.* FROM question A where id = 'himan');
+select count(*) tot from question where id = 'himan';

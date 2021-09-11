@@ -70,7 +70,10 @@ button:hover{
 </head>
 <body align="center">
 	<h2>비밀번호 변경</h2>
-	<form>
+	<form method="post" action="find.do">
+		<input type="hidden" name="id" value="${param.id}">
+		<input type="hidden" name="phone" value="${param.phone}">
+		<input type="hidden" name="choice" value="비밀번호변경">
 		<table align="center">
 			<tr><th>새 비밀번호</th></tr>
 			<tr><th><input type="password" name="newPass" placeholder="비밀번호를 입력해주세요"/></th></tr>
@@ -81,6 +84,17 @@ button:hover{
 	</form>
 </body>
 <script type="text/javascript">
+	var msg = "${msg}";
+	if(msg==""){
+
+	}else if(msg=="아이디,휴대폰 번호가 틀렸습니다"){
+		alert(msg);
+	}else{
+		alert(msg);
+		opener.window.location.href = "index.jsp";
+		window.close();
+	}
+	console.log(msg);
 	$("#cancel").click(function(){
 		window.close();
 	})
@@ -89,7 +103,7 @@ button:hover{
 			alert("비밀번호를 입력해주세요");
 			$("[name=newPass]").focus();
 		} else if ($("[name=re_pass]").val() == "") {
-			alert("비밀번호를 확인란에 입력해주세요");
+			alert("비밀번호를 확인란을 입력해주세요");
 			$("[name=re_pass]").focus();
 		} else{
 			$("form").submit();

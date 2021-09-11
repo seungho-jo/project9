@@ -34,7 +34,7 @@ if(msg!=""){
 					<c:when test="${mem.profile!=null}"><img id="preview" src="${path}/upload/${mem.profile}"><br></c:when>
 					<c:otherwise><img id="preview" src="${path}/img/bros_blank.jpg"><br></c:otherwise>
 				</c:choose>
-				<input type="file" name="profile" onchange="setThumbnail(this)" value="${mem.profile}"/>
+				<input type="file" name="profile" onchange="setThumbnail(this)"/>
 				<input type="button" id="click" value="업로드"/>
 			</div>
 			<table>

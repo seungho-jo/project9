@@ -42,6 +42,19 @@
 				</ul>
 			</li>
 			<li>
+				쿠폰
+				<ul>
+					<li>
+						쿠폰리스트
+						<input type="hidden" value="myCoupon.jsp">
+					</li>
+					<li>
+						쿠폰등록
+						<input type="hidden" value="couponEnrollment.jsp">
+					</li>
+				</ul>
+			</li>
+			<li>
 				문의내역
 				<input type="hidden" value="question.jsp">
 			</li>

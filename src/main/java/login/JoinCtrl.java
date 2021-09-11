@@ -36,6 +36,7 @@ public class JoinCtrl extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
+		// 업로드 파일 올리기위한 작업
 		String SAVEFOLDER = "C:\\javaexp\\workspacce\\project9\\src\\main\\webapp\\upload";
 		String ENCTYPE = "UTF-8";
 		int MAXSIZE = 5*1024*1024;
@@ -58,10 +59,12 @@ public class JoinCtrl extends HttpServlet {
 					multi.getParameter("addr2"),
 					filename
 				);
+		// 회원가입
 		if(multi.getParameter("choice").equals("회원가입")) {
 			service.join(mem);
 			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
 			rd.forward(request, response);
+		// 회원정보 수정
 		}else if(multi.getParameter("choice").equals("회원정보수정")) {
 			Member mem2 = (Member)session.getAttribute("mem");
 			if(multi.getParameter("pass_check").equals(mem2.getPass())) {
@@ -75,6 +78,7 @@ public class JoinCtrl extends HttpServlet {
 				RequestDispatcher rd = request.getRequestDispatcher("edit_mem_info.jsp");
 				rd.forward(request, response);
 			}
+		// 회원탈퇴
 		}else if(multi.getParameter("choice").equals("회원탈퇴")) {
 			Member mem2 = (Member)session.getAttribute("mem");
 			if(multi.getParameter("pass_check").equals(mem2.getPass())) {

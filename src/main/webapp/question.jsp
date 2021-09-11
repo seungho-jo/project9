@@ -20,12 +20,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
+<c:set var="totPage" value="${totPage}"/>
 <jsp:include page="header.jsp"/>
 <section>
 	<jsp:include page="myNavi.jsp"/>
 	<div id="contents">
 		<h1>내 문의 내역</h1>
 		<button>문의 남기기</button>
+		<h4>총 개수: ${totPage}</h4>
 		<table>
 			<colgroup>
 				<col width="10%">
@@ -42,23 +44,32 @@
 				</tr>
 			</thead>
 			<tbody>
-				<%for(int i=0;i<title.length;i++){ %>
-				<tr>
-					<td><%=i+1 %></td><td><a href="readQuestion.jsp"><%=title[i] %></a></td>
-					<td><%=dates[i] %></td><td><%=result[i] %></td>
-				</tr>
-				<%} %>
+				<c:set var="totalList" value="${qlist.size()}"/>
+				<c:forEach var="q" items="${qlist}" varStatus="sts">
+					<tr>
+						<td>${totPage-sts.index}</td>
+						<td>${q.title}</td>
+						<td>${q.wdate}</td>
+						<td>${q.answer}</td>
+					</tr>
+				</c:forEach>
 			</tbody>
 		</table>
 		<div id="paging">
-			<%for(int i=0;i<title.length;i++){ %>
-				<span><%=i+1%></span>
-			<%} %>
+			<c:forEach var="cnt" begin="1" end="${totPage/10 + 1}">
+				<span>${cnt}</span>
+			</c:forEach>
 		</div>
 	</div>
 </section>
 <jsp:include page="footer.jsp"/>
+<form id="page">
+	<input type="hidden" name="paging">
+	<input type="hidden" name="start">
+	<input type="hidden" name="end">
+</form>
 </body>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script type="text/javascript"> var totpage = ${totPage}</script>
 <script src="${path}/js/question.js" type="text/javascript"></script>
 </html>
