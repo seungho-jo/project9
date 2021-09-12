@@ -56,7 +56,7 @@
 			</li>
 			<li>
 				문의내역
-				<input type="hidden" value="question.jsp">
+				<input type="hidden" value="qlist.do">
 			</li>
 		</ul>
 	</div>

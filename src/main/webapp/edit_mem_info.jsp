@@ -58,7 +58,7 @@ if(msg!=""){
 					<input type="button" name="close" value="닫기" id="close"/>
 				</div>
 			</div>
-	</div>
+			</div>
 		</form>
 		<div id="btns">
 			<button id="edit">설정완료</button>

@@ -24,18 +24,27 @@ $("#paging>span").click(function(event){
 			var data = JSON.parse(xhr.responseText);
 			var show = "";
 			if(page == 1){
-				$(data).each(function(idx,qs){
-				show += "<tr><td>"+(totpage-idx)+"</td><td>"+qs.title+"</td><td>"
+				if(data!=null){
+					$(data).each(function(idx,qs){
+					show += "<tr><td>"+(totpage-idx)+"</td><td><a href='qlist.do?qcode="+qs.qcode+"'>"+qs.title+"</a></td><td>"
 						+qs.wdate+"</td><td>"+qs.answer+"</td></tr>"
-				})
-			$("tbody").html(show);
+					})
+					$("tbody").html(show);
+				}else{
+					show += "<h1>내 문의 내역</h1><button>문의 남기기</button><h3>등록된 정보가 없습니다</h3>";
+					$("#contents").html(show);
+				}
 			}else{
 				$(data).each(function(idx,qs){
-				show += "<tr><td>"+(totpage-((page-1)*10)-idx)+"</td><td>"+qs.title+"</td><td>"
+				show += "<tr><td>"+(totpage-((page-1)*10)-idx)+"</td><td><a href='qlist.do?qcode="+qs.qcode+"'>"+qs.title+"</a></td><td>"
 						+qs.wdate+"</td><td>"+qs.answer+"</td></tr>"
 				})
 				$("tbody").html(show);
 			}
 		}
 	}
+})
+$("td").click(function(event){
+	$("[name=qcode]").val($(event.target).find("#qcode").val());
+	//$("#move").submit();
 })

@@ -43,48 +43,56 @@ public class QuestionListCtrl extends HttpServlet {
 		String startS = request.getParameter("start");
 		String endS = request.getParameter("end");
 		String paging = request.getParameter("paging");
-		if(paging==null) {
-			if(startS==null&&endS==null) {
-				startS = "1";
-				endS = "10";
-			}
-			int start = Integer.parseInt(startS);
-			int end = Integer.parseInt(endS);
-			ArrayList<Question> list;
-			int totPage;
-			if(id!=null) {
-				list = service.qList(id,start,end);
-				totPage = service.questionNum(id);
-				if(list!=null) {
-					request.removeAttribute("qlist");
-					request.setAttribute("qlist", list);
-					request.setAttribute("totPage", totPage);
-				}else {
-					request.setAttribute("qlist", "등록된 문의가 없습니다");
+		String qcode = request.getParameter("qcode");
+		if(qcode==null) {
+			if(paging==null) {
+				if(startS==null&&endS==null) {
+					startS = "1";
+					endS = "10";
+				}
+				int start = Integer.parseInt(startS);
+				int end = Integer.parseInt(endS);
+				ArrayList<Question> list;
+				int totPage;
+				if(id!=null) {
+					list = service.qList(id,start,end);
+					totPage = service.questionNum(id);
+					if(list.size()>=1) {
+						request.removeAttribute("qlist");
+						request.setAttribute("qlist", list);
+						request.setAttribute("totPage", totPage);
+					}else {
+						request.setAttribute("qlist", null);
+					}
+				}
+				RequestDispatcher rd = request.getRequestDispatcher("question.jsp");
+				rd.forward(request, response);
+			}else {
+				if(startS==null&&endS==null) {
+					startS = "1";
+					endS = "10";
+				}
+				int start = Integer.parseInt(startS);
+				int end = Integer.parseInt(endS);
+				ArrayList<Question> list;
+				int totPage;
+				if(id!=null) {
+					list = service.qList(id,start,end);
+					totPage = service.questionNum(id);
+					if(list!=null) {
+						Gson gson = new Gson();
+						String json = gson.toJson(list);
+						response.getWriter().print(json);
+					}else {
+						
+					}
 				}
 			}
-			RequestDispatcher rd = request.getRequestDispatcher("question.jsp");
-			rd.forward(request, response);
 		}else {
-			if(startS==null&&endS==null) {
-				startS = "1";
-				endS = "10";
-			}
-			int start = Integer.parseInt(startS);
-			int end = Integer.parseInt(endS);
-			ArrayList<Question> list;
-			int totPage;
-			if(id!=null) {
-				list = service.qList(id,start,end);
-				totPage = service.questionNum(id);
-				if(list!=null) {
-					Gson gson = new Gson();
-					String json = gson.toJson(list);
-					response.getWriter().print(json);
-				}else {
-					request.setAttribute("qlist", "등록된 문의가 없습니다");
-				}
-			}
+			Question qs = service.showQs(id, qcode);
+			request.setAttribute("info", qs);
+			RequestDispatcher rd = request.getRequestDispatcher("readQuestion.jsp");
+			rd.forward(request, response);
 		}
 	}
 

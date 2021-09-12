@@ -25,4 +25,23 @@ public class CommonService {
 	public int questionNum(String id) {
 		return dao.questiontot(id);
 	}
+	// 상세정보
+	public Question showQs(String id,String qcode) {
+		Question qs = dao.showQs(id, qcode);
+		String wdate = qs.getWdate();
+		qs.setWdate(wdate.substring(0,10));
+		return qs;
+	}
+	// 문의 작성
+	public void writeQs(Question qs) {
+		dao.writeQs(qs);
+	}
+	// 문의 삭제
+	public void deleteQs(Question qs) {
+		dao.deleteQs(qs);
+	}
+	// 문의 수정
+	public void updateQs(Question qs) {
+		dao.updateQs(qs);
+	}
 }
