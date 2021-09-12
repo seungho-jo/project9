@@ -23,22 +23,44 @@
 					<i class="fab fa-quora"></i>
 				</div>
 			<table>
-				<tr><th>제목</th><td colspan="3">강의문의 남깁니다</tr>
-				<tr><th>작성일</th><td>2021-08-07</td><th>답변여부</th><td>Y</td></tr>
+				<tr><th>제목</th><td colspan="3">${info.title}</tr>
+				<tr><th>작성일</th><td>${info.wdate}</td><th>답변여부</th><td>${info.answer}</td></tr>
 			</table>
 		</div>
-		<div id="middle">문의내역....</div>
+		<div id="middle">${info.content}</div>
 		<div id="bottom">
 			<p>관리자 답변</p>
 			<p>안녕하세요 고객님 어떤 문제가 있으셨나요??</p>
 		</div>
 		<div id="btns">
 			<button><-목록</button>
-			<button>삭제</button>
-			<button>수정</button>
+			<button id="delete">삭제</button>
+			<button id="update">수정</button>
 		</div>
 	</section>
+	<div class="background">
+		<div class="window">
+			<div class="popup">
+				<h4>비밀번호 재 확인</h4>
+				<input type="password" name="pass_check" placeholder="작성 후 엔터키를 눌러주세요"/><br>
+				<input type="button" name="close" value="닫기" id="close"/>
+			</div>
+		</div>
+	</div>
 <jsp:include page="footer.jsp"/>
+<form id="deleteFrm" action="write.do" method="post">
+	<input type="hidden" name="qcode" value="${info.qcode}">
+	<input type="hidden" name="title" value="${info.title}">
+	<input type="hidden" name="category" value="${info.category}">
+	<input type="hidden" name="content" value="${info.content}">
+	<input type="hidden" name="choice">	
+</form>
+<form id="updateFrm" action="updateQuestion.jsp" method="post">
+	<input type="hidden" name="qcode" value="${info.qcode}">
+	<input type="hidden" name="title" value="${info.title}">
+	<input type="hidden" name="category" value="${info.category}">
+	<input type="hidden" name="content" value="${info.content}">
+</form>
 </body>
 <script type="text/javascript" src="${path}/js/readQuestion.js"></script>
 </html>

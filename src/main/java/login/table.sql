@@ -30,3 +30,11 @@ WHERE RNUM >=21 AND RNUM <=30;
 SELECT * FROM
 (SELECT ROWNUM AS RUM, A.* FROM question A where id = 'himan');
 select count(*) tot from question where id = 'himan';
+CREATE SEQUENCE seq_qs
+	INCREMENT BY 1
+	START WITH 1
+	MINVALUE 1
+	MAXVALUE 999999;
+SELECT seq_qs.nextval FROM dual;
+insert into question values('q'||seq_qs.nextval,'쿠폰등록','쿠폰','내쿠폰 돌려줘!!',sysdate,'N','himan');
+insert into question values(seq_qs.nextval,'쿠폰등록','쿠폰','<p><쿠폰등록이 안되요..../p>',sysdate,'N','himan');
