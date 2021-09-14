@@ -9,6 +9,7 @@
 <%
 	String[] coupons = {"coupon1","coupon2","coupon3","coupon4","coupon5","coupon6","coupon7","coupon8","coupon9"};
 %>
+<c:set var="img" value='{"coupon1","coupon2","coupon3","coupon4","coupon5","coupon6","coupon7","coupon8","coupon9"}'/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,18 +24,15 @@
 		<jsp:include page="myNavi.jsp"/>
 		<div id="contents">
 			<h1>내 쿠폰</h1>
-			<p>총 계수: 30개</p>
+			<p>총 갯수: ${total}개</p>
 			<hr>
 			<div>
-				<%
-					for(int i=0;i<coupons.length;i++){
-						int ran = (int)(Math.random()*11);
-				%>
-				<div>
-					<div class="<%=coupons[i]%>"></div>
-					<span>보유 개수 : <%=ran%>개</span>
-				</div>
-				<%} %>
+				<c:forEach var="c" items="${coupon}" varStatus="sts">
+					<div>
+						<div class="coupon${c.discount}"></div>
+						<span>보유 개수 : ${c.cnt}개</span>
+					</div>
+				</c:forEach>	
 			</div>
 		</div>
 	</section>

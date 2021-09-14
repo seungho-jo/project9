@@ -80,10 +80,7 @@ String[] result = {"N", "Y", "Y", "N", "Y"};
 <script
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript">
-	var totpage = $
-	{
-		totPage
-	}
+	var totpage = ${totPage};
 </script>
 <script src="${path}/js/question.js" type="text/javascript"></script>
 </html>

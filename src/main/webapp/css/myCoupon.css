@@ -1,61 +1,61 @@
 @charset "UTF-8";
-.coupon1 {
+.coupon5 {
 	background: url('../img/coupon2.png') no-repeat -62px -44px;
 	width: 244px;
 	height: 164px;
 	zoom : 0.9;
 	padding-bottom : 4%;
 }
-.coupon2 {
+.coupon10 {
 	background: url('../img/coupon2.png') no-repeat -382px -40px;
 	width: 276px;
 	height: 173px;
 	zoom : 0.85;
 	padding-bottom : 4%;
 }
-.coupon3 {
+.coupon15 {
 	background: url('../img/coupon2.png') no-repeat -732px -40px;
 	width: 290px;
 	height: 181px;
 	zoom : 0.8;
 	padding-bottom : 4%;
 }
-.coupon4 {
+.coupon20 {
 	background: url('../img/coupon2.png') no-repeat -69px -293px;
 	width: 258px;
 	height: 162px;
 	zoom : 0.9;
 	padding-bottom : 4%;
 }
-.coupon5 {
+.coupon25 {
 	background: url('../img/coupon2.png') no-repeat -390px -292px;
 	width: 272px;
 	height: 171px;
 	zoom : 0.85;
 	padding-bottom : 4%;
 }
-.coupon6 {
+.coupon30 {
 	background: url('../img/coupon2.png') no-repeat -743px -291px;
 	width: 278px;
 	height: 175px;
 	zoom : 0.8;
 	padding-bottom : 4%;
 }
-.coupon7 {
+.coupon35 {
 	background: url('../img/coupon2.png') no-repeat -73px -519px;
 	width: 252px;
 	height: 158px;
 	zoom : 0.9;
 	padding-bottom : 4%;
 }
-.coupon8 {
+.coupon40 {
 	background: url('../img/coupon2.png') no-repeat -388px -515px;
 	width: 267px;
 	height: 167px;
 	zoom : 0.85;
 	padding-bottom : 4%;
 }
-.coupon9 {
+.coupon50 {
 	background: url('../img/coupon2.png') no-repeat -750px -513px;
 	width: 274px;
 	height: 172px;

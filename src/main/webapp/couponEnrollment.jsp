@@ -21,7 +21,7 @@
 		<div id="contents">
 			<h1>쿠폰 등록</h1>
 			<hr>
-			<form>
+			<form method="post" action="cpEnroll.do">
 				<input type="text" name="code1" maxlength='4'>-<input type="password" name="code2" maxlength='4'>-
 				<input type="password" name="code3" maxlength='4'>-<input type="text" name="code4" maxlength='4'>
 				<input type="button" id="enrollment" value="등록">

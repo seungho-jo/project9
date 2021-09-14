@@ -6,10 +6,12 @@ import com.google.gson.Gson;
 
 public class CommonService {
 	private Question_Dao dao;
+	private Coupon_Dao dao2;
 	private Gson gson;
 	 
 	public CommonService() {
 		dao = new Question_Dao();
+		dao2 = new Coupon_Dao();
 		gson = new Gson();
 	}
 	// 조회 리스트
@@ -43,5 +45,21 @@ public class CommonService {
 	// 문의 수정
 	public void updateQs(Question qs) {
 		dao.updateQs(qs);
+	}
+	// 쿠폰 조회
+	public ArrayList<Coupon> cp_list(String id){
+		return dao2.cp_list(id);
+	}
+	// 쿠폰 총 갯수
+	public int totalCp(String id) {
+		return dao2.totalCp(id);
+	}
+	// 쿠폰 확인
+	public boolean cp_check(String couponnumber) {
+		return dao2.cp_check(couponnumber);
+	}
+	// 쿠폰 등록
+	public void cp_enrollment(String id,String couponnumber) {
+		dao2.cp_enrollment(id, couponnumber);
 	}
 }

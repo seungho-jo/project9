@@ -38,3 +38,22 @@ CREATE SEQUENCE seq_qs
 SELECT seq_qs.nextval FROM dual;
 insert into question values('q'||seq_qs.nextval,'쿠폰등록','쿠폰','내쿠폰 돌려줘!!',sysdate,'N','himan');
 insert into question values(seq_qs.nextval,'쿠폰등록','쿠폰','<p><쿠폰등록이 안되요..../p>',sysdate,'N','himan');
+CREATE TABLE cp_enrollment(
+	couponnumber varchar2(32) PRIMARY KEY,
+	id varchar2(20) NOT null
+);
+SELECT count(*) AS "5%"  FROM (SELECT * FROM coupon WHERE discount = 5) WHERE DISCOUNT = 5 GROUP BY DISCOUNT;
+SELECT  "5%","10%","15%","20%","25%","30%","35%","40%","50%"
+FROM
+(SELECT count(*) AS "5%" FROM coupon WHERE DISCOUNT = 5 ) b,
+(SELECT count(*) AS "10%" FROM coupon WHERE DISCOUNT = 10 ) c,
+(SELECT count(*) AS "15%" FROM coupon WHERE DISCOUNT = 15 ) d,
+(SELECT count(*) AS "20%" FROM coupon WHERE DISCOUNT = 20 ) e,
+(SELECT count(*) AS "25%" FROM coupon WHERE DISCOUNT = 25 ) f,
+(SELECT count(*) AS "30%" FROM coupon WHERE DISCOUNT = 30 ) g,
+(SELECT count(*) AS "35%" FROM coupon WHERE DISCOUNT = 35 ) h,
+(SELECT count(*) AS "40%" FROM coupon WHERE DISCOUNT = 40 ) i,
+(SELECT count(*) AS "50%" FROM coupon WHERE DISCOUNT = 50 ) j;
+
+(SELECT count(*),DISCOUNT FROM COUPON a,CP_ENROLLMENT b WHERE a.COUPONNUMBER = b.COUPONNUMBER AND id = 'himan' GROUP BY DISCOUNT);
+(SELECT * FROM COUPON a,CP_ENROLLMENT b WHERE a.COUPONNUMBER = b.COUPONNUMBER);

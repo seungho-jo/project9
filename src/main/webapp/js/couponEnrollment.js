@@ -17,6 +17,6 @@ $("#enrollment").click(function(){
 		alert("쿠폰 번호를 입력해주세요");
 		$("[name=code4]").focus();
 	}else{
-		location.href = "myCoupon.jsp";
+		$("form").submit();
 	}
 })

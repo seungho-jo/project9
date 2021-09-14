@@ -6,9 +6,6 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
 <c:set var = "path" value="${pageContext.request.contextPath}"/>
 <fmt:requestEncoding value="utf-8"/>
-<%
-
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +13,12 @@
 <title>근면하고 성실하게 살아라. 그리고 늘 유익한 일에 열중하라(프랭클린)</title>
 <link rel="stylesheet" href="${path}/css/login.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	var msg = "${msg}";
+	if(msg!=null&&msg!=""){
+		alert(msg);
+	}
+</script>
 </head>
 <body>	
 	<div id="login">
