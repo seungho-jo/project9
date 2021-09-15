@@ -7,6 +7,9 @@ section {
 	min-height: 1300px;
 	width: 80%;
 }
+section h1 {
+	width : 85%;
+}
 .class-info {
 	width: 56%;
 	margin: 0 auto;

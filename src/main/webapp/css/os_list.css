@@ -27,11 +27,12 @@ section #os_div{
 	margin: 0px;	
 }
 .os-search-box{
-  box-shadow: 0px 0px 2px 2px #6482FF;
-  width: 27%;
-  margin-right: 0px;
-  margin-left: 68%;
-  border-radius: 30px;
+    box-shadow: 0px 0px 2px 2px #6482ff;
+    width: 27%;
+    border-radius: 30px;
+    position: relative;
+    left: 68%;
+    top: 3%;
 }
 .os-search-btn{
   text-decoration: none;

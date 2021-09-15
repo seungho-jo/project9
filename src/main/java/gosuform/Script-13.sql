@@ -45,14 +45,7 @@ SELECT seq_classcode.nextval
 FROM dual;
 -- 고수신청
 INSERT INTO gosuform VALUES (seq_classcode.NEXTVAL,'himan','길동','안녕하세요','이력','피아노 가르쳐드립니다','https://www.youtube.com/','레슨','상관없음','경기도',20000,3,'');
-INSERT INTO gosuform VALUES (seq_classcode.NEXTVAL,'himan','길동','안녕하세요','이력','피아노 가르쳐드립니다','https://www.youtube.com/','레슨','상관없음','경기도',20000,3,'');
-INSERT INTO gosuform VALUES (seq_classcode.NEXTVAL,'higirl','나비','안녕하세요','이력','피아노 가르쳐드립니다','https://www.youtube.com/','레슨','상관없음','경기도',20000,3,'');
-INSERT INTO gosuform VALUES (seq_classcode.NEXTVAL,'higirl','나비','안녕하세요','이력','피아노 가르쳐드립니다','https://www.youtube.com/','레슨','상관없음','경기도',20000,3,'');
-INSERT INTO gosuform VALUES (seq_classcode.NEXTVAL,'himan','길동','안녕하세요','이력','피아노 가르쳐드립니다','https://www.youtube.com/','레슨','상관없음','경기도',20000,3,'');
-INSERT INTO gosuform VALUES (seq_classcode.NEXTVAL,'himan','길동','안녕하세요','이력','피아노 가르쳐드립니다','https://www.youtube.com/','레슨','상관없음','경기도',20000,3,'');
-INSERT INTO gosuform VALUES (seq_classcode.NEXTVAL,'himan','길동','안녕하세요','이력','피아노 가르쳐드립니다','https://www.youtube.com/','레슨','상관없음','경기도',20000,3,'');
-INSERT INTO gosuform VALUES (seq_classcode.NEXTVAL,'himan','길동','안녕하세요','이력','피아노 가르쳐드립니다','https://www.youtube.com/','레슨','상관없음','경기도',20000,3,'');
-INSERT INTO gosuform VALUES (seq_classcode.NEXTVAL,'himan','길동','안녕하세요','이력','피아노 가르쳐드립니다','https://www.youtube.com/','레슨','상관없음','경기도',20000,3,'');
+
 SELECT * FROM gosuform;
 
 

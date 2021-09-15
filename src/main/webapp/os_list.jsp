@@ -22,15 +22,16 @@
 	<section>
 		<jsp:include page="osnavi.jsp" />
 		<div id="os_div">
+			
 			<div id="cate_title">
-			<h1>${param.category}</h1>
-			</div>
-			<hr style="margin-bottom: 50px;">
 			<div class="os-search-box">
 				<input type="text" class="os-search-txt" name="ossearch"
 					placeholder="외주 검색" >
+			</div>
+			<h1>${param.category}</h1>
+			</div>
+			<hr style="margin-bottom: 50px;">
 
-				</div>
 			<c:choose>
 				<c:when test="${oslist.size()>0}">
 				<c:forEach items="${oslist}" var ="Oslist">
@@ -38,7 +39,7 @@
 				<a href="osdetail.do?oscode=${Oslist.oscode}">
 				<div id="class_ing">
 					<div id="ing_info">
-						<div id='ing_title'>${Oslist.title}</div>	<span id="dday">D-${Oslist.datepicker}</span>
+						<div id='ing_title'>${Oslist.title}</div>	<span id="dday">D${Oslist.datepicker}</span>
 						<div id="ing_info_con">
 							<div id='ing_price'>
 								<p>금액</p><span>${Oslist.budget}</span>

@@ -43,7 +43,7 @@
 							<span id="titlespan">${Classlist.title}</span>
 						</div>
 						<div id="class_list_price">
-							<span id="pricespan">${Classlist.price}원</span><span> / 시간</span>
+							<span id="pricespan">${Classlist.price}원</span><span id="timespan"> / 시간</span>
 						</div>
 					</div>
 				</div>			
