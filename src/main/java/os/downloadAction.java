@@ -1,4 +1,4 @@
-package file;
+package os;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,11 +16,13 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/downloadAction")
 public class downloadAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	private Osform_Service service;
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		service = new Osform_Service();
 		
-		String fileName = request.getParameter("file");
-		String directory = this.getServletContext().getRealPath("/upload/");
+		String fileName = request.getParameter("osfile");
+		String directory = this.getServletContext().getRealPath("upload/");
 		File file = new File(directory + "/" + fileName);
 		
 		String mimeType = getServletContext().getMimeType(file.toString());

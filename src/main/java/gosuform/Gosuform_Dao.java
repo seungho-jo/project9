@@ -15,9 +15,7 @@ public class Gosuform_Dao {
 	
 	public void Gosuform(Gosuform gosuform) {
 		try {
-			String sql = "insert into gosuform(classcode,id,nickname,info,history,\r\n"
-					+ "sns,category,ftf,loc,price,classtime)"
-					+ "values(seq_classcode.NEXTVAL,?,?,?,?,?,?,?,?,?,?)";
+			String sql = "insert into gosuform values(seq_classcode.NEXTVAL,?,?,?,?,?,?,?,?,?,?,?,?)";
 			conn = DBConnection.getConnection();
 			pstm = conn.prepareStatement(sql);
 			//pstm.setString(1, gosuform.getClasscode());
@@ -25,12 +23,14 @@ public class Gosuform_Dao {
 			pstm.setString(2, gosuform.getNickname());
 			pstm.setString(3, gosuform.getInfo());
 			pstm.setString(4, gosuform.getHistory());
-			pstm.setString(5, gosuform.getSns());
-			pstm.setString(6, gosuform.getCategory());
-			pstm.setString(7, gosuform.getFtf());
-			pstm.setString(8, gosuform.getLoc());
-			pstm.setString(9, gosuform.getPrice());
-			pstm.setString(10, gosuform.getClasstime());
+			pstm.setString(5, gosuform.getTitle());
+			pstm.setString(6, gosuform.getSns());
+			pstm.setString(7, gosuform.getCategory());
+			pstm.setString(8, gosuform.getFtf());
+			pstm.setString(9, gosuform.getLoc());
+			pstm.setString(10, gosuform.getPrice());
+			pstm.setString(11, gosuform.getClasstime());
+			pstm.setString(12, gosuform.getFormimg());
 			pstm.executeUpdate();
 		} catch (SQLException e1) {
 			System.out.println("예외발생");
