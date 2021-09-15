@@ -20,7 +20,8 @@
 		<div>
 			<div id="findId">
 				<h1>아이디 찾기</h1>
-				<form>
+				<form id="frm1">
+				<input type="hidden" name="choice" value="아이디찾기">
 					<table>
 						<tr><th>휴대전화</th></tr>
 						<tr><td><input type="text" name="phone"  placeholder="-없이 입력해주세요"></td></tr>
@@ -30,7 +31,7 @@
 			</div>
 			<div id="findPass">
 				<h1>비밀번호 찾기</h1>
-				<form>
+				<form id="frm2">
 					<table>
 						<tr><th>아이디</th></tr>
 						<tr><td><input type="text" name="id"  placeholder="아이디를 입력해주세요"></td></tr>

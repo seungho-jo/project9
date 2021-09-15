@@ -19,8 +19,7 @@ public class Gosuform {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
+
 	public String getFormimg() {
 		return formimg;
 	}
@@ -58,7 +57,6 @@ public class Gosuform {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
 
 	public String getClasscode() {
 		return classcode;

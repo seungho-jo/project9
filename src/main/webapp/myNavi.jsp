@@ -26,14 +26,17 @@
 				내클래스
 				<ul>
 					<li>
-						운영중인 클래스
-						<input type="hidden" value="myclass_gosu.jsp">
+						수강중인 클래스
+						<input type="hidden" value="myclass_user.jsp">
 					</li>
-					<li>수업신청서
-						<input type="hidden" value="myclass_app_gosu.jsp">
+					<li>수강신청 현황
+						<input type="hidden" value="myclass_app_user.jsp">
 					</li>
 					<li>외주현황
-						<input type="hidden" value="myclass_os_gosu.jsp">
+						<input type="hidden" value="myclass_os_user.jsp">
+					</li>
+					<li>북마크
+						<input type="hidden" value="bookmark.jsp">
 					</li>
 					<li>
 						결제내역
@@ -42,8 +45,21 @@
 				</ul>
 			</li>
 			<li>
+				쿠폰
+				<ul>
+					<li>
+						쿠폰리스트
+						<input type="hidden" value="coupon.do">
+					</li>
+					<li>
+						쿠폰등록
+						<input type="hidden" value="cpEnroll.do">
+					</li>
+				</ul>
+			</li>
+			<li>
 				문의내역
-				<input type="hidden" value="question.jsp">
+				<input type="hidden" value="qlist.do">
 			</li>
 		</ul>
 	</div>

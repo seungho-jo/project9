@@ -1,3 +1,4 @@
+var xhr = new XMLHttpRequest;
 var win;
 var width1 = window.screen.width/2 -150
 var height1 = window.screen.height/2 -75
@@ -12,9 +13,17 @@ $("#idBtn").click(function() {
 		$("#findId [name=phone]").val("");
 		$("#findId [name=phone]").focus();
 	} else {
-		var url = "findId.jsp?phone=" + $("#findId [name=phone]").val();
-		win = window.open(url, "", "width=300,height=150");
-		win.moveBy(width1,height1);
+		var url = "findId.jsp";
+		var snd = "phone=" + $("#findId [name=phone]").val()+"&choice="+$("#findId [name=choice]").val();
+		xhr.open("post","find.do",true);
+		xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+		xhr.send(snd);
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState==4&&xhr.status==200){
+				win = window.open(url, "", "width=300,height=150");
+				win.moveBy(width1,height1);
+			}
+		}
 	}
 	win.onbeforeunload = function() {
 		$("#findId [name=phone]").focus();
@@ -32,7 +41,7 @@ $("#passBtn").click(function() {
 		$("#findId [name=phone]").val("");
 		$("#findId [name=phone]").focus();
 	} else {
-		var url = "findPass.jsp?id="+$("#findId [name=id]").val()+"&phone=" + $("#findId [name=phone]").val();
+		var url = "findPass.jsp?id="+$("#findPass [name=id]").val()+"&phone=" + $("#findPass [name=phone]").val();
 		win = window.open(url, "", "width=600,height=500");
 		win.moveBy(width2,height2);
 	}

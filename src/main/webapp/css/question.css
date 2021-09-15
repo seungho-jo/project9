@@ -40,6 +40,9 @@ section div button{
 section div button:hover{
 	background-color : #4D56D5;
 }
+section div h4{
+	margin : 0;
+}
 section div table {
 	width: 100%;
 	margin : 0;

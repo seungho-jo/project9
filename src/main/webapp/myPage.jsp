@@ -46,15 +46,15 @@
 			<p>쿠폰</p>
 			<div>
 				<ul>
-					<li><a href="myCoupon.jsp">내쿠폰</a></li>
-					<li><a href="couponEnrollment.jsp">쿠폰등록</a></li>
+					<li><a href="coupon.do">내쿠폰</a></li>
+					<li><a href="cpEnroll.do">쿠폰등록</a></li>
 				</ul>
 				<img id="right" src="${path}/img/right_icon.svg">
 			</div>
 		</div>
 		<div id="question">
 			<p>문의내역</p>
-			<a href="question.jsp">
+			<a href="qlist.do">
 				<p>바로가기</p>
 				<img id="right" src="${path}/img/right_icon.svg">
 			</a>
