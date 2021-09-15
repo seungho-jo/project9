@@ -41,9 +41,6 @@ public class Classlist_Ctrl extends HttpServlet {
 			ArrayList<Classlist> list;
 			list = service.classlist(category);
 			request.setAttribute("classlist", list);	
-			for(Classlist c:list) {
-				System.out.println(c.getFormimg());
-			}
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(page);

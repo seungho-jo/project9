@@ -6,19 +6,24 @@ section{
 	display : flex;
 }
 section>div{
-	padding-top : 60px;
-	width : 80%
+	padding-top: 60px;
+    width: 82%;
+}
+
+h1 {
+    width: 86%;
 }
 #class_list {
 	margin: auto;
-	width: 320px;
+	width: 32%;
 	float: left;
 	padding: 5px;
+    height: 35%;
 }
 #class_cont_list {
 	border: solid 0.8px #ddd;
-	width: 320px;
-	height: 310px;
+	width: 100%;
+	height: 100%;
 	float: left;
 }
 #class_cont_list:hover {
@@ -26,7 +31,7 @@ section>div{
 	cursor: pointer;
 }
 #class_cont_list #class_list_img img{
-	width: 320px;
+	width: 100%;
 	height: 200px;	
 }
 #class_cont_list #class_list_profile {
@@ -43,7 +48,7 @@ section>div{
 	padding-left: 60px;
 }
 #class_cont_list #class_list_title span{
-	font-size: 14px;
+	font-size: 0.73vw;
 	font-weight: bold;
 	padding-left: 10px;	
 	padding-top: 4px;
@@ -58,6 +63,6 @@ section>div{
 }
 #class_cont_list #class_list_price #timespan {
 	margin-left: 2px;
-	font-size: 11px;
+	font-size: 0.6vw;
 	padding-top: 5px;
 }

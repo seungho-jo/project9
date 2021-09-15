@@ -35,7 +35,7 @@
 						수강중인 클래스
 					</li>
 					<li><a href="myclass_app_user.jsp">수강신청 현황</a></li>
-					<li><a href="myclass_os_user.jsp">외주현황</a></li>
+					<li><a href="osuser.do">외주현황</a></li>
 					<li><a href="bookmark.jsp">북마크</a></li>
 					<li><a href="paymentHistory.jsp">결제내역</a></li>
 				</ul>
