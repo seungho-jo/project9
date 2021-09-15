@@ -1,4 +1,5 @@
-package gosuform;
+package index;
+
 
 public class Gosuform {
 	private String classcode;
@@ -6,7 +7,6 @@ public class Gosuform {
 	private String nickname;
 	private String info;
 	private String history;
-	private String title;
 	private String sns;
 	private String category;
 	private String ftf;
@@ -19,7 +19,9 @@ public class Gosuform {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	
+	
 	public String getFormimg() {
 		return formimg;
 	}
@@ -30,7 +32,7 @@ public class Gosuform {
 	}
 
 
-	public Gosuform(String classcode, String id, String nickname, String info, String history, String title, String sns,
+	public Gosuform(String classcode, String id, String nickname, String info, String history, String sns,
 			String category, String ftf, String loc, String price, String classtime, String formimg) {
 		super();
 		this.classcode = classcode;
@@ -38,7 +40,6 @@ public class Gosuform {
 		this.nickname = nickname;
 		this.info = info;
 		this.history = history;
-		this.title = title;
 		this.sns = sns;
 		this.category = category;
 		this.ftf = ftf;
@@ -48,15 +49,6 @@ public class Gosuform {
 		this.formimg = formimg;
 	}
 
-
-	public String getTitle() {
-		return title;
-	}
-
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
 
 	public String getClasscode() {
 		return classcode;

@@ -1,6 +1,6 @@
-package gosuform;
+package classlist;
 
-public class Gosuform {
+public class Detailgosu {
 	private String classcode;
 	private String id;
 	private String nickname;
@@ -14,12 +14,14 @@ public class Gosuform {
 	private String price;
 	private String classtime;
 	private String formimg;
+	private String profile;
 	
-	public Gosuform() {
+	public Detailgosu() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
+	
+	
 	public String getFormimg() {
 		return formimg;
 	}
@@ -30,8 +32,19 @@ public class Gosuform {
 	}
 
 
-	public Gosuform(String classcode, String id, String nickname, String info, String history, String title, String sns,
-			String category, String ftf, String loc, String price, String classtime, String formimg) {
+	public String getProfile() {
+		return profile;
+	}
+
+
+	public void setProfile(String profile) {
+		this.profile = profile;
+	}
+
+
+	public Detailgosu(String classcode, String id, String nickname, String info, String history, String title,
+			String sns, String category, String ftf, String loc, String price, String classtime, String formimg,
+			String profile) {
 		super();
 		this.classcode = classcode;
 		this.id = id;
@@ -46,6 +59,7 @@ public class Gosuform {
 		this.price = price;
 		this.classtime = classtime;
 		this.formimg = formimg;
+		this.profile = profile;
 	}
 
 
@@ -57,6 +71,7 @@ public class Gosuform {
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
 
 	public String getClasscode() {
 		return classcode;

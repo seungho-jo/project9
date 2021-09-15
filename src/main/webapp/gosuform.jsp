@@ -27,7 +27,7 @@
 		<div id="gosuform1">
 		<h1>고수신청</h1>
 		
-			<form id="gosuform1_action" name="gosuform" action="insGosuform.do" method="post">
+			<form id="gosuform1_action" name="gosuform" action="insGosuform.do" method="post" enctype="multipart/form-data">
 			<input type="hidden" name="id" value="${mem.id}"/>
 			<input type="hidden" name="pass" value="${mem.pass}"/>
 				<h3>고수 홍길동님에 대해 알려주세요.</h3>
@@ -83,6 +83,8 @@
 							</select>
 						</td>
 					</tr>
+					<tr><td>클래스 대표사진 업로드</td></tr>
+					<tr><td><input type="file" name="formimg"></td></tr>
 				</table>
 				<h3>고수 홍길동님의 클래스 수강료에 대해 알려주세요.</h3>
 				<h5>수강생이 지불하는 클래스 최종 가격으로, VAT 10%가 포함된 가격입니다.</h5>

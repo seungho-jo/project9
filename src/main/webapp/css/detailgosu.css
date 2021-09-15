@@ -5,9 +5,10 @@
 }
 section {
 	min-height: 1300px;
+	width: 80%;
 }
 .class-info {
-	width: 1000px;
+	width: 56%;
 	margin: 0 auto;
 	margin-top: 30px;
 }
@@ -33,42 +34,8 @@ section {
 	font-size: 14px;
 }
 
-/*슬라이더*/
-.swiper {
-	float: left;
-	width: 34.3rem;
-	height: 25rem;
-	right: 35px;
-	top: 30px;
-	float:left;
-	display: block;
-	margin-bottom: 40px;
-}
-
-.swiper-slide {
-	border-radius: 10px;
-	text-align: center;
-	font-size: 18px;
-	background: #fff;
-	/* Center slide text vertically */
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	-webkit-justify-content: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	-webkit-align-items: center;
-	align-items: center;
-}
-
-.swiper-slide img {
-	width: 34.3rem;
-	height: 25rem;
-	object-fit: cover;
+#formimg img {
+	width: 30%;
 }
 
 .sticky_area .sticky_navi {

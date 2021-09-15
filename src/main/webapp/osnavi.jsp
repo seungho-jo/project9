@@ -38,28 +38,28 @@ onload = function() {
 				<input type="hidden" value="os_list.jsp">
 			</li>
 			<li>
-				<a href="os_list.jsp">레슨</a>
+				<a href="oslist.do?category=레슨">레슨</a>
 			</li>
 			<li>
-				홈/리빙
+				<a href="oslist.do?category=홈리빙">홈/리빙</a>
 			</li>
 			<li>
-				이벤트
+				<a href="oslist.do?category=이벤트">이벤트</a>
 			</li>
 			<li>
-				비즈니스
+				<a href="oslist.do?category=비즈니스">비즈니스</a>
 			</li>
 			<li>
-				디자인/개발
+				<a href="oslist.do?category=디자인개발">디자인/개발</a>
 			</li>
 			<li>
-				건강/미용
+				<a href="oslist.do?category=건강/미용">건강/미용</a>
 			</li>
 			<li>
-				알바
+				<a href="oslist.do?category=알바">알바</a>
 			</li>
 			<li>
-				기타
+				<a href="oslist.do?category=기타">기타</a>
 			</li>
 		</ul>
 	</div>

@@ -20,12 +20,103 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script type="text/javascript">
-	function clicksubmit(){
-		confirm('제출하시겠습니까?\n제출이 완료되면 수정이 불가능합니다.');
-	}
-	
 
+</head>
+<body>
+	
+	<jsp:include page="header.jsp"/>
+
+	<section>
+		<div id="gosuform1">
+		<h1>외주요청서</h1>
+		
+			<form action="insOsform.do" method="post" enctype="multipart/form-data">
+			<input type="hidden" name="id" value="${mem.id}"/>
+			<input type="hidden" name="pass" value="${mem.pass}"/>
+				<h3>고수에게 요청할 외주에 대해 적어주세요.</h3>
+				<table id="first_table">
+					<tr><td>외주제목</td></tr>
+					<tr><td><input type="text" name="title" placeholder="외주 제목을 입력해주세요."/></td></tr>
+					<tr><td>분야선택</td></tr>
+					<tr>
+						<td>				
+							<select name="category">
+								<option selected>카테고리</option>
+								<option value="레슨">레슨</option>								
+								<option value="홈리빙">홈/리빙</option>								
+								<option value="이벤트">이벤트</option>								
+								<option value="비즈니스">비즈니스</option>								
+								<option value="디자인개발">디자인/개발</option>								
+								<option value="건강미용">건강/미용</option>								
+								<option value="알바">알바</option>								
+								<option value="기타">기타</option>								
+							</select>
+						</td>
+					</tr>
+					<tr><td>진행방식</td></tr>
+					<tr>
+						<td>				
+							<select name="ftf">
+								<option selected>진행방식</option>
+								<option value="대면">대면</option>								
+								<option value="비대면">비대면</option>								
+								<option value="상관없음">상관없음</option>															
+							</select>
+						</td>
+					</tr>
+					<tr><td>지역</td></tr>
+					<tr>
+						<td>				
+							<select name="loc">
+								<option selected>지역</option>
+								<%for(int i=0; i<loc.length; i++) { %>
+								<option><%=loc[i] %></option>								
+								<%} %>													
+							</select>
+						</td>
+					</tr>
+					<tr><td>금액</td></tr>
+					<tr>
+						<td>				
+							<input type="text" name="budget" placeholder="금액을 입력해주세요. ex) 협의가능"/>
+						</td>
+					</tr>
+					<tr><td>기한</td></tr>
+					<tr>
+						<td>				
+							<input type="text" id="datepicker" name="datepicker" placeholder="날짜를 입력해주세요."/>
+						</td>
+					</tr>
+					<tr><td>세금계산서 여부</td></tr>
+					<tr>
+						<td>				
+							<select name="taxinvoice">
+								<option selected>세금계산서</option>
+								<option value="필요">필요</option>								
+								<option value="불필요">불필요</option>								
+								<option value="상관없음">상관없음</option>															
+							</select>
+						</td>
+					</tr>
+					<tr><td>구체적인 업무설명</td></tr>
+					<tr><td><textarea name="explain" placeholder="-자세하게 적어주세요."></textarea></td></tr>
+				</table>		
+				<div id="clear"></div>		
+			<span>파일업로드</span>
+				<input type="file" name="osfile">				
+			<input type="button" id="send" value="제출"/>		
+			</form>
+		</div>
+	
+	</section>
+
+	<jsp:include page="footer.jsp"/>
+</body>
+<script type="text/javascript">
+	$("#send").click(function(){
+		$("form").submit();
+	});
+	
 
     $(function() {
         //input을 datepicker로 선언
@@ -56,94 +147,5 @@
         $('#datepicker').datepicker('setDate', 'today'); //(-1D:하루전, -1M:한달전, -1Y:일년전), (+1D:하루후, -1M:한달후, -1Y:일년후)            
     });
 </script>
-</head>
-<body>
-	
-	<jsp:include page="header.jsp"/>
-
-	<section>
-		<div id="gosuform1">
-		<h1>외주요청서</h1>
-		
-			<form action="uploadAction.jsp" method="post" enctype="multipart/form-data">
-				<h3>고수에게 요청할 외주에 대해 적어주세요.</h3>
-				<table id="first_table">
-					<tr><td>외주제목</td></tr>
-					<tr><td><input type="text" name="title" placeholder="외주 제목을 입력해주세요."/></td></tr>
-					<tr><td>분야선택</td></tr>
-					<tr>
-						<td>				
-							<select name="select_cate">
-								<option selected>카테고리</option>
-								<option value="레슨">레슨</option>								
-								<option value="홈리빙">홈/리빙</option>								
-								<option value="이벤트">이벤트</option>								
-								<option value="비즈니스">비즈니스</option>								
-								<option value="디자인개발">디자인/개발</option>								
-								<option value="건강미용">건강/미용</option>								
-								<option value="알바">알바</option>								
-								<option value="기타">기타</option>								
-							</select>
-						</td>
-					</tr>
-					<tr><td>진행방식</td></tr>
-					<tr>
-						<td>				
-							<select name="select_way">
-								<option selected>진행방식</option>
-								<option value="대면">대면</option>								
-								<option value="비대면">비대면</option>								
-								<option value="상관없음">상관없음</option>															
-							</select>
-						</td>
-					</tr>
-					<tr><td>지역</td></tr>
-					<tr>
-						<td>				
-							<select name="select_loc">
-								<option selected>지역</option>
-								<%for(int i=0; i<loc.length; i++) { %>
-								<option><%=loc[i] %></option>								
-								<%} %>													
-							</select>
-						</td>
-					</tr>
-					<tr><td>금액</td></tr>
-					<tr>
-						<td>				
-							<input type="text" name="price" placeholder="금액을 입력해주세요. ex) 협의가능"/>
-						</td>
-					</tr>
-					<tr><td>기한</td></tr>
-					<tr>
-						<td>				
-							<input type="text" id="datepicker" placeholder="날짜를 입력해주세요."/>
-						</td>
-					</tr>
-					<tr><td>세금계산서 여부</td></tr>
-					<tr>
-						<td>				
-							<select name="select_tax">
-								<option selected>세금계산서</option>
-								<option value="필요">필요</option>								
-								<option value="불필요">불필요</option>								
-								<option value="상관없음">상관없음</option>															
-							</select>
-						</td>
-					</tr>
-					<tr><td>구체적인 업무설명</td></tr>
-					<tr><td><textarea name="explain" placeholder="-자세하게 적어주세요."></textarea></td></tr>
-				</table>		
-				<div id="clear"></div>		
-			<span>파일업로드</span>
-				<input type="file" name="file">				
-			<button onclick="clicksubmit()" id="submit" type="submit">제출</button>		
-			</form>
-		</div>
-	
-	</section>
-
-	<jsp:include page="footer.jsp"/>
-</body>
 <script src="${path}/js/gosuform.js" type="text/javascript"></script>
 </html>

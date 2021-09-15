@@ -7,6 +7,7 @@ section{
 }
 section>div{
 	padding-top : 60px;
+	width : 80%
 }
 #class_list {
 	margin: auto;
