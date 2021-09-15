@@ -1,12 +1,11 @@
-package mypage_user;
+package mypage_gosu;
 
-public class Myclass_user {
+public class Myclass_gosu {
 	private String classcode;
 	private String title;
 	private String profile;
 	private String id;
 	private String nickname;
-	private String datepicker;
 	private String price;
 	private String loc;
 	
@@ -40,12 +39,6 @@ public class Myclass_user {
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
-	public String getDatepicker() {
-		return datepicker;
-	}
-	public void setDatepicker(String datepicker) {
-		this.datepicker = datepicker;
-	}
 	public String getPrice() {
 		return price;
 	}
@@ -58,11 +51,11 @@ public class Myclass_user {
 	public void setLoc(String loc) {
 		this.loc = loc;
 	}
-	public Myclass_user() {
+	public Myclass_gosu() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Myclass_user(String classcode, String title, String profile, String id, String nickname, String datepicker,
+	public Myclass_gosu(String classcode, String title, String profile, String id, String nickname, String datepicker,
 			String price, String loc) {
 		super();
 		this.classcode = classcode;
@@ -70,7 +63,6 @@ public class Myclass_user {
 		this.profile = profile;
 		this.id = id;
 		this.nickname = nickname;
-		this.datepicker = datepicker;
 		this.price = price;
 		this.loc = loc;
 	}

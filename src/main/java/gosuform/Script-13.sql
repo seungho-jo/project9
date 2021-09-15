@@ -106,7 +106,7 @@ SELECT TRUNC(sysdate) - TRUNC(TO_DATE(DATEPICKER,'yyyy-mm-dd'))
 FROM OSFORM;
 
 --외주리스트
-SELECT oscode, id, title, category, budget, explain, TRUNC(sysdate) - TRUNC(TO_DATE(DATEPICKER,'yyyy-mm-dd'))
+SELECT oscode, id, title, category, budget, explain, TRUNC(sysdate) - TRUNC(TO_DATE(DATEPICKER,'yyyy-mm-dd')) AS dday
 FROM osform 
 WHERE CATEGORY= '레슨'
 ORDER BY oscode desc;
@@ -116,3 +116,21 @@ ORDER BY oscode desc;
 SELECT g.*,m.profile, m.name
 FROM osform g, MEMBER m
 WHERE classcode= ? AND g.id = m.id; 
+
+-- 듣고있는 학생들
+
+--마이클래스 유저 / 수강중인 클래스
+SELECT 
+
+-- 마이클래스 유저 / 신청한 외주 리스트
+SELECT TRUNC(sysdate) - TRUNC(TO_DATE(DATEPICKER,'yyyy-mm-dd')
+FROM osform;
+
+SELECT id, oscode, title, budget,taxinvoice,DATEPICKER, (TRUNC(sysdate) - TRUNC(TO_DATE(DATEPICKER,'yyyy-mm-dd'))) as dday
+FROM osform
+WHERE id = 'himan';
+
+-- 마이페이지 운영중인 클래스 고수
+SELECT classcode, title, nickname, id, profile, price, loc
+FROM gosuform
+WHERE id = ?

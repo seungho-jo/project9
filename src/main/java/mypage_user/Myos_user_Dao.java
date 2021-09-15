@@ -6,35 +6,36 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import os.DBConnection;
 
-import customer.DBConnection;
-
-public class Myclass_user_Dao {
+public class Myos_user_Dao {
 
 	Connection conn = null; 
 	PreparedStatement pstmt = null; 
 	ResultSet rs = null; 
 	
-	//수강중인 클래스 현황
-	public ArrayList<Myclass_user> classlist_user(String id){
-		ArrayList<Myclass_user> list = new ArrayList<Myclass_user>();
+	
+	public ArrayList<Myos_user> myoslist_user(String id){
+		ArrayList<Myos_user> list = new ArrayList<Myos_user>();
 		Connection conn = null; 
 		PreparedStatement pstmt = null; 
 		ResultSet rs = null;
 		try {
-			String sql = "";
+			String sql = "SELECT id, oscode, title, budget, taxinvoice,datepicker, (TRUNC(sysdate) - TRUNC(TO_DATE(DATEPICKER,'yyyy-mm-dd'))) as dday\r\n"
+					+ "FROM osform\r\n"
+					+ "WHERE id = ?";
 			conn = DBConnection.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-				Myclass_user sl = new Myclass_user();
-				sl.setClasscode(rs.getString("classcode"));
-				sl.setNickname(rs.getString("nickname"));
+				Myos_user sl = new Myos_user();
+				sl.setOscode(rs.getString("oscode"));
 				sl.setTitle(rs.getString("title"));
-				sl.setPrice(rs.getString("price"));
-				sl.setId(rs.getString("id"));
-				sl.setProfile(rs.getString("profile"));
+				sl.setBudget(rs.getString("budget"));
+				sl.setTaxinvoice(rs.getString("taxinvoice"));
+				sl.setDatepicker(rs.getString("datepicker"));	
+				sl.setDday(rs.getString("dday"));
 				list.add(sl);
 			}
 		} catch (SQLException e) {
@@ -53,8 +54,6 @@ public class Myclass_user_Dao {
 		return list;
 	}
 	
-	//신청한 외주 현황
-	
-	
-	
+
+
 }

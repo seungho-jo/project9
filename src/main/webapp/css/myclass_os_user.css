@@ -20,17 +20,17 @@ section #contents{
 	font-size: 0.8vw;
 }
 #os_btn {
-    width: 13%;
-	background-color: #6482FF;	
-	padding: 0.5%;
-	color : white;
-	border-radius : 8px;
-	display: inline;
-	margin-left: 37%;
-	font-size: 0.8vw;
-	padding-left: 3%;
-	padding-right: 3%;
-	cursor: pointer;
+    width: 7%;
+    background-color: #6482FF;
+    padding: 0.5%;
+    color: white;
+    border-radius: 8px;
+    margin-left: 37%;
+    float: right;
+    font-size: 0.8vw;
+    padding-left: 3%;
+    padding-right: 3%;
+    cursor: pointer;
 }
 #class_ing {
 	padding: 3%;

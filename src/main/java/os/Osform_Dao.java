@@ -63,7 +63,7 @@ public class Osform_Dao {
 		PreparedStatement pstmt = null; 
 		ResultSet rs = null;
 		try {
-			String sql = "SELECT oscode, id, title, category, budget, explain, TRUNC(sysdate) - TRUNC(TO_DATE(DATEPICKER,'yyyy-mm-dd'))"
+			String sql = "SELECT oscode, id, title, category, budget, explain, (TRUNC(sysdate) - TRUNC(TO_DATE(DATEPICKER,'yyyy-mm-dd'))) as datepicker "
 					+ "FROM osform "
 					+ "WHERE CATEGORY= ? "
 					+ "ORDER BY oscode desc";

@@ -33,7 +33,7 @@
 						<input type="hidden" value="myclass_app_user.jsp">
 					</li>
 					<li>외주현황
-						<input type="hidden" value="myclass_os_user.jsp">
+						<input type="hidden" value="osuser.do">
 					</li>
 					<li>북마크
 						<input type="hidden" value="bookmark.jsp">

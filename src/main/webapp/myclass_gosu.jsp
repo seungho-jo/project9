@@ -22,35 +22,37 @@
 			<h2>운영중인 클래스 현황</h2>
 			<hr style="margin-bottom: 50px;">
 			<%--클래스현황 --%>	
+			<c:choose>
+			<c:when test="${classgosulist.size()>0}">
+			<c:forEach items="${classgosulist} var="cgl">
 			<div id="class_ing">
 				<div id="ing_info">
-					<div id='ing_title'>생화같은 카네이션 앙금쿠키 원데이 클래스</div>
+					<div id='ing_title'>${cgl.title}</div>
 					<div>
 						<input type="button" id="rev_btn" value="평가하기"/>
 					</div>
 					<div id="ing_img">
-						<img src="img/reco2.JPG">
+						<img src="upload/${cgl.profile}">
 					</div>					
 					<div id="ing_info_con">
 						<div id='ing_gosu'>
-							<p>고수</p><span>이은정</span>
-						</div>
-						<div id='ing_day'>
-							<p>수강일</p><span>2021-09-04</span>
+							<p>고수</p><span>${cgl.nickname}</span>
 						</div>
 						<div id='ing_price'>
-							<p>금액</p><span>44,000원</span>
+							<p>금액</p><span>${cgl.price}</span>
 						</div>
 						<div id='ing_loc'>
-							<p>장소</p><span>개인공지</span>
-						</div>
-						<div id='ing_time'>
-							<p>시간</p><span>개인공지</span>
+							<p>장소</p><span>${cgl.loc}</span>
 						</div>
 					</div>
 				</div>
 			</div>
-			
+			</c:forEach>
+			</c:when>
+				<c:otherwise>
+					<h3>개설된 클래스가 없습니다.</h3>
+				</c:otherwise>
+			</c:choose>
 			
 		</div>
 	</section>
