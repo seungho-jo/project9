@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import customer.DBConnection;
-import customer.Question;
 
 
 
