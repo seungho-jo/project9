@@ -102,9 +102,9 @@ public class Osform_Dao {
 	public OsDetail os_detail(String oscode) {
 		OsDetail de = new OsDetail();
 		try {
-			String sql = "SELECT g.*,m.profile, m.name\r\n"
-					+ "FROM osform g, MEMBER m\r\n"
-					+ "WHERE classcode= ? AND g.id = m.id";
+			String sql = "SELECT g.*,m.profile, m.name "
+					+ "FROM osform g, MEMBER m "
+					+ "WHERE oscode= ? AND g.id = m.id";
 			conn = DBConnection.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, oscode);
@@ -123,34 +123,6 @@ public class Osform_Dao {
 				de.setOsfile(rs.getString("osfile"));
 				de.setProfile(rs.getString("profile"));
 				de.setName(rs.getString("name"));
-			}
-		}catch(SQLException e) {
-			e.printStackTrace();
-		}finally {
-			try {
-				if(rs!=null) rs.close();
-				if(pstmt!=null) pstmt.close();
-				if(conn!=null) conn.close();
-			}catch(Exception e) {
-				e.printStackTrace();
-			}
-		}
-		return de;
-	}
-	
-	public OsDetail os_file(String oscode) {
-		OsDetail de = new OsDetail();
-		try {
-			String sql = "SELECT oscode, osfile"
-					+ "FROM osform g"
-					+ "WHERE classcode= ?";
-			conn = DBConnection.getConnection();
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, oscode);
-			rs = pstmt.executeQuery();
-			if(rs.next()) {
-				de.setOscode(rs.getString("oscode"));
-				de.setOsfile(rs.getString("osfile"));
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
