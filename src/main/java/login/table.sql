@@ -68,3 +68,21 @@ CREATE TABLE application_status_member(
 );
 INSERT INTO application_status_member values('higirl','43',1);
 select * from application_status_member where classcode = '43';
+CREATE TABLE bookmark(
+	classcode varchar2(50),
+	id varchar2(20)
+);
+ALTER TABLE bookmark
+ADD status char(1);
+MERGE INTO bookmark a
+USING dual
+ON (a.classcode = '43' AND a.id = 'higirl')
+WHEN MATCHED THEN 
+	UPDATE SET a.status = 
+	CASE 
+	WHEN a.STATUS = '1' THEN '2' 
+	WHEN a.STATUS = '2' THEN '1'
+	END WHERE a.classcode = '43' AND a.id = 'higirl'
+WHEN NOT MATCHED THEN 
+	INSERT values('43','higirl','1');
+select b.*,c.profile from bookmark a,GOSUFORM b,MEMBER c WHERE a.CLASSCODE =b.CLASSCODE AND b.id=c.id and a.id = 'higirl' and a.status = 1;

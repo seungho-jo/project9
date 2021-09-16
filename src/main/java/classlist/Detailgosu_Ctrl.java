@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import bookmark.Bookmark;
+import bookmark.CommonService;
 import login.Member;
 
 /**
@@ -19,12 +21,14 @@ import login.Member;
 public class Detailgosu_Ctrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private Classlist_Service service;
+    private CommonService service2;
     /**
      * @see HttpServlet#HttpServlet()
      */
     public Detailgosu_Ctrl() {
         super();
         service = new Classlist_Service();
+        service2 = new CommonService();
         // TODO Auto-generated constructor stub
     }
 
@@ -34,27 +38,19 @@ public class Detailgosu_Ctrl extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html; charset=UTF-8");
-		
+		HttpSession session = request.getSession();
 		
 		//고수와 고수 클래스 정보
 		String classcode = request.getParameter("classcode");
-		String id = request.getParameter("id"); // 클래스고수아이디
-		String nickname = request.getParameter("nickname");
-		String info = request.getParameter("info");
-		String history = request.getParameter("history");
-		String title = request.getParameter("title");
-		String sns = request.getParameter("sns");
-		String category = request.getParameter("category");
-		String ftf = request.getParameter("ftf");
-		String loc = request.getParameter("loc");
-		String price = request.getParameter("price");
-		String classtime = request.getParameter("classtime");
-		String formimg = request.getParameter("formimg");
-		String profile = request.getParameter("profile");
-		
+		Member mem = (Member)session.getAttribute("mem");
+		String id = mem.getId(); // 클래스고수아이디
 		
 		Detailgosu de = service.detailproduct(classcode);
 		request.setAttribute("detail", de);
+		if(id!=null) {
+			Bookmark bm = service2.bookmarkInfo(id, classcode);
+			request.setAttribute("bookmark", bm.getStatus());
+		}
 		RequestDispatcher rd = request.getRequestDispatcher("detailgosu.jsp");
 		rd.forward(request, response);
 	}

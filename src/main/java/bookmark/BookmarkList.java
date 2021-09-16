@@ -1,4 +1,4 @@
-package customer;
+package bookmark;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,16 +14,16 @@ import javax.servlet.http.HttpSession;
 import login.Member;
 
 /**
- * Servlet implementation class CouponCtrl
+ * Servlet implementation class BookmarkList
  */
-@WebServlet(name = "coupons.do", urlPatterns = { "/coupons.do" })
-public class CouponCtrl extends HttpServlet {
+@WebServlet(name = "bmlist.do", urlPatterns = { "/bmlist.do" })
+public class BookmarkList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private CommonService service;
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CouponCtrl() {
+    public BookmarkList() {
         super();
         service = new CommonService();
         // TODO Auto-generated constructor stub
@@ -38,13 +38,9 @@ public class CouponCtrl extends HttpServlet {
 		HttpSession session = request.getSession();
 		Member mem = (Member)session.getAttribute("mem");
 		String id = mem.getId();
-		if(id!=null) {
-			ArrayList<Coupon> list = service.cp_list(id);
-			int tot = service.totalCp(id);
-			request.setAttribute("coupon", list);
-			request.setAttribute("total", tot);
-		}
-		RequestDispatcher rd = request.getRequestDispatcher("myCoupon.jsp");
+		ArrayList<BookmarkInfo> bmlist = service.bookmarkList(id);
+		request.setAttribute("bmlist", bmlist);
+		RequestDispatcher rd = request.getRequestDispatcher("bookmark.jsp");
 		rd.forward(request, response);
 	}
 

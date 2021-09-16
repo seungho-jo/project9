@@ -36,7 +36,7 @@
 						<input type="hidden" value="osuser.do">
 					</li>
 					<li>북마크
-						<input type="hidden" value="bookmark.jsp">
+						<input type="hidden" value="bmlist.do">
 					</li>
 					<li>
 						결제내역
@@ -49,7 +49,7 @@
 				<ul>
 					<li>
 						쿠폰리스트
-						<input type="hidden" value="coupon.do">
+						<input type="hidden" value="coupons.do">
 					</li>
 					<li>
 						쿠폰등록

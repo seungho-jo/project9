@@ -50,7 +50,7 @@ public class CpEnrollmentCtrl extends HttpServlet {
 			boolean check = service.cp_check(couponnumber);
 			if(check) {
 				service.cp_enrollment(id, couponnumber);
-				page = "coupon.do";
+				page = "coupons.do";
 			}else {
 				page = "couponEnrollment.jsp";
 				request.removeAttribute("msg");

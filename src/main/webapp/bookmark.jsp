@@ -26,22 +26,17 @@
 			<h1>북마크</h1>
 			<hr>
 			<div id="content">
-				<a href="${path}/detailgosu.jsp">
-				<%for(int i=0;i<8;i++){ 
-					int ran1 = (int)(Math.random()*3);
-					int ran2 = (int)(Math.random()*2);
-				%>
+				<c:forEach var="bm" items="${bmlist}">
 				<div class="mark">
-					<img src="${path}/img/<%=cls[ran2]%>">
-					<h5>생화같은 카네이션 앙금쿠키 원데이 클래스</h5>
+					<img src="${path}/upload/${bm.formimg}">
+					<h5>${bm.title}</h5>
 					<div>
-						<img id="profile" src="${path}/img/<%=imgs[ran1]%>">
-						<p class="name">이은정</p>
+						<img id="profile" src="${path}/upload/${bm.profile}">
+						<p class="name">${bm.nickname}</p>
 					</div>
-					<p class="price"><span>44,000원</span>/시간</p>
+					<p class="price"><span><fmt:formatNumber value="${bm.price}" pattern="#,###.##"/></span>/시간</p>
 				</div>
-				<%} %>
-				</a>
+				</c:forEach>
 			</div>
 		</div>
 	</section>

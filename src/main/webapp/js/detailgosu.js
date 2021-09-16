@@ -82,5 +82,24 @@ var autoSlider = setInterval(function () {
 }, 3000);
 */
 $("#application").click(function(){
-	$("form").submit();
+	$("#frm1").submit();
+})
+$("#c_like").click(function(){
+	var xhr = new XMLHttpRequest();
+	var snd = $("form").serialize();
+	xhr.open("post","bkinsert.do",true);
+	xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+	xhr.send(snd);
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState==4&&xhr.status==200){
+			var mark = xhr.responseText;
+			if(mark==1){
+				$("#c_like").css("background","#6482FF");
+				$("i").css("color","white");
+			}else if(mark==2){
+				$("#c_like").css("background","white");
+				$("i").css("color","#6482FF");
+			}
+		}
+	}
 })
