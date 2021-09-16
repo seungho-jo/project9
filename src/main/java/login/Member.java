@@ -9,10 +9,12 @@ public class Member {
 	private String address1;
 	private String address2;
 	private String profile;
+	private String gosuCheck;
 	public Member() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	public Member(String id, String pass, String name, String phone, String zipcode, String address1, String address2,
 			String profile) {
 		super();
@@ -24,6 +26,20 @@ public class Member {
 		this.address1 = address1;
 		this.address2 = address2;
 		this.profile = profile;
+	}
+
+	public Member(String id, String pass, String name, String phone, String zipcode, String address1, String address2,
+			String profile, String gosuCheck) {
+		super();
+		this.id = id;
+		this.pass = pass;
+		this.name = name;
+		this.phone = phone;
+		this.zipcode = zipcode;
+		this.address1 = address1;
+		this.address2 = address2;
+		this.profile = profile;
+		this.gosuCheck = gosuCheck;
 	}
 	public String getId() {
 		return id;
@@ -72,6 +88,12 @@ public class Member {
 	}
 	public void setProfile(String profile) {
 		this.profile = profile;
+	}
+	public String getGosuCheck() {
+		return gosuCheck;
+	}
+	public void setGosuCheck(String gosuCheck) {
+		this.gosuCheck = gosuCheck;
 	}
 	
 }

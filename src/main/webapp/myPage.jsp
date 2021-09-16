@@ -34,7 +34,7 @@
 					<li>
 						수강중인 클래스
 					</li>
-					<li><a href="myclass_app_user.jsp">수강신청 현황</a></li>
+					<li><a href="myclass_ap.do">수강신청 현황</a></li>
 					<li><a href="osuser.do">외주현황</a></li>
 					<li><a href="bookmark.jsp">북마크</a></li>
 					<li><a href="paymentHistory.jsp">결제내역</a></li>
@@ -47,7 +47,7 @@
 			<div>
 				<ul>
 					<li><a href="coupon.do">내쿠폰</a></li>
-					<li><a href="cpEnroll.do">쿠폰등록</a></li>
+					<li><a href="couponEnrollment.jsp">쿠폰등록</a></li>
 				</ul>
 				<img id="right" src="${path}/img/right_icon.svg">
 			</div>

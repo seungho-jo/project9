@@ -57,3 +57,14 @@ FROM
 
 (SELECT count(*),DISCOUNT FROM COUPON a,CP_ENROLLMENT b WHERE a.COUPONNUMBER = b.COUPONNUMBER AND id = 'himan' GROUP BY DISCOUNT);
 (SELECT * FROM COUPON a,CP_ENROLLMENT b WHERE a.COUPONNUMBER = b.COUPONNUMBER);
+SELECT count(*) as cnt,DISCOUNT FROM COUPON a,CP_ENROLLMENT b
+WHERE a.COUPONNUMBER = b.COUPONNUMBER and id = 'himan' GROUP BY DISCOUNT ORDER BY discount;
+ALTER TABLE member 
+ADD gosuCheck char(1);
+CREATE TABLE application_status_member(
+	id varchar2(20) PRIMARY KEY,
+	classcode varchar(50) NOT null,
+	status NUMBER NOT null
+);
+INSERT INTO application_status_member values('higirl','43',1);
+select * from application_status_member where classcode = '43';
