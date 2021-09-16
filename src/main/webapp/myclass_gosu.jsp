@@ -39,7 +39,7 @@
 							<p>고수</p><span>${cgl.nickname}</span>
 						</div>
 						<div id='ing_price'>
-							<p>금액</p><span>${cgl.price}</span>
+							<p>금액</p><span><fmt:formatNumber type="number" maxFractionDigits="3" value="${cgl.price}" /></span>
 						</div>
 						<div id='ing_loc'>
 							<p>장소</p><span>${cgl.loc}</span>

@@ -42,7 +42,7 @@
 						<div id='ing_title'>${Oslist.title}</div>	<span id="dday">D${Oslist.datepicker}</span>
 						<div id="ing_info_con">
 							<div id='ing_price'>
-								<p>금액</p><span>${Oslist.budget}</span>
+								<p>금액</p><span><fmt:formatNumber type="number" maxFractionDigits="3" value="${Oslist.budget}" /></span>
 							</div>
 							<div id='ing_content'>
 								<span id="ing_content_span">${Oslist.explain}</span>

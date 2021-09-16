@@ -32,7 +32,7 @@
 					<span id="os_btn">진행중</span>	
 					<div id="ing_info_con">
 						<div id='ing_price'>
-							<p>금액</p><span>${Oslist.budget}</span>
+							<p>금액</p><span><fmt:formatNumber type="number" maxFractionDigits="3" value="${Oslist.budget}" /></span>
 						</div>
 						<div id='ing_tax'>
 							<p>세금계산서여부</p><span>${Oslist.taxinvoice}</span>

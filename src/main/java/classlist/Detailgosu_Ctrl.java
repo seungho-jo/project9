@@ -42,11 +42,13 @@ public class Detailgosu_Ctrl extends HttpServlet {
 		
 		//고수와 고수 클래스 정보
 		String classcode = request.getParameter("classcode");
-		Member mem = (Member)session.getAttribute("mem");
-		String id = mem.getId(); // 클래스고수아이디
+
 		
 		Detailgosu de = service.detailproduct(classcode);
 		request.setAttribute("detail", de);
+		
+		Member mem = (Member)session.getAttribute("mem");
+		String id = mem.getId(); // 클래스고수아이디
 		if(id!=null) {
 			Bookmark bm = service2.bookmarkInfo(id, classcode);
 			request.setAttribute("bookmark", bm.getStatus());
