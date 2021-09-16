@@ -29,6 +29,7 @@ public class Login_Join_Dao {
 				mem.setAddress1(rs.getString("address1"));
 				mem.setAddress2(rs.getString("address2"));
 				mem.setProfile(rs.getString("profile"));
+				mem.setGosuCheck(rs.getString("gosuCheck"));
 			}
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -73,7 +74,7 @@ public class Login_Join_Dao {
 	// 회원가입
 	public void join(Member m) {
 		try {
-			String sql = "insert into member values(?,?,?,?,?,?,?,?)";
+			String sql = "insert into member values(?,?,?,?,?,?,?,?,N)";
 			conn = DBConnection.getConnection();
 			conn.setAutoCommit(false);
 			pstmt = conn.prepareStatement(sql);

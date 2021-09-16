@@ -13,6 +13,12 @@
 <title></title>
 <link rel="stylesheet" href="${path}/css/couponEnrollment.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+	var msg = "${msg}";
+	if(msg!=null&&msg!=""){
+		alert(msg);
+	}
+</script>
 </head>
 <body>
 	<jsp:include page="header.jsp"/>

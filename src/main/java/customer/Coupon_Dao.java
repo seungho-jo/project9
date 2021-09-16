@@ -15,7 +15,8 @@ public class Coupon_Dao {
 		ArrayList<Coupon> list = new ArrayList<Coupon>();
 		try {
 			String sql = "SELECT count(*) as cnt,DISCOUNT FROM COUPON a,CP_ENROLLMENT b"
-					+ " WHERE a.COUPONNUMBER = b.COUPONNUMBER and id = ? GROUP BY DISCOUNT";
+					+ " WHERE a.COUPONNUMBER = b.COUPONNUMBER and id = ? GROUP BY DISCOUNT"
+					+ " ORDER BY discount";
 			conn = DBConnection.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id);
@@ -70,7 +71,7 @@ public class Coupon_Dao {
 	public boolean cp_check(String couponnumber) {
 		boolean result = false;
 		try {
-			String sql = "select * from coupon where couponnumber = ?";
+			String sql = "select * from coupon where couponnumber = ? and status = 1";
 			conn = DBConnection.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, couponnumber);
@@ -96,6 +97,7 @@ public class Coupon_Dao {
 	public void cp_enrollment(String id,String couponnumber) {
 		try {
 			String sql = "insert into cp_enrollment values(?,?)";
+			conn = DBConnection.getConnection();
 			conn.setAutoCommit(false);
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, couponnumber);

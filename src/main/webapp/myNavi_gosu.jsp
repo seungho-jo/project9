@@ -50,7 +50,7 @@
 					</li>
 					<li>
 						쿠폰등록
-						<input type="hidden" value="cpEnroll.do">
+						<input type="hidden" value="couponEnrollment.jsp">
 					</li>
 				</ul>
 			</li>

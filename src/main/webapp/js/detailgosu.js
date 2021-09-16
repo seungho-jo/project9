@@ -1,7 +1,7 @@
 /**
  * 
  */
-
+/*
 //slide-wrap
 var slideWrapper = document.getElementById('slide_img');
 //current slideIndexition
@@ -80,3 +80,7 @@ pagination();
 var autoSlider = setInterval(function () {
     plusSlides(1);
 }, 3000);
+*/
+$("#application").click(function(){
+	$("form").submit();
+})

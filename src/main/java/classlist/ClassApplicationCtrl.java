@@ -1,4 +1,4 @@
-package customer;
+package classlist;
 
 import java.io.IOException;
 
@@ -13,18 +13,18 @@ import javax.servlet.http.HttpSession;
 import login.Member;
 
 /**
- * Servlet implementation class CpEnrollmentCtrl
+ * Servlet implementation class ClassApplicationCtrl
  */
-@WebServlet(name = "cpEnroll.do", urlPatterns = { "/cpEnroll.do" })
-public class CpEnrollmentCtrl extends HttpServlet {
+@WebServlet(name = "application.do", urlPatterns = { "/application.do" })
+public class ClassApplicationCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private CommonService service;
+    private ClassApplicationService service;
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CpEnrollmentCtrl() {
+    public ClassApplicationCtrl() {
         super();
-        service = new CommonService();
+        service = new ClassApplicationService();
         // TODO Auto-generated constructor stub
     }
 
@@ -35,31 +35,20 @@ public class CpEnrollmentCtrl extends HttpServlet {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
+		String classcode = request.getParameter("classcode");
 		Member mem = (Member)session.getAttribute("mem");
-		String id = null;
-		if(mem!=null) {
-			id = mem.getId();
-		}
-		String num1 = request.getParameter("code1");
-		String num2 = request.getParameter("code2");
-		String num3 = request.getParameter("code3");
-		String num4 = request.getParameter("code4");
-		String couponnumber = num1+num2+num3+num4;
-		String page;
-		if(id!=null) {
-			boolean check = service.cp_check(couponnumber);
-			if(check) {
-				service.cp_enrollment(id, couponnumber);
-				page = "coupon.do";
-			}else {
-				page = "couponEnrollment.jsp";
+		String id = mem.getId();
+		String page = "detail.do?classcode="+classcode;
+		if(classcode!=null) {
+			boolean result = service.classAp_check(classcode);
+			if(result) {
+				service.classAp(id,classcode);
 				request.removeAttribute("msg");
-				request.setAttribute("msg", "등록되지 않은 쿠폰입니다");
+				request.setAttribute("msg", "신청완료");
+			}else {
+				request.removeAttribute("msg");
+				request.setAttribute("msg", "이미 신청한 클래스입니다");
 			}
-		}else {
-			page = "login.jsp";
-			request.removeAttribute("msg");
-			request.setAttribute("msg", "로그인을 진행해주세요");
 		}
 		RequestDispatcher rd = request.getRequestDispatcher(page);
 		rd.forward(request, response);

@@ -30,7 +30,7 @@
 						<input type="hidden" value="myclass_user.jsp">
 					</li>
 					<li>수강신청 현황
-						<input type="hidden" value="myclass_app_user.jsp">
+						<input type="hidden" value="myclass_ap.do">
 					</li>
 					<li>외주현황
 						<input type="hidden" value="osuser.do">
@@ -53,7 +53,7 @@
 					</li>
 					<li>
 						쿠폰등록
-						<input type="hidden" value="cpEnroll.do">
+						<input type="hidden" value="couponEnrollment.jsp">
 					</li>
 				</ul>
 			</li>

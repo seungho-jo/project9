@@ -14,6 +14,8 @@ public class Gosuform {
 	private String price;
 	private String classtime;
 	private String formimg;
+	private int status;
+	private String statusS;
 	
 	public Gosuform() {
 		super();
@@ -31,7 +33,8 @@ public class Gosuform {
 
 
 	public Gosuform(String classcode, String id, String nickname, String info, String history, String title, String sns,
-			String category, String ftf, String loc, String price, String classtime, String formimg) {
+			String category, String ftf, String loc, String price, String classtime, String formimg, int status,
+			String statusS) {
 		super();
 		this.classcode = classcode;
 		this.id = id;
@@ -46,8 +49,9 @@ public class Gosuform {
 		this.price = price;
 		this.classtime = classtime;
 		this.formimg = formimg;
+		this.status = status;
+		this.statusS = statusS;
 	}
-
 
 	public String getTitle() {
 		return title;
@@ -123,6 +127,22 @@ public class Gosuform {
 	}
 	public void setClasstime(String classtime) {
 		this.classtime = classtime;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
+	}
+
+	public String getStatusS() {
+		return statusS;
+	}
+
+	public void setStatusS(String statusS) {
+		this.statusS = statusS;
 	}
 	
 	
