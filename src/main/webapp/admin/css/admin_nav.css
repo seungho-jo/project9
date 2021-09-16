@@ -13,7 +13,7 @@ nav #navi{
 	display:block;
 	margin :0px;
 	width :100%;
-	height:100vh;
+	height: 100vh;
 	float:left;
 	background: #6482FF;
 }
@@ -55,9 +55,10 @@ nav #navi ul li ul{
 }
 
 #navi ul li .show li:hover{
-	color : #6482FF;
+	color : white;
 	cursor : pointer;
 }
+
 #navi ul li .show li:nth-child(1){
 	padding-top : 10px;
 }

@@ -64,8 +64,12 @@ section #table01 table{
     border-right :unset;
     position: relative;
   	left: 5%;
+  	text-align:center;
 }
 
+section #table01 table td{
+	font-size : 0.7vh;	
+}
 
 section #table01 table th{
     width: 5%;

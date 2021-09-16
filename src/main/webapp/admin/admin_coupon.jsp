@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
+ 
     %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
@@ -30,22 +31,27 @@
 						<div id="coupon_content">
 							<img src="" alt=""/>
 							<p class="title">전체 쿠폰 수 : </p>
-							<p>100</p>
+							<p></p>
 						</div>
 						<div id="coupon_content">
 							<img src="" alt=""/>
 							<p class="title">기간 만료된 쿠폰 : </p>
-							<p>14</p>
+							<p></p>
 						</div>
 				</div>
 			
 			<div id="table01">
 				<table>
-					<tr><th scope="col">Member Id</th>
+					<tr>
 					<th scope="col">coupon Name</th>
 					<th scope="col">coupon Number</th>
-					<th scope="col">Class Name</th></tr>
-					<tr><td></td><td></td><td></td><td></td></tr>
+					<th scope="col">discount</th>
+					<th scope="col">created Day</th>
+					<th scope="col">status</th></tr>
+					<c:forEach var = "cp" items="${clist}" varStatus="sts">
+					<tr><td>${cp.couponName}</td><td>${cp.couponNumber}</td>
+					<td>${cp.discount}</td><td>${cp.cDay}</td><td>${cp.statusS}</td></tr>
+					</c:forEach>
 				</table>
 			</div>
 		</div>
