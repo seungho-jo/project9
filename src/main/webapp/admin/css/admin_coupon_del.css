@@ -59,6 +59,7 @@ section #table01 table{
     border-right :unset;
     position: relative;
   	left: 5%;
+  	text-align:center;
 }
 
 section #table01 table th{

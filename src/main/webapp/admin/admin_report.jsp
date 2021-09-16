@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
+   
     %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
@@ -42,14 +43,29 @@
 			
 			<div id = "table01">
 			<table>
+				<colgroup>
+					<col width="15%"/>
+					<col width="15%"/>
+					<col width="35%"/>
+					<col width="15%"/>
+					<col width="10%"/>
+					<col width="10%"/>
+					
+				</colgroup>
 				<tr>
 					<th scope="col">User Id</th>
-					<th scope="col">Class Name</th>
-					<th scope="col">Class Number</th>
-					<th scope="col">Content</th>
+					<th scope="col">Class Code</th>
+					<th scope="col">Title</th>
 					<th scope="col">Date</th>
 					<th scope="col">Status</th>
 					<th scope="col">Delete</th></tr>
+					<form method="post" action="reportDel.do">
+					<c:forEach var="rd" items="${clist}" varStatus="sts">
+						<tr><td>${rd.id}</td><td>${rd.classCode}</td><td>${rd.title}</td><td>${rd.cDate}</td>
+						<td>${rd.status}</td><td><input type="checkbox" name="checked"></td></tr>
+					</c:forEach>
+					</form>
+					
 			</table>
 			</div>
 			
@@ -59,4 +75,5 @@
 	</div>
 	</section>
 </body>
+<script src="${path}/admin/js/admin_report_del.js" type="text/javascript"></script>
 </html>

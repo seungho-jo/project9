@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
+    
     %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
@@ -39,13 +40,13 @@
 				<li>쿠폰
 					<ul>
 						<li>쿠폰 조회
-							<input type="hidden" value="admin_coupon.jsp"/>
+							<input type="hidden" value="${path}/cLC.do" />
 						</li>
 						<li>생성
-							<input type="hidden" value="admin_coupon_create.jsp"/>
+							<input type="hidden" value="${path}/admin/admin_coupon_create.jsp"/>
 						</li>
 						<li>삭제
-							<input type="hidden" value="admin_coupon_del.jsp"/>
+							<input type="hidden" value="${path}/couponDel.do"/>
 						</li>						
 					</ul>
 				</li>
@@ -53,7 +54,7 @@
 					<input type="hidden" value="admin_review.jsp"/>
 				</li>
 				<li>신고
-					<input type="hidden" value="admin_report.jsp"/>
+					<input type="hidden" value="${path}/reportDel.do"/>
 				</li>
 				
 				<li>지도
@@ -66,5 +67,5 @@
 		</div>
 	</nav>
 </body>
-<script type="text/javascript" src="${path}/sist_project9/js/admin_nav.js"></script>
+<script type="text/javascript" src="${path}/admin/js/admin_nav.js"></script>
 </html>

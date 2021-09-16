@@ -31,19 +31,21 @@
 			</div>
 		</div>
 		
+		<form method="post" action="${path}/coupon.do">
 		<div id="coupon_table">
 			<table id="coupon_list">
-					<tr><td>Coupon Name </td><td><input type="text" placeholder = "insert Coupon Name"/></td></tr>
-					<tr><td>Coupon Number </td><td id="tlist"><input type="text"/>-<input type="text"/>-<input type="text"/>-<input type="text"/></td></tr>
-					<tr><td>Coupon discount </td><td><input type="text" placeholder = "insert Coupon discount"/></td></tr>
+					<tr><td>Coupon Name </td><td><input type="text" placeholder = "insert Coupon Name" name="couponName"/></td></tr>
+					<tr><td>Coupon Number </td><td id="tlist"><input type="text" name="cNum1"/>-<input type="text" name="cNum2"/>-<input type="text" name="cNum3"/>-<input type="text" name="cNum4"/><input type="button" value="번호" id="randomCk"/></td></tr>
+					<tr><td>Coupon discount </td><td><input type="text" placeholder = "insert Coupon discount" name="discount"/></td></tr>
 			</table>
 		
 			<div id="button">
-				<input type="button" value="생성"/>
+				<input type="button" value="생성" id="button"/>
 			</div>
-		
 		</div>
+		</form>
 		</div>
 	</section>
 </body>
+<script src="${path}/admin/js/admin_coupon_create.js" type="text/javascript"></script>
 </html>

@@ -54,10 +54,17 @@
 				<table>
 					<tr><th scope="col">Coupon Name</th>
 					<th scope="col">CouponNumber</th>
-					<th scope="col">ClassName</th>
+					<th scope="col">discount</th>
 					<th scope="col">Date</th>
-					<th scope="col">Delete</th></tr>					
-					<tr><td></td><td></td><td></td><td></td></tr>
+					<th scope="col">status></th>
+					<th scope="col">Delete</th></tr>	
+					<form method="post" action = "couponDel.do">				
+					<c:forEach var="cp" items="${clist}" varStatus="sts">
+					<tr><td>${cp.couponName}</td><td>${cp.couponNumber}</td>
+					<td>${cp.discount}</td><td>${cp.cDay}</td>
+					<td>${cp.statusS}</td><td><input type="checkbox" name="checked" value="${cp.couponNumber}"></td></tr>
+					</c:forEach>
+					</form>
 				</table>
 			</div>
 	
@@ -67,4 +74,5 @@
 	</div>
 	</section>
 </body>
+<script src="${path}/admin/js/admin_coupon_del.js" type="text/javascript"></script>
 </html>
