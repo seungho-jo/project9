@@ -22,7 +22,7 @@
 </head>
 <body>	
 	<div id="login">
-		<a href="index.jsp"><img alt="타이틀" src="${path}/img/title.png"></a>
+		<a href="blist.do"><img alt="타이틀" src="${path}/img/title.png"></a>
 		<h1 align="center">로그인</h1>
 		<form method="post" action="login.do">
 			<table align="center">

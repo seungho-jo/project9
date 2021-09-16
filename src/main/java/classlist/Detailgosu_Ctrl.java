@@ -48,7 +48,10 @@ public class Detailgosu_Ctrl extends HttpServlet {
 		request.setAttribute("detail", de);
 		
 		Member mem = (Member)session.getAttribute("mem");
-		String id = mem.getId(); // 클래스고수아이디
+		String id = null;
+		if(mem!=null) {
+			id = mem.getId(); // 클래스고수아이디
+		}
 		if(id!=null) {
 			Bookmark bm = service2.bookmarkInfo(id, classcode);
 			request.setAttribute("bookmark", bm.getStatus());

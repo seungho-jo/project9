@@ -16,12 +16,14 @@
 <script type="text/javascript">
 
 	$(document).ready(function() {
-		if($("#rev_btn").attr('value')=='승인완료'){
-			$("#rev_btn").css('background','#f5007a');
-		} 
-		if($("#rev_btn").attr('value')=='승인대기'){
-			$("#rev_btn").css('background','#6482FF');
-		} 
+		console.log($(".rev_btn").length)
+		for(var i=0;i<$(".rev_btn").length;i++){
+			if($(".rev_btn").eq(i).attr('value')=='승인완료'){
+				$(".rev_btn").eq(i).css('background','#f5007a');
+			} else if($(".rev_btn").eq(i).attr('value')=='승인대기'){
+				$(".rev_btn").eq(i).css('background','#6482FF');
+			} 
+		}
 	});
 </script>
 </head>
@@ -38,10 +40,10 @@
 					<div id="ing_info">
 						<div id='ing_title'>${list.title}</div>
 						<div id="btn_div">
-							<input type="button" name="rev_btn" id="rev_btn" value="${list.statusS}"/>
+							<input type="button" name="rev_btn" class="rev_btn" value="${list.statusS}"/>
 						</div>
 						<div id="ing_img">
-							<img src="img/reco2.JPG">
+							<img src="${path}/upload/${list.formimg}">
 						</div>					
 						<div id="ing_info_con">
 							<div id='ing_gosu'>

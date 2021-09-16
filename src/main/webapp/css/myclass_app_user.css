@@ -51,12 +51,12 @@ section #contents{
 	height: 2rem;
 }
 
-#rev_btn {
+.rev_btn {
     width: 13%;
     height: 10%;
     left: 84%;
     position: relative;
-    background-color: #6482FF;
+    
 	color: white;
 	border: 0;
 	border-radius: 5px;

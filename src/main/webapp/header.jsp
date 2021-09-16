@@ -16,7 +16,7 @@
 <body>
 	<header>
 		<div id="top">
-			<a href="index.jsp"><img id="title" src="img/title.png"></a>
+			<a href="blist.do"><img id="title" src="img/title.png"></a>
 			<div class="search-box">
 				<input type="text" class="search-txt" name=""
 					placeholder="서비스를 입력하세요" /> <a class="search-btn" href="#"> <i
