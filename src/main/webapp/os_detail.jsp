@@ -28,6 +28,7 @@
 	<section>
 		<jsp:include page="osnavi.jsp" />
 		
+		<div id="os_back">
 		<div id="outsourcing">
 			<div id="os_cate">
 			<h4>${detail.category}</h4>
@@ -77,9 +78,10 @@
 				</div>
 				<div id="os_file">
 					<h3>다운로드 파일</h3>
-					<span><a href="<c:url value="/osdetail.do?fileDir=/wcom/manual&fileName=test.jpg"/>">테스트 파일</a></span>
+					<span>${detail.osfile}</span>
 				</div>
 			</div>
+		</div>
 		</div>
 	</section>
 	<div id="cl"></div>

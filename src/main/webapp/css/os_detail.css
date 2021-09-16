@@ -17,8 +17,11 @@ section {
 	margin: auto;
 	display : flex;
 }
+#os_back {
+	padding : 50px;
+}
 section #outsourcing {
-	width: 874px;
+	width: 84%;
 	padding: 50px;
 	border : 0.8px solid #F5F5F5;
 	border-radius: 15px;

@@ -32,8 +32,4 @@ public class Osform_Service {
 		return de;
 	}
 	
-	public OsDetail os_file(String oscode) {
-		OsDetail fi = dao.os_file(oscode);
-		return fi;
-	}
 }

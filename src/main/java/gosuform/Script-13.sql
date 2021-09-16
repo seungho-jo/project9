@@ -105,6 +105,10 @@ WHERE CATEGORY= '레슨'
 ORDER BY oscode desc;
 
 --외주상세화면
+SELECT g.*,m.profile, m.name
+FROM osform g, MEMBER m
+WHERE oscode= ? AND g.id = m.id
+
 --클래스 상세화면
 SELECT g.*,m.profile, m.name
 FROM osform g, MEMBER m
