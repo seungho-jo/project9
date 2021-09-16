@@ -57,6 +57,47 @@ public class Classlist_Dao {
 		return list;
 	}
 	
+	
+	public ArrayList<Classlist> classlist_best(){
+		ArrayList<Classlist> list = new ArrayList<Classlist>();
+		Connection conn = null; 
+		PreparedStatement pstmt = null; 
+		ResultSet rs = null;
+		try {
+			String sql = "SELECT g.classcode, g.nickname,g.title,g.price,g.id,g.formimg,m.profile "
+					+ "FROM gosuform g, MEMBER m "
+					+ "WHERE g.id = m.id AND rownum<5 "
+					+ "ORDER BY classcode";
+			conn = DBConnection.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				Classlist sl = new Classlist();
+				sl.setClasscode(rs.getString("classcode"));
+				sl.setNickname(rs.getString("nickname"));
+				sl.setTitle(rs.getString("title"));
+				sl.setPrice(rs.getString("price"));
+				sl.setId(rs.getString("id"));
+				sl.setFormimg(rs.getString("formimg"));
+				sl.setProfile(rs.getString("profile"));
+				list.add(sl);
+			}
+		} catch (SQLException e) {
+			System.out.println("예외발생");
+			e.printStackTrace();
+		} finally{
+			// DB 연결을 종료한다.
+			try {
+				if (rs != null) rs.close();
+				if (pstmt != null) pstmt.close();
+				if (conn != null) conn.close();
+			} catch (Exception e) {
+				throw new RuntimeException(e.getMessage());
+			}
+		}
+		return list;
+	}
+	
 	public Detailgosu detailproduct(String classcode) {
 		Detailgosu de = new Detailgosu();
 		try {

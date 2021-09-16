@@ -53,12 +53,11 @@ SELECT * FROM gosuform;
 --클래스 리스트 : 닉네임, 타이틀, 프로필사진, 클래스사진, 시간당가격
 SELECT classcode, nickname,title,price,CATEGORY,id,formimg, profile 
 FROM gosuform 
-WHERE CATEGORY= ?  
-ORDER BY classcode desc; --카테고리별
+WHERE rownum < 5; --카테고리별
 
 SELECT g.classcode, g.nickname,g.title,g.price,g.CATEGORY,g.id,g.formimg,m.profile
 FROM gosuform g, MEMBER m
-WHERE g.CATEGORY=? AND g.id = m.id
+WHERE g.id = m.id AND rownum<5
 ORDER BY classcode DESC; --카테고리별
 
 

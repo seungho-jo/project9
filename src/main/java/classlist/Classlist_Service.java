@@ -17,6 +17,11 @@ public class Classlist_Service {
 		return list;
 	}
 	
+	public ArrayList<Classlist> best_classlist() {
+		ArrayList<Classlist> blist = dao.classlist_best();
+		return blist;
+	}
+	
 	
 	// 클래스 상세정보
 	public Detailgosu detailproduct(String classcode) {

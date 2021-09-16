@@ -48,7 +48,7 @@
 			</div>
 			<div id="c_price">
 				<ul id="price_list">
-					<li class="c_price">${detail.price} / 시간</li>
+					<li class="c_price"><fmt:formatNumber type="number" maxFractionDigits="3" value="${detail.price}" /> / 시간</li>
 					<li class="c_tot">${detail.price*detail.classtime} / 총 1회 ${detail.classtime}시간</li>
 				</ul>
 			</div>

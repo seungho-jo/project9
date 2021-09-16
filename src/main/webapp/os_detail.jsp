@@ -46,7 +46,7 @@
 				</div>		
 				<div id="os_price">
 					<div id="user_2">예산</div>
-					<div id="user_3">${detail.budget}</div>
+					<div id="user_3"><fmt:formatNumber type="number" maxFractionDigits="3" value="${detail.budget}" /></div>
 				</div>
 				<div id="os_tax">
 					<div id="user_4">세금계산서</div>

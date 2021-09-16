@@ -2,11 +2,15 @@
     pageEncoding="UTF-8"
     import = "java.util.*"    
 %>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
+<c:set var = "path" value="${pageContext.request.contextPath}"/>
+<fmt:requestEncoding value="utf-8"/>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<title>오늘의 수업</title>
 <link rel="stylesheet" href="css/index.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
@@ -102,125 +106,29 @@
 			</li>
 		</ul>
 		</a>
-	</div>
+	</div>	
 	<div id="main-recommend">
 		<h2>인기 클래스</h2>
+	<c:forEach items="${bestlist}" var="Bestlist">
+	<a href="detail.do?classcode=${Bestlist.classcode}">	
 		<div id="rclass-list">
 			<div id="rclass-list-img">
-				<img src="img/reco1.jpg"/>
+				<img src="upload/${Bestlist.formimg}"/>
 			</div>
 			<div id="rclass-list-name">
-				<p>오늘한입</p>
+				<p>${Bestlist.nickname}</p>
 			</div>
 			<div id="rclass-list-title">
-				<p>한 번 배우면 평생 사용할 수 있는 소불고기 레시피</p>
+				<p>${Bestlist.title}</p>
 			</div>
 			<div id="rclass-list-price">
-				<p>25,000원</p>
+				<p><fmt:formatNumber type="number" maxFractionDigits="3" value="${Bestlist.price}" /></p>
 			</div>
 		</div>
-		<div id="rclass-list">
-			<div id="rclass-list-img">
-				<img src="img/reco2.JPG"/>
-			</div>
-			<div id="rclass-list-name">
-				<p>이은정</p>
-			</div>
-			<div id="rclass-list-title">
-				<p>생화같은 카네이션 앙금쿠키 원데이 클래스</p>
-			</div>
-			<div id="rclass-list-price">
-				<p>44,000원</p>
-			</div>
-		</div>
-		<div id="rclass-list">
-			<div id="rclass-list-img">
-				<img src="img/reco1.jpg"/>
-			</div>
-			<div id="rclass-list-name">
-				<p>오늘한입</p>
-			</div>
-			<div id="rclass-list-title">
-				<p>한 번 배우면 평생 사용할 수 있는 소불고기 레시피</p>
-			</div>
-			<div id="rclass-list-price">
-				<p>25,000원</p>
-			</div>
-		</div>
-		<div id="rclass-list">
-			<div id="rclass-list-img">
-				<img src="img/reco1.jpg"/>
-			</div>
-			<div id="rclass-list-name">
-				<p>오늘한입</p>
-			</div>
-			<div id="rclass-list-title">
-				<p>한 번 배우면 평생 사용할 수 있는 소불고기 레시피</p>
-			</div>
-			<div id="rclass-list-price">
-				<p>25,000원</p>
-			</div>
-		</div>
+		</a>
+	</c:forEach>
 	</div>
-	<div id="main-recommend">
-		<h2>신규 클래스</h2>
-		<div id="rclass-list">
-			<div id="rclass-list-img">
-				<img src="img/reco1.jpg"/>
-			</div>
-			<div id="rclass-list-name">
-				<p>오늘한입</p>
-			</div>
-			<div id="rclass-list-title">
-				<p>한 번 배우면 평생 사용할 수 있는 소불고기 레시피</p>
-			</div>
-			<div id="rclass-list-price">
-				<p>25,000원</p>
-			</div>
-		</div>
-		<div id="rclass-list">
-			<div id="rclass-list-img">
-				<img src="img/reco1.jpg"/>
-			</div>
-			<div id="rclass-list-name">
-				<p>오늘한입</p>
-			</div>
-			<div id="rclass-list-title">
-				<p>한 번 배우면 평생 사용할 수 있는 소불고기 레시피</p>
-			</div>
-			<div id="rclass-list-price">
-				<p>25,000원</p>
-			</div>
-		</div>
-		<div id="rclass-list">
-			<div id="rclass-list-img">
-				<img src="img/reco1.jpg"/>
-			</div>
-			<div id="rclass-list-name">
-				<p>오늘한입</p>
-			</div>
-			<div id="rclass-list-title">
-				<p>한 번 배우면 평생 사용할 수 있는 소불고기 레시피</p>
-			</div>
-			<div id="rclass-list-price">
-				<p>25,000원</p>
-			</div>
-		</div>
-		<div id="rclass-list">
-			<div id="rclass-list-img">
-				<img src="img/reco1.jpg"/>
-			</div>
-			<div id="rclass-list-name">
-				<p>오늘한입</p>
-			</div>
-			<div id="rclass-list-title">
-				<p>한 번 배우면 평생 사용할 수 있는 소불고기 레시피</p>
-			</div>
-			<div id="rclass-list-price">
-				<p>25,000원</p>
-			</div>
-		</div>
-	</div>
+
 	</section>
 	<jsp:include page="footer.jsp"></jsp:include>	
 </body>
