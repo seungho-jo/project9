@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"
-   
+    pageEncoding="UTF-8"  
     %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>  
@@ -62,7 +61,7 @@
 					<form method="post" action="reportDel.do">
 					<c:forEach var="rd" items="${clist}" varStatus="sts">
 						<tr><td>${rd.id}</td><td>${rd.classCode}</td><td>${rd.title}</td><td>${rd.cDate}</td>
-						<td>${rd.status}</td><td><input type="checkbox" name="checked"></td></tr>
+						<td>${rd.status}</td><td><input type="checkbox" name="checked" value="${rd.classCode}"></td></tr>
 					</c:forEach>
 					</form>
 					
