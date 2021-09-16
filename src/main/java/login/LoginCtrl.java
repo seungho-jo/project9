@@ -39,7 +39,7 @@ public class LoginCtrl extends HttpServlet {
 			Member mem = service.login(id, pass);
 			if(mem!=null) {
 				session.setAttribute("mem", mem);
-				page = "index.jsp";
+				page = "blist.do";
 			}
 		}
 		RequestDispatcher rd = request.getRequestDispatcher(page);

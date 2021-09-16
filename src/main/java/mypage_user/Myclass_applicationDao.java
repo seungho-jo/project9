@@ -33,6 +33,7 @@ public class Myclass_applicationDao {
 				gf.setLoc(rs.getString("loc"));
 				gf.setClasstime(rs.getString("classtime"));
 				gf.setClasscode(rs.getString("classcode"));
+				gf.setFormimg(rs.getString("formimg"));
 				list.add(gf);
 			}
 		}catch(SQLException e) {
