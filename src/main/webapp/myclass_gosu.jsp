@@ -24,7 +24,7 @@
 			<%--클래스현황 --%>	
 			<c:choose>
 			<c:when test="${classgosulist.size()>0}">
-			<c:forEach items="${classgosulist} var="cgl">
+			<c:forEach items="${classgosulist}" var="cgl">
 			<div id="class_ing">
 				<div id="ing_info">
 					<div id='ing_title'>${cgl.title}</div>

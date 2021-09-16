@@ -46,7 +46,7 @@
 				<ul>
 					<li>
 						내 쿠폰
-						<input type="hidden" value="coupon.do">
+						<input type="hidden" value="coupons.do">
 					</li>
 					<li>
 						쿠폰등록

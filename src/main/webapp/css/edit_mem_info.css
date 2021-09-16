@@ -53,7 +53,7 @@ section div table tr:nth-child(2n) td {
 	padding-bottom: 20px;
 }
 
-section div table tr:nth-child(9) td {
+section div table tr:nth-child(10) td {
 	padding-bottom: 0;
 	position: relative;
 }
@@ -76,7 +76,7 @@ section div table tr:nth-child(2) td #idCheck:hover {
 	background-color: #4D56D5;
 }
 
-section div table tr:nth-child(10) td #search {
+section div table tr:nth-child(12) td #search {
 	position: absolute;
 	left: 71.3%;
 	width: 4%;
@@ -88,11 +88,11 @@ section div table tr:nth-child(10) td #search {
 	cursor: pointer;
 }
 
-section div table tr:nth-child(10) td #search:hover {
+section div table tr:nth-child(11) td #search:hover {
 	background-color: #4D56D5;
 }
 
-section div table tr:nth-child(11) td input {
+section div table tr:nth-child(13) td input {
 	width: 45%;
 }
 

@@ -27,13 +27,13 @@
 				<img id="right" src="${path}/img/right_icon.svg">
 			</a>
 		</div>
-		<div id="myClass">
+		<c:choose>
+			<c:when test="${mem.gosuCheck==N }">
+				<div id="myClass">
 			<p>내클래스</p>
 			<div>
 				<ul>
-					<li>
-						수강중인 클래스
-					</li>
+					<li><a href="myclass_user.jsp">수강중인 클래스</a></li>
 					<li><a href="myclass_ap.do">수강신청 현황</a></li>
 					<li><a href="osuser.do">외주현황</a></li>
 					<li><a href="bmlist.do">북마크</a></li>
@@ -42,6 +42,22 @@
 				<img id="right" src="${path}/img/right_icon.svg">
 			</div>
 		</div>
+			</c:when>
+			<c:otherwise>
+				<div id="myClass">
+			<p>내클래스</p>
+			<div>
+				<ul>
+					<li><a href="myclass_gosu.jsp">운영중인 클래스</a></li>
+					<li><a href="myclass_app_gosu.jsp">수업신청서</a></li>
+					<li><a href="osuser.do">외주현황</a></li>
+					<li><a href="paymentHistory.jsp">결제내역</a></li>
+				</ul>
+				<img id="right" src="${path}/img/right_icon.svg">
+			</div>
+		</div>
+			</c:otherwise>
+		</c:choose>
 		<div id="cuppon">
 			<p>쿠폰</p>
 			<div>
