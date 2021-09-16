@@ -42,6 +42,8 @@ if(msg!=""){
 				<tr><td><input type="text" name="id" value="${mem.id}"/></td></tr>
 				<tr><td>비밀번호</td></tr>
 				<tr><td><input type="password" name="pass" value="${mem.pass}" placeholder="영문+숫자+특수문자 8~15자리 입력해주세요"/></td></tr>
+				<tr><td>비밀번호 확인</td></tr>
+				<tr><td><input type="password" name="re_pass"  placeholder="다시한번 비밀번호를 적어주세요"/></td></tr>
 				<tr><td>이름</td></tr>
 				<tr><td><input type="text" name="name" value="${mem.name}"/></td></tr>
 				<tr><td>휴대전화</td></tr>

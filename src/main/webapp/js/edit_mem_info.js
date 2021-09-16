@@ -13,6 +13,9 @@ $("#edit").click(function() {
 	if ($("[name=pass]").val() == "") {
 		alert("비밀번호를 입력해주세요");
 		$("[name=pass]").focus();
+	}else if ($("[name=re_pass]").val() == "") {
+		alert("비밀번호를 다시 확인해주세요");
+		$("[name=re_pass]").focus();
 	}else if ($("[name=name]").val() == "") {
 		alert("이름을 입력해주세요");
 		$("[name=name]").focus();
@@ -61,6 +64,18 @@ $("[name=pass]").blur(function() {
 	} else {
 		$("table tr:eq(3) td br").remove();
 		$("table tr:eq(3) td span").remove();
+	}
+})
+$("[name=re_pass]").blur(function() {
+	if ($("[name=re_pass]").val() != $("[name=pass]").val()) {
+		if ($("table tr:eq(5) td br").length) {
+		}
+		else {
+			$("table tr:eq(5) td").append("<br><span style='color:red;'>다시한번 확인해주세요</span>");
+		}
+	} else {
+		$("table tr:eq(5) td br").remove();
+		$("table tr:eq(5) td span").remove();
 	}
 })
 function sample6_execDaumPostcode() {

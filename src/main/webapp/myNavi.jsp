@@ -15,7 +15,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-	<div id="navi">
+	<c:choose>
+		<c:when test="${mem.gosuCheck==N}">
+			<div id="navi">
 		<h2>마이페이지</h2>
 		<ul>
 			<li>
@@ -63,6 +65,12 @@
 			</li>
 		</ul>
 	</div>
+	<script src="${path}/js/myNavi.js" type="text/javascript"></script>
+		</c:when>
+		<c:otherwise>
+			<jsp:include page="myNavi_gosu.jsp"></jsp:include>
+		</c:otherwise>
+			
+	</c:choose>
 </body>
-<script src="${path}/js/myNavi.js" type="text/javascript"></script>
 </html>
