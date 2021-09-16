@@ -10,52 +10,56 @@
 <meta charset="UTF-8">
 <title></title>
 <link rel="stylesheet" href="${path}/css/myPage.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-	<%@ include file = "header.jsp" %>
+	<%@ include file="header.jsp"%>
 	<section>
 		<h1>마이페이지</h1>
 		<div id="member_info">
 			<p>회원정보</p>
-			<a href="edit_mem_info.jsp">
-				<c:choose>
-					<c:when test="${mem.profile!=null}"><img id="my_icon" src="${path}/upload/${mem.profile}"></c:when>
-					<c:otherwise><img id="my_icon" src="${path}/img/bros_blank.jpg"></c:otherwise>
+			<a href="edit_mem_info.jsp"> <c:choose>
+					<c:when test="${mem.profile!=null}">
+						<img id="my_icon" src="${path}/upload/${mem.profile}">
+					</c:when>
+					<c:otherwise>
+						<img id="my_icon" src="${path}/img/bros_blank.jpg">
+					</c:otherwise>
 				</c:choose>
-				<p>${mem.name} 고객님</p>
-				<img id="right" src="${path}/img/right_icon.svg">
+				<p>${mem.name}고객님</p> <img id="right"
+				src="${path}/img/right_icon.svg">
 			</a>
 		</div>
 		<c:choose>
-			<c:when test="${mem.gosuCheck==N }">
+			<c:when test="${mem.gosuCheck=='N' }">
 				<div id="myClass">
-			<p>내클래스</p>
-			<div>
-				<ul>
-					<li><a href="myclass_user.jsp">수강중인 클래스</a></li>
-					<li><a href="myclass_ap.do">수강신청 현황</a></li>
-					<li><a href="osuser.do">외주현황</a></li>
-					<li><a href="bmlist.do">북마크</a></li>
-					<li><a href="paymentHistory.jsp">결제내역</a></li>
-				</ul>
-				<img id="right" src="${path}/img/right_icon.svg">
-			</div>
-		</div>
+					<p>내클래스</p>
+					<div>
+						<ul>
+							<li><a href="myclass_user.jsp">수강중인 클래스</a></li>
+							<li><a href="myclass_ap.do">수강신청 현황</a></li>
+							<li><a href="osuser.do">외주현황</a></li>
+							<li><a href="bmlist.do">북마크</a></li>
+							<li><a href="paymentHistory.jsp">결제내역</a></li>
+						</ul>
+						<img id="right" src="${path}/img/right_icon.svg">
+					</div>
+				</div>
 			</c:when>
 			<c:otherwise>
 				<div id="myClass">
-			<p>내클래스</p>
-			<div>
-				<ul>
-					<li><a href="myclass_gosu.jsp">운영중인 클래스</a></li>
-					<li><a href="myclass_app_gosu.jsp">수업신청서</a></li>
-					<li><a href="osuser.do">외주현황</a></li>
-					<li><a href="paymentHistory.jsp">결제내역</a></li>
-				</ul>
-				<img id="right" src="${path}/img/right_icon.svg">
-			</div>
-		</div>
+					<p>내클래스</p>
+					<div>
+						<ul>
+							<li><a href="myclass_gosu.jsp">운영중인 클래스</a></li>
+							<li><a href="myclass_app_gosu.jsp">수업신청서</a></li>
+							<li><a href="osuser.do">외주현황</a></li>
+							<li><a href="paymentHistory.jsp">결제내역</a></li>
+						</ul>
+						<img id="right" src="${path}/img/right_icon.svg">
+					</div>
+				</div>
 			</c:otherwise>
 		</c:choose>
 		<div id="cuppon">
@@ -71,8 +75,7 @@
 		<div id="question">
 			<p>문의내역</p>
 			<a href="qlist.do">
-				<p>바로가기</p>
-				<img id="right" src="${path}/img/right_icon.svg">
+				<p>바로가기</p> <img id="right" src="${path}/img/right_icon.svg">
 			</a>
 		</div>
 	</section>

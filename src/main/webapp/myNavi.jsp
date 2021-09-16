@@ -16,7 +16,7 @@
 </head>
 <body>
 	<c:choose>
-		<c:when test="${mem.gosuCheck==N}">
+		<c:when test="${mem.gosuCheck=='N'}">
 			<div id="navi">
 		<h2>마이페이지</h2>
 		<ul>
