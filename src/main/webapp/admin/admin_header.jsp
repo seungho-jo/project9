@@ -16,7 +16,7 @@
 </head>
 <header>
 	<div id="top">
-		<img src = "img/title_font_black.png" alt=""/>
+		<img src = "${path}/admin/img/title_font_black.png" alt=""/>
 		<div id ="content">
 			<a href="#" class="fas-fa-user"></a>
 			<a href="#">관리자님 환영합니다</a>

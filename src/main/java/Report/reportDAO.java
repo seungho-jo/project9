@@ -50,7 +50,7 @@ public class reportDAO {
 	public void delete(String classCode) {
 		
 		try {
-			String sql = "";
+			String sql = "delete from report where classCode = ?";
 			conn = DBConnection.getConnection();
 			conn.setAutoCommit(false);
 			pstmt = conn.prepareStatement(sql);
