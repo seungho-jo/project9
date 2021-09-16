@@ -1,9 +1,7 @@
-package customer;
+package bookmark;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,16 +12,16 @@ import javax.servlet.http.HttpSession;
 import login.Member;
 
 /**
- * Servlet implementation class CouponCtrl
+ * Servlet implementation class BmInsertCtrl
  */
-@WebServlet(name = "coupons.do", urlPatterns = { "/coupons.do" })
-public class CouponCtrl extends HttpServlet {
+@WebServlet(name = "bkinsert.do", urlPatterns = { "/bkinsert.do" })
+public class BmInsertCtrl extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private CommonService service;
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CouponCtrl() {
+    public BmInsertCtrl() {
         super();
         service = new CommonService();
         // TODO Auto-generated constructor stub
@@ -38,14 +36,13 @@ public class CouponCtrl extends HttpServlet {
 		HttpSession session = request.getSession();
 		Member mem = (Member)session.getAttribute("mem");
 		String id = mem.getId();
+		String classcode = request.getParameter("classcode");
 		if(id!=null) {
-			ArrayList<Coupon> list = service.cp_list(id);
-			int tot = service.totalCp(id);
-			request.setAttribute("coupon", list);
-			request.setAttribute("total", tot);
+			service.bmInsert(id, classcode);
+			Bookmark bm = service.bookmarkInfo(id, classcode);
+			System.out.println(bm.getStatus());
+			response.getWriter().print(bm.getStatus());
 		}
-		RequestDispatcher rd = request.getRequestDispatcher("myCoupon.jsp");
-		rd.forward(request, response);
 	}
 
 }

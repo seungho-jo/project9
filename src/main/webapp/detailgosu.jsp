@@ -14,12 +14,6 @@
 <link rel="stylesheet" href="css/detailgosu.css"/>
 <script src="https://kit.fontawesome.com/e34f41b737.js" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script type="text/javascript">
-	var msg = "${msg}";
-	if(msg!=null&&msg!=""){
-		alert(msg);
-	}
-</script>
 </head>
 <body>
 	<jsp:include page="header.jsp"/>
@@ -99,9 +93,26 @@
 	</div>
 	</section>
 	<jsp:include page="footer.jsp"/>
-<form action="application.do" method="post">
+<form id="frm1" action="application.do" method="post">
 	<input type="hidden" name="classcode" value="${detail.classcode}">
 </form>
 </body>
 <script src="${path}/js/detailgosu.js" type="text/javascript"></script>
+<script type="text/javascript">
+	var msg = "${msg}";
+	if(msg!=null&&msg!=""){
+		alert(msg);
+	}
+	var bookmark = "${bookmark}";
+	if(bookmark!=null&&bookmark!=""){
+		if(bookmark=="1"){
+			$("#c_like").css("background","#6482FF");
+			$("i").css("color","white");
+			
+		}else if(bookmark=="2"){
+			$("#c_like").css("background","white");
+			$("i").css("color","#6482FF");
+		}
+	}
+</script>
 </html>
